@@ -163,6 +163,12 @@ instalar módulo compatível e testar no navegador. Não foi feito upload no itc
 de executável sem QA. Procedência/licença das artes originais continua por documentar, separada
 da GPL do código. Os testes manuais não foram marcados como aprovados.
 
+**Correção após a publicação:** o CI Linux identificou que o arquivo
+`InputPluginGamepadGetVendorAndProduct.gml` usava capitalização diferente do recurso
+`InputPlugInGamepadGetVendorAndProduct`. A capitalização do arquivo foi ajustada, com aviso,
+preservando conteúdo e nome do asset. O validador passou a detectar o caso também no Windows.
+Essa correção de portabilidade foi registrada em commit adicional de publicação.
+
 ## Histórico das fases
 
 | Etapa | Commit |

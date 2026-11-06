@@ -174,6 +174,10 @@ class Validator:
         if not path.is_file():
             self.error(path, "arquivo GML declarado ausente")
             return
+        # Windows aceita nomes com caixa diferente; Linux/GitHub exigem igualdade.
+        if path.name not in {entry.name for entry in path.parent.iterdir()}:
+            self.error(path, "capitalização do arquivo GML difere do recurso declarado")
+            return
         # Third-party libraries remain covered by asset/event checks. Their many
         # macro/preprocessor constructs are outside this lexical sanity check.
         if path.parent.name.startswith(("Input", "__Input", "scribble", "__scribble")):

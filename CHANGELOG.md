@@ -17,6 +17,8 @@ Preparação do projeto existente para publicação por Pedro Tescaro.
 - Correção do ciclo de vida/cópia do mapa de kerning no Scribble.
 - README PT/EN, GPL-3.0 para código próprio, avisos de terceiros, guia itch.io e QA.
 - Verificações automáticas e compilação Windows VM via Igor 2026.0.0.23.
+- Capitalização do arquivo `InputPlugInGamepadGetVendorAndProduct.gml` corrigida para
+  checkouts Linux; nome do recurso e conteúdo preservados. Validador detecta essa divergência.
 
 Ainda pendentes: execução e QA manual do jogo, audição, desempenho, capturas reais e
 confirmação da procedência das artes. HTML5 requer instalar o módulo ausente no runtime
