@@ -1,0 +1,1442 @@
+{
+  "base_tile": [
+    16,
+    16
+  ],
+  "sprites": [
+    {
+      "name": "s_background",
+      "path": "sprites/s_background/s_background.yy",
+      "size": [
+        320,
+        256
+      ],
+      "origin": [
+        0,
+        0
+      ],
+      "frames": 1,
+      "fps": 15.0,
+      "bbox_mode": 0,
+      "bbox": [
+        0,
+        0,
+        319,
+        255
+      ],
+      "png_dimensions": {
+        "(320, 256)": 2
+      },
+      "opaque_rgb_colors": 39,
+      "alpha_counts": {
+        "255": 163840
+      },
+      "orphans_preserved": [],
+      "frame_ink_bboxes": [
+        [
+          0,
+          0,
+          320,
+          256
+        ]
+      ],
+      "edge_filtering": false
+    },
+    {
+      "name": "s_cursor",
+      "path": "sprites/s_cursor/s_cursor.yy",
+      "size": [
+        16,
+        16
+      ],
+      "origin": [
+        0,
+        0
+      ],
+      "frames": 1,
+      "fps": 15.0,
+      "bbox_mode": 0,
+      "bbox": [
+        1,
+        1,
+        13,
+        14
+      ],
+      "png_dimensions": {
+        "(16, 16)": 2
+      },
+      "opaque_rgb_colors": 4,
+      "alpha_counts": {
+        "0": 258,
+        "255": 254
+      },
+      "orphans_preserved": [],
+      "frame_ink_bboxes": [
+        [
+          1,
+          1,
+          14,
+          15
+        ]
+      ],
+      "edge_filtering": false
+    },
+    {
+      "name": "scribble_fallback_bulletpoint",
+      "path": "sprites/scribble_fallback_bulletpoint/scribble_fallback_bulletpoint.yy",
+      "size": [
+        12,
+        12
+      ],
+      "origin": [
+        0,
+        0
+      ],
+      "frames": 1,
+      "fps": 30.0,
+      "bbox_mode": 0,
+      "bbox": [
+        1,
+        1,
+        10,
+        10
+      ],
+      "png_dimensions": {
+        "(12, 12)": 2
+      },
+      "opaque_rgb_colors": 1,
+      "alpha_counts": {
+        "0": 168,
+        "255": 120
+      },
+      "orphans_preserved": [],
+      "frame_ink_bboxes": [
+        [
+          1,
+          1,
+          11,
+          11
+        ]
+      ],
+      "edge_filtering": false
+    },
+    {
+      "name": "spr_bat",
+      "path": "sprites/spr_bat/spr_bat.yy",
+      "size": [
+        32,
+        32
+      ],
+      "origin": [
+        16,
+        30
+      ],
+      "frames": 4,
+      "fps": 10.0,
+      "bbox_mode": 2,
+      "bbox": [
+        7,
+        8,
+        28,
+        28
+      ],
+      "png_dimensions": {
+        "(32, 32)": 8
+      },
+      "opaque_rgb_colors": 5,
+      "alpha_counts": {
+        "0": 6896,
+        "255": 1296
+      },
+      "orphans_preserved": [],
+      "frame_ink_bboxes": [
+        [
+          7,
+          17,
+          26,
+          32
+        ],
+        [
+          9,
+          1,
+          26,
+          22
+        ],
+        [
+          9,
+          6,
+          26,
+          21
+        ],
+        [
+          11,
+          6,
+          26,
+          27
+        ]
+      ],
+      "edge_filtering": false
+    },
+    {
+      "name": "spr_candle",
+      "path": "sprites/spr_candle/spr_candle.yy",
+      "size": [
+        26,
+        29
+      ],
+      "origin": [
+        0,
+        0
+      ],
+      "frames": 1,
+      "fps": 30.0,
+      "bbox_mode": 0,
+      "bbox": [
+        0,
+        0,
+        25,
+        28
+      ],
+      "png_dimensions": {
+        "(26, 29)": 2
+      },
+      "opaque_rgb_colors": 5,
+      "alpha_counts": {
+        "0": 900,
+        "255": 608
+      },
+      "orphans_preserved": [],
+      "frame_ink_bboxes": [
+        [
+          0,
+          0,
+          26,
+          29
+        ]
+      ],
+      "edge_filtering": false
+    },
+    {
+      "name": "spr_coffin",
+      "path": "sprites/spr_coffin/spr_coffin.yy",
+      "size": [
+        21,
+        32
+      ],
+      "origin": [
+        0,
+        0
+      ],
+      "frames": 1,
+      "fps": 1.0,
+      "bbox_mode": 0,
+      "bbox": [
+        0,
+        1,
+        19,
+        31
+      ],
+      "png_dimensions": {
+        "(21, 32)": 2
+      },
+      "opaque_rgb_colors": 3,
+      "alpha_counts": {
+        "0": 380,
+        "255": 964
+      },
+      "orphans_preserved": [],
+      "frame_ink_bboxes": [
+        [
+          0,
+          1,
+          20,
+          32
+        ]
+      ],
+      "edge_filtering": false
+    },
+    {
+      "name": "spr_coffin_open",
+      "path": "sprites/spr_coffin_open/spr_coffin_open.yy",
+      "size": [
+        21,
+        32
+      ],
+      "origin": [
+        0,
+        0
+      ],
+      "frames": 1,
+      "fps": 1.0,
+      "bbox_mode": 0,
+      "bbox": [
+        0,
+        1,
+        19,
+        31
+      ],
+      "png_dimensions": {
+        "(21, 32)": 2
+      },
+      "opaque_rgb_colors": 3,
+      "alpha_counts": {
+        "0": 380,
+        "255": 964
+      },
+      "orphans_preserved": [],
+      "frame_ink_bboxes": [
+        [
+          0,
+          1,
+          20,
+          32
+        ]
+      ],
+      "edge_filtering": false
+    },
+    {
+      "name": "spr_ground",
+      "path": "sprites/spr_ground/spr_ground.yy",
+      "size": [
+        64,
+        64
+      ],
+      "origin": [
+        0,
+        0
+      ],
+      "frames": 1,
+      "fps": 30.0,
+      "bbox_mode": 0,
+      "bbox": [
+        0,
+        0,
+        63,
+        63
+      ],
+      "png_dimensions": {
+        "(64, 64)": 2
+      },
+      "opaque_rgb_colors": 1,
+      "alpha_counts": {
+        "171": 8192
+      },
+      "orphans_preserved": [],
+      "frame_ink_bboxes": [
+        [
+          0,
+          0,
+          64,
+          64
+        ]
+      ],
+      "edge_filtering": false
+    },
+    {
+      "name": "spr_hud",
+      "path": "sprites/spr_hud/spr_hud.yy",
+      "size": [
+        77,
+        26
+      ],
+      "origin": [
+        0,
+        0
+      ],
+      "frames": 2,
+      "fps": 0.0,
+      "bbox_mode": 0,
+      "bbox": [
+        0,
+        0,
+        76,
+        25
+      ],
+      "png_dimensions": {
+        "(77, 26)": 4,
+        "(188, 84)": 4
+      },
+      "opaque_rgb_colors": 4,
+      "alpha_counts": {
+        "0": 59272,
+        "255": 11904
+      },
+      "orphans_preserved": [
+        "983094c0-dc0e-4ab3-b5c0-614c28b2ea7e.png",
+        "9971e78d-72e5-481d-a987-9a874f3ba2b6.png",
+        "hud-ui-empty.png",
+        "hud-ui-full.png"
+      ],
+      "frame_ink_bboxes": [
+        [
+          0,
+          0,
+          77,
+          26
+        ],
+        [
+          0,
+          0,
+          77,
+          26
+        ]
+      ],
+      "edge_filtering": false
+    },
+    {
+      "name": "Spr_hud_full",
+      "path": "sprites/Spr_hud_full/Spr_hud_full.yy",
+      "size": [
+        188,
+        84
+      ],
+      "origin": [
+        0,
+        0
+      ],
+      "frames": 1,
+      "fps": 30.0,
+      "bbox_mode": 0,
+      "bbox": [
+        53,
+        26,
+        129,
+        51
+      ],
+      "png_dimensions": {
+        "(188, 84)": 2
+      },
+      "opaque_rgb_colors": 4,
+      "alpha_counts": {
+        "0": 28504,
+        "255": 3080
+      },
+      "orphans_preserved": [],
+      "frame_ink_bboxes": [
+        [
+          53,
+          26,
+          130,
+          52
+        ]
+      ],
+      "edge_filtering": false
+    },
+    {
+      "name": "spr_light",
+      "path": "sprites/spr_light/spr_light.yy",
+      "size": [
+        64,
+        64
+      ],
+      "origin": [
+        0,
+        0
+      ],
+      "frames": 1,
+      "fps": 30.0,
+      "bbox_mode": 0,
+      "bbox": [
+        0,
+        0,
+        63,
+        63
+      ],
+      "png_dimensions": {
+        "(64, 64)": 2
+      },
+      "opaque_rgb_colors": 1,
+      "alpha_counts": {
+        "233": 8192
+      },
+      "orphans_preserved": [],
+      "frame_ink_bboxes": [
+        [
+          0,
+          0,
+          64,
+          64
+        ]
+      ],
+      "edge_filtering": false
+    },
+    {
+      "name": "spr_spike",
+      "path": "sprites/spr_spike/spr_spike.yy",
+      "size": [
+        16,
+        16
+      ],
+      "origin": [
+        0,
+        0
+      ],
+      "frames": 1,
+      "fps": 30.0,
+      "bbox_mode": 0,
+      "bbox": [
+        0,
+        3,
+        15,
+        15
+      ],
+      "png_dimensions": {
+        "(16, 16)": 2
+      },
+      "opaque_rgb_colors": 4,
+      "alpha_counts": {
+        "0": 264,
+        "255": 248
+      },
+      "orphans_preserved": [],
+      "frame_ink_bboxes": [
+        [
+          0,
+          2,
+          16,
+          16
+        ]
+      ],
+      "edge_filtering": false
+    },
+    {
+      "name": "spr_tileset",
+      "path": "sprites/spr_tileset/spr_tileset.yy",
+      "size": [
+        256,
+        256
+      ],
+      "origin": [
+        0,
+        0
+      ],
+      "frames": 1,
+      "fps": 30.0,
+      "bbox_mode": 0,
+      "bbox": [
+        16,
+        0,
+        255,
+        255
+      ],
+      "png_dimensions": {
+        "(256, 256)": 2
+      },
+      "opaque_rgb_colors": 4,
+      "alpha_counts": {
+        "0": 77056,
+        "255": 54016
+      },
+      "orphans_preserved": [],
+      "frame_ink_bboxes": [
+        [
+          16,
+          0,
+          256,
+          256
+        ]
+      ],
+      "edge_filtering": false
+    },
+    {
+      "name": "spr_tileset_grama",
+      "path": "sprites/spr_tileset_grama/spr_tileset_grama.yy",
+      "size": [
+        512,
+        512
+      ],
+      "origin": [
+        0,
+        0
+      ],
+      "frames": 1,
+      "fps": 30.0,
+      "bbox_mode": 0,
+      "bbox": [
+        80,
+        128,
+        492,
+        380
+      ],
+      "png_dimensions": {
+        "(512, 512)": 2
+      },
+      "opaque_rgb_colors": 1896,
+      "alpha_counts": {
+        "0": 496860,
+        "255": 27428
+      },
+      "orphans_preserved": [],
+      "frame_ink_bboxes": [
+        [
+          80,
+          128,
+          493,
+          381
+        ]
+      ],
+      "edge_filtering": false
+    },
+    {
+      "name": "spr_tileset_props",
+      "path": "sprites/spr_tileset_props/spr_tileset_props.yy",
+      "size": [
+        256,
+        256
+      ],
+      "origin": [
+        0,
+        0
+      ],
+      "frames": 1,
+      "fps": 30.0,
+      "bbox_mode": 0,
+      "bbox": [
+        14,
+        16,
+        241,
+        223
+      ],
+      "png_dimensions": {
+        "(256, 256)": 2
+      },
+      "opaque_rgb_colors": 4,
+      "alpha_counts": {
+        "0": 102980,
+        "255": 28092
+      },
+      "orphans_preserved": [],
+      "frame_ink_bboxes": [
+        [
+          14,
+          16,
+          242,
+          224
+        ]
+      ],
+      "edge_filtering": false
+    },
+    {
+      "name": "spr_vampire_dash",
+      "path": "sprites/spr_vampire_dash/spr_vampire_dash.yy",
+      "size": [
+        32,
+        32
+      ],
+      "origin": [
+        17,
+        26
+      ],
+      "frames": 20,
+      "fps": 30.0,
+      "bbox_mode": 0,
+      "bbox": [
+        9,
+        8,
+        22,
+        25
+      ],
+      "png_dimensions": {
+        "(32, 32)": 40
+      },
+      "opaque_rgb_colors": 5,
+      "alpha_counts": {
+        "0": 33520,
+        "255": 7440
+      },
+      "orphans_preserved": [],
+      "frame_ink_bboxes": [
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ]
+      ],
+      "edge_filtering": false
+    },
+    {
+      "name": "spr_vampire_fall",
+      "path": "sprites/spr_vampire_fall/spr_vampire_fall.yy",
+      "size": [
+        32,
+        32
+      ],
+      "origin": [
+        17,
+        26
+      ],
+      "frames": 37,
+      "fps": 60.0,
+      "bbox_mode": 0,
+      "bbox": [
+        0,
+        5,
+        23,
+        28
+      ],
+      "png_dimensions": {
+        "(32, 32)": 74
+      },
+      "opaque_rgb_colors": 4,
+      "alpha_counts": {
+        "0": 62440,
+        "255": 13336
+      },
+      "orphans_preserved": [],
+      "frame_ink_bboxes": [
+        [
+          0,
+          5,
+          20,
+          14
+        ],
+        [
+          0,
+          5,
+          20,
+          14
+        ],
+        [
+          0,
+          5,
+          20,
+          15
+        ],
+        [
+          1,
+          6,
+          21,
+          16
+        ],
+        [
+          2,
+          6,
+          21,
+          18
+        ],
+        [
+          3,
+          6,
+          21,
+          19
+        ],
+        [
+          4,
+          7,
+          22,
+          20
+        ],
+        [
+          5,
+          7,
+          22,
+          21
+        ],
+        [
+          6,
+          7,
+          22,
+          22
+        ],
+        [
+          7,
+          7,
+          22,
+          24
+        ],
+        [
+          8,
+          8,
+          23,
+          25
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          10,
+          8,
+          23,
+          27
+        ],
+        [
+          11,
+          9,
+          24,
+          28
+        ],
+        [
+          12,
+          9,
+          24,
+          29
+        ],
+        [
+          10,
+          8,
+          23,
+          28
+        ],
+        [
+          9,
+          8,
+          23,
+          27
+        ],
+        [
+          9,
+          8,
+          23,
+          25
+        ],
+        [
+          8,
+          8,
+          23,
+          25
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ]
+      ],
+      "edge_filtering": false
+    },
+    {
+      "name": "spr_vampire_idle",
+      "path": "sprites/spr_vampire_idle/spr_vampire_idle.yy",
+      "size": [
+        32,
+        32
+      ],
+      "origin": [
+        16,
+        25
+      ],
+      "frames": 1,
+      "fps": 30.0,
+      "bbox_mode": 0,
+      "bbox": [
+        8,
+        7,
+        21,
+        24
+      ],
+      "png_dimensions": {
+        "(32, 32)": 2
+      },
+      "opaque_rgb_colors": 4,
+      "alpha_counts": {
+        "0": 1676,
+        "255": 372
+      },
+      "orphans_preserved": [],
+      "frame_ink_bboxes": [
+        [
+          8,
+          7,
+          22,
+          25
+        ]
+      ],
+      "edge_filtering": false
+    },
+    {
+      "name": "spr_vampire_jump",
+      "path": "sprites/spr_vampire_jump/spr_vampire_jump.yy",
+      "size": [
+        32,
+        32
+      ],
+      "origin": [
+        17,
+        26
+      ],
+      "frames": 23,
+      "fps": 30.0,
+      "bbox_mode": 0,
+      "bbox": [
+        6,
+        7,
+        25,
+        31
+      ],
+      "png_dimensions": {
+        "(32, 32)": 46
+      },
+      "opaque_rgb_colors": 4,
+      "alpha_counts": {
+        "0": 39340,
+        "255": 7764
+      },
+      "orphans_preserved": [],
+      "frame_ink_bboxes": [
+        [
+          6,
+          11,
+          13,
+          32
+        ],
+        [
+          6,
+          11,
+          13,
+          32
+        ],
+        [
+          6,
+          10,
+          14,
+          32
+        ],
+        [
+          7,
+          10,
+          15,
+          32
+        ],
+        [
+          7,
+          10,
+          16,
+          32
+        ],
+        [
+          7,
+          10,
+          17,
+          32
+        ],
+        [
+          8,
+          9,
+          18,
+          32
+        ],
+        [
+          8,
+          9,
+          19,
+          31
+        ],
+        [
+          8,
+          9,
+          20,
+          29
+        ],
+        [
+          8,
+          9,
+          21,
+          28
+        ],
+        [
+          9,
+          8,
+          22,
+          27
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          24,
+          25
+        ],
+        [
+          10,
+          7,
+          25,
+          24
+        ],
+        [
+          10,
+          7,
+          26,
+          23
+        ],
+        [
+          9,
+          8,
+          24,
+          24
+        ],
+        [
+          9,
+          8,
+          23,
+          25
+        ],
+        [
+          9,
+          8,
+          23,
+          27
+        ],
+        [
+          9,
+          8,
+          22,
+          27
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ],
+        [
+          9,
+          8,
+          23,
+          26
+        ]
+      ],
+      "edge_filtering": false
+    },
+    {
+      "name": "spr_vampire_walk",
+      "path": "sprites/spr_vampire_walk/spr_vampire_walk.yy",
+      "size": [
+        32,
+        32
+      ],
+      "origin": [
+        16,
+        25
+      ],
+      "frames": 4,
+      "fps": 8.0,
+      "bbox_mode": 0,
+      "bbox": [
+        6,
+        7,
+        21,
+        25
+      ],
+      "png_dimensions": {
+        "(32, 32)": 8
+      },
+      "opaque_rgb_colors": 4,
+      "alpha_counts": {
+        "0": 6718,
+        "255": 1474
+      },
+      "orphans_preserved": [],
+      "frame_ink_bboxes": [
+        [
+          8,
+          7,
+          22,
+          25
+        ],
+        [
+          8,
+          7,
+          22,
+          25
+        ],
+        [
+          8,
+          7,
+          22,
+          25
+        ],
+        [
+          6,
+          7,
+          22,
+          26
+        ]
+      ],
+      "edge_filtering": false
+    },
+    {
+      "name": "spr_wall",
+      "path": "sprites/spr_wall/spr_wall.yy",
+      "size": [
+        64,
+        64
+      ],
+      "origin": [
+        0,
+        0
+      ],
+      "frames": 1,
+      "fps": 30.0,
+      "bbox_mode": 0,
+      "bbox": [
+        0,
+        0,
+        63,
+        63
+      ],
+      "png_dimensions": {
+        "(64, 64)": 2
+      },
+      "opaque_rgb_colors": 1,
+      "alpha_counts": {
+        "94": 8192
+      },
+      "orphans_preserved": [],
+      "frame_ink_bboxes": [
+        [
+          0,
+          0,
+          64,
+          64
+        ]
+      ],
+      "edge_filtering": false
+    }
+  ],
+  "tilesets": [
+    {
+      "name": "ts_fundo",
+      "tileWidth": 16,
+      "tileHeight": 16,
+      "tile_count": 256,
+      "out_tilehborder": 2,
+      "out_tilevborder": 2
+    },
+    {
+      "name": "ts_grass",
+      "tileWidth": 16,
+      "tileHeight": 16,
+      "tile_count": 1024,
+      "out_tilehborder": 2,
+      "out_tilevborder": 2
+    },
+    {
+      "name": "ts_props",
+      "tileWidth": 16,
+      "tileHeight": 16,
+      "tile_count": 256,
+      "out_tilehborder": 2,
+      "out_tilevborder": 2
+    }
+  ],
+  "rooms": [
+    {
+      "name": "rm_level1",
+      "size": [
+        1920,
+        540
+      ],
+      "view0": {
+        "hborder": 32,
+        "hport": 1080,
+        "hspeed": -1,
+        "hview": 270,
+        "inherit": false,
+        "objectId": null,
+        "vborder": 32,
+        "visible": true,
+        "vspeed": -1,
+        "wport": 1920,
+        "wview": 480,
+        "xport": 0,
+        "xview": 0,
+        "yport": 0,
+        "yview": 0
+      },
+      "fractional_positions": [
+        {
+          "name": "inst_SPIKE_EXT_15",
+          "object": "obj_spike",
+          "x": 1903.9698,
+          "y": 481.09613
+        },
+        {
+          "name": "inst_2483E752",
+          "object": "obj_ground",
+          "x": 1440.0,
+          "y": 497.09613
+        },
+        {
+          "name": "inst_5370134",
+          "object": "obj_spike",
+          "x": 1681.0,
+          "y": 481.09613
+        },
+        {
+          "name": "inst_61FFF457",
+          "object": "obj_light",
+          "x": 817.0,
+          "y": 78.4
+        },
+        {
+          "name": "inst_EBB46E0",
+          "object": "obj_light",
+          "x": 1329.0,
+          "y": 126.4
+        }
+      ]
+    },
+    {
+      "name": "rm_menu",
+      "size": [
+        480,
+        270
+      ],
+      "view0": {
+        "hborder": 32,
+        "hport": 1080,
+        "hspeed": -1,
+        "hview": 270,
+        "inherit": false,
+        "objectId": null,
+        "vborder": 32,
+        "visible": true,
+        "vspeed": -1,
+        "wport": 1920,
+        "wview": 480,
+        "xport": 0,
+        "xview": 0,
+        "yport": 0,
+        "yview": 0
+      },
+      "fractional_positions": []
+    }
+  ]
+}
