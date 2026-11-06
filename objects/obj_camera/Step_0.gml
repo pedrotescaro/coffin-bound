@@ -1,5 +1,13 @@
 /// @description Segue o player com look-ahead horizontal e impede a câmera de sair da sala.
 // === SEGUIR O PLAYER COM SUAVIZAÇÃO E LOOK-AHEAD ===
+if (variable_global_exists("is_paused") && global.is_paused) exit;
+var _shake_x = 0;
+var _shake_y = 0;
+if (shake_timer > 0) {
+    shake_timer--;
+    _shake_x = irandom_range(-shake_amount, shake_amount);
+    _shake_y = irandom_range(-shake_amount, shake_amount);
+} else shake_amount = 0;
 if (instance_exists(obj_player)) {
     // Calculando a antecipação (look-ahead) baseada na velocidade do player
     var _target_look_ahead = obj_player.hsp * look_ahead_factor;
@@ -24,5 +32,7 @@ if (instance_exists(obj_player)) {
     // Aplica a posição da câmera
     follow_x = _new_x;
     follow_y = _new_y;
-    camera_set_view_pos(cam, round(follow_x), round(follow_y));
+    camera_set_view_pos(cam,
+        clamp(round(follow_x) + _shake_x, 0, max(0, room_width - view_w)),
+        clamp(round(follow_y) + _shake_y, 0, max(0, room_height - view_h)));
 }

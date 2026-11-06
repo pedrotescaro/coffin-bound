@@ -2,6 +2,8 @@
   "$GMProject":"v1",
   "%Name":"Coffin Bound final",
   "AudioGroups":[
+    {"$GMAudioGroup":"v1","%Name":"audiogroup_sfx","exportDir":"","name":"audiogroup_sfx","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"v1","%Name":"audiogroup_music","exportDir":"","name":"audiogroup_music","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
     {"$GMAudioGroup":"v1","%Name":"audiogroup_default","exportDir":"","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
   "configs":{
@@ -10,6 +12,7 @@
   },
   "defaultScriptType":1,
   "Folders":[
+    {"$GMFolder":"","%Name":"Sounds","folderPath":"folders/Sounds.yy","name":"Sounds","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Animation Curves","folderPath":"folders/Animation Curves.yy","name":"Animation Curves","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Extensions","folderPath":"folders/Extensions.yy","name":"Extensions","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Fonts","folderPath":"folders/Fonts.yy","name":"Fonts","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -108,6 +111,16 @@
   },
   "name":"Coffin Bound final",
   "resources":[
+    {"id":{"name":"cb_services","path":"scripts/cb_services/cb_services.yy",},},
+    {"id":{"name":"snd_cb_bat","path":"sounds/snd_cb_bat/snd_cb_bat.yy",},},
+    {"id":{"name":"snd_cb_checkpoint","path":"sounds/snd_cb_checkpoint/snd_cb_checkpoint.yy",},},
+    {"id":{"name":"snd_cb_dash","path":"sounds/snd_cb_dash/snd_cb_dash.yy",},},
+    {"id":{"name":"snd_cb_death","path":"sounds/snd_cb_death/snd_cb_death.yy",},},
+    {"id":{"name":"snd_cb_hurt","path":"sounds/snd_cb_hurt/snd_cb_hurt.yy",},},
+    {"id":{"name":"snd_cb_jump","path":"sounds/snd_cb_jump/snd_cb_jump.yy",},},
+    {"id":{"name":"snd_cb_music","path":"sounds/snd_cb_music/snd_cb_music.yy",},},
+    {"id":{"name":"snd_cb_ui","path":"sounds/snd_cb_ui/snd_cb_ui.yy",},},
+    {"id":{"name":"snd_cb_win","path":"sounds/snd_cb_win/snd_cb_win.yy",},},
     {"id":{"name":"cb_render","path":"scripts/cb_render/cb_render.yy",},},
     {"id":{"name":"fnt_monogram","path":"fonts/fnt_monogram/fnt_monogram.yy",},},
     {"id":{"name":"scribble_fallback_font","path":"fonts/scribble_fallback_font/scribble_fallback_font.yy",},},

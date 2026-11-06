@@ -30,7 +30,7 @@ function player_state_bat() {
     vsp = lerp(vsp, _target_vsp, _control_accel);
     if (_v_move < 0) vsp -= _lift_force;
     vsp = min(vsp + _bat_gravity, bat_max_fall_speed);
-    if (_h_move != 0) image_xscale = sign(_h_move);
+    if (_h_move != 0) facing_dir = sign(_h_move);
 
     bat_flight_timer = max(0, bat_flight_timer - 1);
     if (bat_landing_grace_timer > 0) bat_landing_grace_timer--;

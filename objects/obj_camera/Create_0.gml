@@ -21,3 +21,5 @@ if (instance_exists(obj_player)) {
 // Acumuladores suaves separados da posição inteira apresentada.
 follow_x = camera_get_view_x(cam);
 follow_y = camera_get_view_y(cam);
+shake_timer = 0;
+shake_amount = 0;

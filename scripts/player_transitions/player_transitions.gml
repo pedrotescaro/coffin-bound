@@ -1,10 +1,12 @@
 /// @description Aplica o impulso do dash no mesmo frame da entrada.
 function player_start_dash() {
+    cb_play_sfx(snd_cb_dash);
+    cb_shake(1, 5);
     state = PlayerState.DASH;
     can_dash = false;
     dash_timer = max(0, dash_duration - 1);
     var _direction = (input_move_x == 0 && input_move_y == 0)
-        ? ((image_xscale >= 0) ? 0 : 180)
+        ? ((facing_dir >= 0) ? 0 : 180)
         : point_direction(0, 0, input_move_x, input_move_y);
     dash_hsp = lengthdir_x(dash_spd, _direction);
     dash_vsp = lengthdir_y(dash_spd, _direction);
@@ -24,7 +26,7 @@ function player_start_wall_jump() {
     state = PlayerState.JUMP;
     hsp = -on_wall * wall_jump_hsp;
     vsp = wall_jump_vsp;
-    image_xscale = -on_wall;
+    facing_dir = -on_wall;
     on_ground = false;
     buffer_counter = 0;
     coyote_counter = 0;
@@ -40,8 +42,9 @@ function player_try_start_bat() {
     if (!input_transform
         || (!player_is_human_state(state) && state != PlayerState.WALL_SLIDE)
         || bat_energy < max(bat_min_to_transform, bat_activation_cost)) return;
+    cb_play_sfx(snd_cb_bat);
     var _direction = (input_move_x == 0 && input_move_y == 0)
-        ? ((image_xscale >= 0) ? 0 : 180)
+        ? ((facing_dir >= 0) ? 0 : 180)
         : point_direction(0, 0, input_move_x, input_move_y);
     state = PlayerState.BAT;
     bat_phase = BatPhase.LAUNCH;
@@ -58,7 +61,7 @@ function player_try_start_bat() {
     buffer_counter = 0;
     coyote_counter = 0;
     wall_jump_timer = 0;
-    if (input_move_x != 0) image_xscale = sign(input_move_x);
+    if (input_move_x != 0) facing_dir = sign(input_move_x);
 }
 
 /// @description Inicia o retorno visual seguro após o pouso.
@@ -125,6 +128,7 @@ function player_reset(_spawn_x, _spawn_y) {
     image_index = 0;
     image_speed = 1;
     image_xscale = 1;
+    facing_dir = 1;
     image_yscale = 1;
     image_angle = 0;
     image_alpha = 1;
@@ -138,6 +142,7 @@ function player_reset(_spawn_x, _spawn_y) {
     input_dash = false;
     input_transform = false;
     input_restart = false;
+    suppress_action_press = true;
     input_move_x = 0;
     input_move_y = 0;
     player_update_contacts();

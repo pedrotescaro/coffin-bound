@@ -91,3 +91,36 @@ tiles, texto e barras em 960×540, 1366×768 e 1920×1080; Alt+Tab e fullscreen;
 **Pendente:** aprovação visual em movimento e revisão de timing/poses no runner; fontes e
 sprite branco técnico são exceções funcionais ao remapeamento de cores. Composição de luz e
 filtro pode produzir outras cores na tela. Origem/licença das artes continua por confirmar.
+
+## Fase 4 — polimento
+
+**Mudou:** menu completo, pausa por flag, game over com retorno ao checkpoint, créditos após
+vitória e catálogo de fases com a room existente. Checkpoints/progresso e preferências em
+INIs separados. Sete teclas remapeáveis, controle, volumes, filtro e fullscreen Windows.
+No HTML5 a interface orienta usar o botão de fullscreen do navegador/itch.io.
+
+Câmera com shake leve limitado à room, poeira/morcego/morte em arrays limitados e nove WAVs
+originais CC0 (8 efeitos e loop de 21,33 s), grupos de música/efeitos com carregamento assíncrono.
+Corrigido espelhamento da máscara assimétrica: `facing_dir` agora controla só a apresentação.
+Entradas de confirmação não disparam ações involuntárias ao retomar, renascer ou fechar diálogo.
+
+**Arquivos:** `scripts/cb_services/`, `scripts/menu_*/`, `scripts/scr_enums/`,
+`scripts/player_{input,states,transitions,visuals,health,bat}/`, `objects/obj_{menu,pause,gameboy,player,camera,level_controller,light,candle,dash_trail}/`,
+`.yyp`, `sounds/snd_cb_*/`, `tools/generate_audio.py`, `tools/check_movement.cjs`,
+`tools/check_services.cjs`, `assets/audio_manifest.json`, `docs/AUDIO.md`,
+`docs/POLIMENTO.md` e esta entrega. Nomes e IDs dos assets originais preservados.
+
+**Verificado:** estrutura com 0 erros/0 avisos; 13 regressões matemáticas/input do jogador;
+regressões de preferências/progresso em sandbox (ver ferramenta e saída). Áudio regenerado
+duas vezes e comparado byte a byte: sem clipping, headers PCM/SHA-256 válidos e borda do loop
+com diferença de 36 unidades PCM16. Revisão independente dos INIs, ordem dos fluxos e lifecycle.
+As simulações não compilam GML nem reproduzem os eventos do runner.
+
+**Conferir manualmente:** roteiro em `docs/POLIMENTO.md` e audição em `docs/AUDIO.md`.
+Especialmente: morrer em todos os checkpoints, fechar/reabrir e continuar; pausar com pulo
+segurado; remapear e salvar; controle e desconexão; concluir o caixão; volumes 0/50/100;
+três voltas da música; profiler por 10 minutos. HTML5 continua condicionado a build/teste.
+
+**Pendente:** compilação e percurso completo no GameMaker, aprovação visual, audição e
+performance. O jogo tem uma fase existente; novas rooms podem ser cadastradas, mas nenhuma
+fase adicional foi inventada. Origem/licença das artes originais ainda precisa ser confirmada.

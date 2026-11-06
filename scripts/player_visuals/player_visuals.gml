@@ -2,6 +2,7 @@
 // hsp, vsp e mask_index nunca são alterados aqui.
 /// @description Dispara o stretch visual inicial do pulo sem alterar física ou hitbox.
 function player_visual_start_jump() {
+    cb_play_sfx(snd_cb_jump);
     xscale_draw = visual_jump_squash_x;
     yscale_draw = visual_jump_stretch_y;
 }

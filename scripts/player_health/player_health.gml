@@ -20,6 +20,8 @@ function player_take_damage(_amount) {
     if (hp <= 0) {
         player_die();
     } else if (!was_in_light && player_is_human_state(state)) {
+        cb_play_sfx(snd_cb_hurt);
+        cb_shake(1, 5);
         state = PlayerState.DAMAGE;
         damage_timer = 10;
     }

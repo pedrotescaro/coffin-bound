@@ -1,5 +1,6 @@
 /// @description Atualiza chama, recarga o dash do player e gerencia o respawn da vela.
 // === ESTADO ATIVO: VELA ACESA ===
+if (global.is_paused) exit;
 if (is_active) {
     // --- EFEITO DE FLICKER (piscar da chama) ---
     flicker_timer++;

@@ -42,7 +42,7 @@ function player_state_normal() {
     }
 
     vsp = min(vsp + grv, max_vsp);
-    if (move_input != 0 && wall_jump_timer == 0) image_xscale = sign(move_input);
+    if (move_input != 0 && wall_jump_timer == 0) facing_dir = sign(move_input);
     if (on_ground) can_dash = true;
 
     if (buffer_counter > 0 && on_wall != 0 && !on_ground) {
@@ -88,7 +88,7 @@ function player_state_dash() {
         _trail.sprite_index = spr_vampire_dash;
         _trail.image_index = image_index;
         _trail.image_speed = 0;
-        _trail.image_xscale = image_xscale;
+        _trail.image_xscale = facing_dir;
         _trail.image_blend = COLOR_GB_BRIGHT;
         _trail.image_alpha = 0.6;
     }
@@ -102,7 +102,7 @@ function player_state_wall_slide() {
         player_state_normal();
         return;
     }
-    image_xscale = on_wall;
+    facing_dir = on_wall;
     if (buffer_counter > 0) {
         player_start_wall_jump();
         return;

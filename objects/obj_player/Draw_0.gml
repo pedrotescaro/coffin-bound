@@ -5,5 +5,5 @@ if (flash_hit > 0 && floor(current_time / 40) mod 2 == 0) {
 }
 if (state != PlayerState.DEATH) {
     draw_sprite_ext(sprite_index, image_index, round(x), round(y),
-        (image_xscale < 0) ? -1 : 1, 1, 0, _blend, image_alpha);
+        facing_dir, 1, 0, _blend, image_alpha);
 }

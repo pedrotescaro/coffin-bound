@@ -10,6 +10,14 @@ function player_input() {
     input_dash = InputPressed(INPUT_VERB.PLAYER_DASH);
     input_transform = InputPressed(INPUT_VERB.PLAYER_BAT);
     input_restart = keyboard_check_pressed(ord("R"));
+    // A confirmação de um menu não deve virar ação de jogo no mesmo frame.
+    if (suppress_action_press) {
+        input_jump_press = false;
+        input_dash = false;
+        input_transform = false;
+        input_restart = false;
+        suppress_action_press = false;
+    }
 
     // O cluster preserva intensidade do analógico, enquanto input_* serve às ações digitais.
     input_move_x = InputX(INPUT_CLUSTER.PLAYER_MOVE);

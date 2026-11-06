@@ -1,24 +1,51 @@
 /// @description Controla armadilhas, checkpoints e dialogos da fase expandida.
-if (!instance_exists(obj_player)) exit;
+if (global.is_paused || !instance_exists(obj_player)) exit;
 
 var _player = instance_find(obj_player, 0);
 if (respawn_cooldown > 0) respawn_cooldown--;
+checkpoint_timer = max(0, checkpoint_timer - 1);
+for (var _i = array_length(fx_particles) - 1; _i >= 0; _i--) {
+    var _p = fx_particles[_i];
+    _p.px += _p.vx;
+    _p.py += _p.vy;
+    _p.vy += 0.06;
+    _p.life--;
+    if (_p.life <= 0) array_delete(fx_particles, _i, 1);
+}
+if (_player.state == PlayerState.DEATH) {
+    if (!death_handled) {
+        death_handled = true;
+        global.cb.deaths++;
+        cb_save_progress();
+        cb_play_sfx(snd_cb_death);
+        cb_shake(2, 10);
+        emit_burst(_player.x, _player.y - 8, 24, make_color_rgb(191, 89, 99));
+    }
+    if (_player.death_timer >= 24) {
+        if (InputPressed(INPUT_VERB.MENU_ACCEPT) || keyboard_check_pressed(ord("R"))) respawn_player();
+        else if (InputPressed(INPUT_VERB.MENU_BACK)) room_goto(rm_menu);
+    }
+    exit;
+}
+if (_player.state == PlayerState.WIN) {
+    if (!win_handled) {
+        win_handled = true;
+        cb_play_sfx(snd_cb_win);
+        emit_burst(_player.x, _player.y - 8, 24, COLOR_LEVEL_BRIGHT);
+    }
+    if (_player.win_timer <= 0) cb_complete_level();
+    exit;
+}
 
 // Checkpoints invisiveis deixam as tentativas curtas, no ritmo de Celeste.
 if (checkpoint < 1 && _player.x >= 780) {
-    checkpoint = 1;
-    respawn_x = 790;
-    respawn_y = 118;
+    set_checkpoint(1);
 }
 if (checkpoint < 2 && _player.x >= 1264) {
-    checkpoint = 2;
-    respawn_x = 1290;
-    respawn_y = 230;
+    set_checkpoint(2);
 }
 if (checkpoint < 3 && _player.x >= 1536) {
-    checkpoint = 3;
-    respawn_x = 1565;
-    respawn_y = 342;
+    set_checkpoint(3);
 }
 
 if (!global.dialogue_active) {
@@ -41,9 +68,7 @@ if (!global.dialogue_active) {
 }
 
 if (global.dialogue_active) {
-    var _advance = keyboard_check_pressed(vk_space)
-        || keyboard_check_pressed(vk_enter)
-        || keyboard_check_pressed(ord("E"));
+    var _advance = InputPressed(INPUT_VERB.MENU_ACCEPT) || InputPressed(INPUT_VERB.PLAYER_JUMP);
 
     for (var _pad = 0; _pad < 4; _pad++) {
         if (gamepad_is_connected(_pad) && gamepad_button_check_pressed(_pad, gp_face1)) {
@@ -56,13 +81,15 @@ if (global.dialogue_active) {
             dialogue_typist.skip();
         } else {
             global.dialogue_active = false;
+            _player.suppress_action_press = true;
+            _player.buffer_counter = 0;
         }
     }
     exit;
 }
 
 if (respawn_cooldown <= 0) {
-    var _hit_hazard = (_player.y > room_height - 12);
+    var _hit_hazard = (_player.bbox_top >= room_height);
     if (!_hit_hazard) {
         _hit_hazard = collision_rectangle(
             _player.bbox_left,
@@ -78,3 +105,8 @@ if (respawn_cooldown <= 0) {
         with (_player) player_die();
     }
 }
+
+if (_player.on_ground && !last_grounded) emit_burst(_player.x, _player.bbox_bottom, 6, COLOR_LEVEL_LIGHT);
+if (_player.state == PlayerState.BAT && !last_bat) emit_burst(_player.x, _player.y - 8, 12, make_color_rgb(127, 155, 176));
+last_grounded = _player.on_ground;
+last_bat = _player.state == PlayerState.BAT;

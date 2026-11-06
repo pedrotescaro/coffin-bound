@@ -30,4 +30,6 @@ enum BatPhase {
 enum MenuPage {
     MAIN,
     OPTIONS,
+    CONTROLS,
+    CREDITS,
 }

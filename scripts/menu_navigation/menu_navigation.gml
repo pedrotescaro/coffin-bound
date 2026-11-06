@@ -1,22 +1,20 @@
-/// @description Atualiza o cursor e move a seleção dentro da página atual.
-function menu_navigation_update()
-{
-    cursorLevitate = dsin(cursorTime) * 3;
+function menu_navigation_update() {
+    cursorLevitate = round(dsin(cursorTime) * 2);
     cursorTime += leviRate;
-
-    if (menu_input_vertical != 0)
-    {
-        var _items = menu_get_current_items();
-        selected = clamp(selected + sign(menu_input_vertical), 0, array_length(_items) - 1);
+    menu_notice_timer = max(0, menu_notice_timer - 1);
+    if (menu_input_vertical != 0 && current_page != MenuPage.CREDITS) {
+        var _previous = selected;
+        selected = clamp(selected + sign(menu_input_vertical), 0, array_length(menu_get_current_items()) - 1);
+        if (selected != _previous) cb_play_sfx(snd_cb_ui);
     }
-
     selectLerp = lerp(selectLerp, selected, lerpAmt);
 }
 
-/// @description Troca de página mantendo a posição visual do cursor consistente.
-function menu_navigation_open_page(_page, _selection)
-{
+function menu_navigation_open_page(_page, _selection) {
     current_page = _page;
     selected = _selection;
     selectLerp = _selection;
+    rebind_index = -1;
+    menu_notice_timer = 0;
+    cb_play_sfx(snd_cb_ui);
 }

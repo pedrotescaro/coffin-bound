@@ -4,6 +4,7 @@
 // Atualiza oscilação de brilho e movimento de poeira atmosférica
 // ============================================================
 
+if (global.is_paused) exit;
 pulse_timer += 0.03;
 flicker = dsin(pulse_timer * 60) * 3;
 

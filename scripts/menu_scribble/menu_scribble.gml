@@ -14,5 +14,5 @@ function menu_scribble_draw(_text, _id, _x, _y, _scale, _colour, _xscale = 1, _y
         .align(fa_left, fa_top)
         .scale(_scale)
         .transform(_xscale, _yscale)
-        .draw(_x, _y);
+        .draw(round(_x), round(_y));
 }

@@ -117,6 +117,9 @@ transform_timer = 0;          // Countdown da animação de transição
 
 // ===== COLISÃO =====
 mask_index = spr_vampire_idle;
+// Espelhamento é só visual; image_xscale permanece 1 para estabilizar a máscara.
+image_xscale = 1;
+facing_dir = 1;
 
 // ===== FLAGS DE DETECÇÃO =====
 on_ground = false;            // True se há chão 1px abaixo
@@ -155,6 +158,7 @@ win_timer = 0;
 
 // ===== DEBUG =====
 show_debug = false;
+suppress_action_press = true;
 
 // Reset único usado também pelos checkpoints; os parâmetros acima são preservados.
 player_reset(x, y);

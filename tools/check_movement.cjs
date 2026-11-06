@@ -15,6 +15,7 @@ function sandbox() {
     state: PlayerState.NORMAL, x: 40, y: 40, hsp: 0, vsp: 0,
     move_remainder_x: 0, move_remainder_y: 0, room_width: 480,
     obj_wall: 1, obj_ground: 2, walls: [], on_ground: false, on_wall: 0,
+    cb_play_sfx() {}, cb_shake() {}, snd_cb_dash: 21, snd_cb_bat: 22,
     visual_was_on_ground: false, visual_landed: false, can_dash: true,
     bat_landing_grace_timer: 0, damage_timer: 0,
     player_return_to_human() { s.state = PlayerState.TRANSFORM_TO_HUMAN; },
@@ -76,7 +77,7 @@ function movement() {
     wall_jump_hsp: 5, wall_jump_vsp: -6, wall_slide_spd: 2,
     buffer_counter: 0, buffer_frames: 6, coyote_counter: 0, coyote_frames: 10,
     input_jump_press: false, input_jump_held: true, input_dash: false,
-    input_move_x: 1, input_move_y: 0, image_xscale: 1,
+    input_move_x: 1, input_move_y: 0, image_xscale: 1, facing_dir: 1,
     spr_vampire_idle: 10, dash_spd: 3.5, dash_duration: 9, bat_energy: 100, bat_energy_max: 100,
     bat_recharge_rate: 0.33, respawn_invulnerability: 0,
     player_visual_start_jump() {}, player_visual_start_dash() {},
@@ -108,5 +109,34 @@ check('soltar pulo reduz altura e dash mantém prioridade sobre parede', () => {
 check('perder parede impede wall jump sem contato', () => {
   const s = movement(); s.state = PlayerState.WALL_SLIDE; s.buffer_counter = 3;
   s.player_state_wall_slide(); assert.ok(s.vsp >= 0); assert.equal(s.image_xscale, 1);
+});
+check('virar junto à parede altera só facing e mantém escala da máscara', () => {
+  const s = movement(); s.move_input = -1;
+  s.player_state_normal();
+  assert.equal(s.facing_dir, -1); assert.equal(s.image_xscale, 1);
+  s.on_wall = -1; s.state = PlayerState.WALL_SLIDE;
+  s.player_state_wall_slide();
+  assert.equal(s.facing_dir, -1); assert.equal(s.image_xscale, 1);
+  s.player_start_wall_jump();
+  assert.equal(s.facing_dir, 1); assert.equal(s.image_xscale, 1);
+});
+check('dash sem direção segue facing visual com escala de colisão fixa', () => {
+  const s = movement(); s.input_move_x = 0; s.input_move_y = 0; s.facing_dir = -1;
+  s.player_start_dash();
+  assert.equal(s.hsp, -s.dash_spd); assert.ok(Math.abs(s.vsp) < 1e-9);
+  assert.equal(s.image_xscale, 1);
+});
+check('retomar menu ignora ações novas e preserva pulo já segurado', () => {
+  const s = movement();
+  Object.assign(s, { INPUT_VERB: {}, INPUT_CLUSTER: {},
+    InputCheck: () => true, InputPressed: () => true,
+    InputX: () => 0, InputY: () => 0, ord: c => c.charCodeAt(0),
+    keyboard_check_pressed: () => false, suppress_action_press: true });
+  vm.runInContext(read('player_input'), s);
+  s.player_input();
+  assert.equal(s.input_jump_press, false); assert.equal(s.input_dash, false);
+  assert.equal(s.input_transform, false); assert.equal(s.input_jump_held, true);
+  assert.equal(s.suppress_action_press, false);
+  s.player_input(); assert.equal(s.input_jump_press, true);
 });
 console.log(`${checks} verificações matemáticas aprovadas; teste no GameMaker continua necessário.`);
