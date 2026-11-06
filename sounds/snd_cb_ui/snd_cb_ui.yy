@@ -6,10 +6,12 @@
     "path": "audiogroups/audiogroup_sfx"
   },
   "bitDepth": 1,
-  "bitRate": 128,
+  "channelFormat": 0,
   "compression": 0,
+  "compressionQuality": 1,
   "conversionMode": 0,
   "duration": 0.089977,
+  "exportDir": "",
   "name": "snd_cb_ui",
   "parent": {
     "name": "Sounds",
@@ -20,6 +22,5 @@
   "resourceVersion": "2.0",
   "sampleRate": 22050,
   "soundFile": "snd_cb_ui.wav",
-  "type": 0,
   "volume": 1.0
 }

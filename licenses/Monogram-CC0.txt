@@ -1,0 +1,13 @@
+Monogram by datagoblin / Vinicius Menezio
+License: CC0 1.0 Universal
+
+The author identifies Monogram as CC0 on the official font page:
+https://datagoblin.itch.io/monogram
+
+CC0 deed and legal code:
+https://creativecommons.org/publicdomain/zero/1.0/
+https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+Applies to fonts/fnt_monogram/monogram.ttf and its font atlas in this project.
+No ownership of this third-party font is asserted by the Coffin Bound project.
+Source checked on 2026-11-06.

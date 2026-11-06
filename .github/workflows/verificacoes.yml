@@ -1,0 +1,23 @@
+name: Verificações do projeto
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verificacoes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validar recursos e referências
+        run: python tools/validate_project.py --strict-warnings
+      - name: Verificar movimento e menus
+        run: |
+          node tools/check_movement.cjs
+          node tools/check_services.cjs
+      - name: Verificar geração dos sons
+        run: python tools/generate_audio.py --check

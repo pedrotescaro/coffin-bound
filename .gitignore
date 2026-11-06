@@ -55,7 +55,6 @@ Temporary Items
 .apdisk
 
 # GameMaker temporary files
-*.resource_order
 *.old
 
 # GMRT build directory
@@ -65,3 +64,15 @@ Build
 tools/arte/.work/
 __pycache__/
 *.pyc
+
+# Builds, caches, logs e credenciais locais
+.build/
+dist/
+builds/
+output/
+*.log
+*.yydebug
+*.local
+.env
+.env.*
+!.env.example

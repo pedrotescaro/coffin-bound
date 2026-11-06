@@ -1,0 +1,16 @@
+Original Coffin Bound synthesized audio
+Copyright 2026 Pedro Tescaro
+License: CC0-1.0
+
+To the extent possible under law, Pedro Tescaro has waived all copyright and
+related or neighboring rights to the nine original WAV files in
+sounds/snd_cb_*/. The dedication applies to these WAV files, including music,
+and does not change the GPL-3.0-only license of tools/generate_audio.py.
+
+CC0 1.0 Universal:
+https://creativecommons.org/publicdomain/zero/1.0/
+Full legal code:
+https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+These files were generated with deterministic mathematical synthesis.
+No external recordings, samples or soundfonts were used.

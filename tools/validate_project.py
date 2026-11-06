@@ -340,6 +340,13 @@ class Validator:
             elif kind == "GMScript":
                 self.check_gml(path.with_suffix(".gml"))
             elif kind == "GMSound":
+                if asset.get("$GMSound") == "v2":
+                    for field in ("channelFormat", "compressionQuality", "exportDir"):
+                        if field not in asset:
+                            self.error(path, f"GMSound v2: campo obrigatório ausente: {field}")
+                    for field in ("bitRate", "type"):
+                        if field in asset:
+                            self.error(path, f"GMSound v2: campo legado incompatível com runtime 2026: {field}")
                 sound_file = asset.get("soundFile")
                 if sound_file and not (path.parent / sound_file).is_file():
                     self.error(path, f"arquivo de áudio ausente: {sound_file}")

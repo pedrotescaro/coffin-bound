@@ -62,3 +62,22 @@ As fontes foram consultadas em 06/11/2026. As instruções de publicação dever
 ## Teste manual necessário
 
 Abrir o `.yyp` na instalação GameMaker compatível; verificar importação dos prefabs, avisos sobre assets ausentes, fonte Monogram, compilação VM Windows e compilação HTML5. Não publicar até confirmar autoria das artes, executar o checklist de QA e testar os pacotes exportados fora da IDE.
+
+## Adendo da preparação final
+
+Foi localizado posteriormente o runtime **LTS 2026.0.0.23** na raiz separada
+`C:\ProgramData\GameMakerStudio2-LTS2026\Cache\runtimes\runtime-2026.0.0.23`.
+O executável `bin/igor/windows/x64/Igor.exe` e `fnames` existem nessa instalação.
+O inventário original acima registrava somente a raiz `GameMakerStudio2`, com runtimes 2024.x;
+portanto a ausência de runtime 2026 não deve ser tratada como bloqueio confirmado.
+
+A existência do compilador não aprova um build. A tentativa de compilação CLI está sendo
+feita na fase final e seu resultado, incluindo eventuais correções de schema dos recursos
+GMSound, será registrado nas entregas. Testes de execução, áudio e jogabilidade permanecem
+separados da compilação.
+
+As duas referências obsoletas a contrast/blend foram removidas do registro na fase 3 após
+verificar que nenhuma room/script as usa. Os assets e filtros locais foram preservados.
+A licença do código próprio foi definida pelo titular como GPL-3.0-only e os créditos como
+Pedro Tescaro. Os avisos faltantes foram consolidados em `datafiles/third_party_notices.txt`;
+a proveniência da arte original continua pendente de documentação.

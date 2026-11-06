@@ -124,3 +124,52 @@ três voltas da música; profiler por 10 minutos. HTML5 continua condicionado a 
 **Pendente:** compilação e percurso completo no GameMaker, aprovação visual, audição e
 performance. O jogo tem uma fase existente; novas rooms podem ser cadastradas, mas nenhuma
 fase adicional foi inventada. Origem/licença das artes originais ainda precisa ser confirmada.
+
+## Fase 5 — publicação
+
+**Mudou:** README em português e inglês, GIF real de asset exportado pelo LibreSprite,
+licença integral GPL-3.0 para código próprio de Pedro Tescaro, avisos/licenças de terceiros,
+CHANGELOG, `.gitignore` para builds/caches/credenciais e workflow de verificações no GitHub.
+Metadados Windows/HTML5 corrigidos. Guia itch.io com texto PT/EN, tags, gênero, capa 630×500,
+capturas/GIFs recomendados, exportação Windows/HTML5 e comandos butler. Checklist manual
+permanece explícito. O `.yyz` original continua preservado; o `.yyp` é o projeto atualizado.
+
+**Arquivos:** `README.md`, `README.en.md`, `LICENSE`, `THIRD_PARTY_NOTICES.md`, `CHANGELOG.md`,
+`licenses/`, `datafiles/{GPL-3.0,third_party_notices}.txt`, `docs/{LICENCAS,ITCH_IO,QA,COMPILACAO}.md`,
+`assets/preview/`, `tools/arte/gerar_preview.ps1`, `tools/build.ps1`,
+`.github/workflows/verificacoes.yml`, `.gitignore`, opções em `options/`, `.yyp`,
+`sounds/snd_cb_*/*.yy`, `tools/generate_audio.py`, `tools/validate_project.py`, adendos ao
+diagnóstico e esta entrega. Metadados novos de ordem dos prefabs, gerados pelo compilador,
+também são versionados.
+
+**Verificado:** compilação Windows VM por Igor **2026.0.0.23**, saída 0, GML e shaders
+compilados; repetida após integrar os avisos de licença e opções finais. Os recursos de som
+foram ajustados ao schema GMSound v2 do runtime 2026 e o validador agora verifica esses campos.
+Estrutura final: 453 scripts, 14 objetos, 2 rooms, 21 sprites, 3 tilesets e 9 sons;
+0 erros/0 avisos. Passaram 13 regressões de movimento/input e 13 de serviços/menus,
+determinismo do áudio, validação do GIF e revisão dos arquivos publicáveis.
+
+**GitHub:** destino público solicitado pelo autor: [pedrotescaro/coffin-bound](https://github.com/pedrotescaro/coffin-bound).
+O histórico mantém um commit por fase e o backup original. O workflow executa somente as
+verificações abertas; a compilação GameMaker exige instalação/licença local.
+
+**Conferir manualmente:** seguir `docs/QA.md`, principalmente percurso até o caixão,
+morte/reinício/checkpoints, pausa, save ao reabrir, controles, fullscreen, audição e profiler.
+Capturar gameplay verdadeiro e gerar ZIP Windows na IDE para distribuir o runner completo.
+O GIF do README é uma prévia de sprite e não comprova funcionamento em jogo.
+
+**Pendente:** HTML5 tentou compilar, mas falta `html5/scripts.html5.zip` no runtime instalado;
+instalar módulo compatível e testar no navegador. Não foi feito upload no itch.io nem release
+de executável sem QA. Procedência/licença das artes originais continua por documentar, separada
+da GPL do código. Os testes manuais não foram marcados como aprovados.
+
+## Histórico das fases
+
+| Etapa | Commit |
+| --- | --- |
+| Backup original | `dd2bf04` |
+| Fase 1 — diagnóstico | `7d22466` |
+| Fase 2 — código | `15121da` |
+| Fase 3 — arte | `07f4dfe` |
+| Fase 4 — polimento | `4033299` |
+| Fase 5 — publicação | Consultar o commit com mensagem “Fase 5” no histórico |

@@ -199,11 +199,11 @@ def sound_metadata(name: str, stats: dict, *, music: bool) -> dict:
     return {
         "$GMSound": "v2", "%Name": name,
         "audioGroupId": {"name": group, "path": f"audiogroups/{group}"},
-        "bitDepth": 1, "bitRate": 128, "compression": 0, "conversionMode": 0,
-        "duration": stats["duration_seconds"], "name": name,
+        "bitDepth": 1, "channelFormat": 0, "compression": 0, "compressionQuality": 1, "conversionMode": 0,
+        "duration": stats["duration_seconds"], "exportDir": "", "name": name,
         "parent": {"name": "Sounds", "path": "folders/Sounds.yy"},
         "preload": not music, "resourceType": "GMSound", "resourceVersion": "2.0",
-        "sampleRate": SAMPLE_RATE, "soundFile": f"{name}.wav", "type": 0,
+        "sampleRate": SAMPLE_RATE, "soundFile": f"{name}.wav",
         "volume": 1.0,
     }
 
