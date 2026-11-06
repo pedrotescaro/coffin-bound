@@ -28,7 +28,7 @@ function player_update_visuals() {
         }
 
         // Sem sprites de pulo/queda: a velocidade vertical comunica o estado no corpo.
-        if (!on_ground && state == PlayerState.NORMAL) {
+        if (!on_ground && player_is_human_state(state)) {
             if (vsp < 0) {
                 var _rise = clamp(abs(vsp) / abs(jump_spd), 0, 1);
                 _target_x = lerp(1, visual_air_stretch_x, _rise);

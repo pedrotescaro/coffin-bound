@@ -4,17 +4,19 @@
 // Definidos em script para serem acessíveis por qualquer objeto.
 // ============================================================
 
-/// Estados do player — representa o MODO DE MOVIMENTO ativo
-/// Inspirado no design do Celeste (Matt Thorson):
-/// Cada estado muda a FÍSICA, não é micro-estado de animação.
-/// A animação é determinada por condições dentro de cada estado.
+/// Estados do player: NORMAL/JUMP/FALL/DAMAGE compartilham a física humana.
+/// As transições especiais controlam dash, parede, transformação e conclusão.
 enum PlayerState {
-    NORMAL,              // Idle, corrida, pulo, queda (sub-determinado por condições)
+    NORMAL,              // Forma humana apoiada: parado ou andando
     DASH,                // Dash em 8 direções (override total de velocidade)
     WALL_SLIDE,          // Escorregando/grudado na parede
     TRANSFORM_TO_HUMAN,  // Transição morcego → humano (congela input)
     BAT,                 // Forma morcego — voo livre, sem gravidade normal
     WIN,                 // Vitória — tocou o caixão, congela tudo
+    JUMP,                // Forma humana em subida
+    FALL,                // Forma humana em queda
+    DAMAGE,              // Reação breve à luz; preserva o controle
+    DEATH,               // Aguarda o controlador decidir o respawn
 }
 
 /// Fase interna da habilidade de morcego.

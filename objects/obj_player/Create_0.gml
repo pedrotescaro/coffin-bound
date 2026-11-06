@@ -20,8 +20,10 @@ max_vsp = 10;                 // Terminal velocity — velocidade máxima de que
 
 // ===== MOVIMENTO HORIZONTAL (HUMANO) =====
 walk_spd = 3;                 // Velocidade máxima de caminhada
-accel_ground = 0.25;          // Fator de aceleração no chão (lerp)
-accel_air = 0.15;             // Fator de aceleração no ar (menor = mais "planado")
+accel_ground = 0.55;          // Aceleração no chão em pixels/frame²
+accel_air = 0.28;             // Controle no ar em pixels/frame²
+friction_ground = 0.45;       // Desaceleração sem input no chão
+friction_air = 0.12;          // Preserva parte da inércia no ar
 jump_spd = -6;                // Velocidade inicial do pulo (negativo = sobe)
 
 // ===== JUICE / PROGRAMMAÇÃO DE ANIMAÇÃO (Squish & Stretch) =====
@@ -52,7 +54,7 @@ visual_dash_tilt = 10;
 
 // ===== DASH =====
 can_dash = true;              // Se pode dar dash (reseta ao tocar o chão)
-dash_spd = 3.5;               // Velocidade do dash
+dash_spd = 7.5;               // Velocidade do dash (pixels/frame)
 dash_duration = 9;            // Duração em frames (~150ms a 60 FPS)
 dash_timer = 0;               // Contador regressivo do dash ativo
 dash_hsp = 0;                 // Componente horizontal do dash (calculado no início)
@@ -67,7 +69,7 @@ wall_stick_timer = 0;         // Timer de "grude" na parede (countdown)
 wall_stick_max = 15;          // 15 frames (~0.25s) para deslizar naturalmente
 
 // ===== COYOTE TIME & JUMP BUFFER =====
-coyote_frames = 10;           // Frames de tolerância após sair da plataforma
+coyote_frames = 6;            // 100 ms de tolerância a 60 FPS
 coyote_counter = 0;           // Countdown de coyote time
 buffer_frames = 6;            // Frames de tolerância do input de pulo
 buffer_counter = 0;           // Countdown de jump buffer
@@ -153,3 +155,6 @@ win_timer = 0;
 
 // ===== DEBUG =====
 show_debug = false;
+
+// Reset único usado também pelos checkpoints; os parâmetros acima são preservados.
+player_reset(x, y);

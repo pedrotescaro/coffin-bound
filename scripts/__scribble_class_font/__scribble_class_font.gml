@@ -65,6 +65,11 @@ function __scribble_class_font(_name, _glyph_count, _render_type, _from_bundle, 
             {
                 ds_map_copy(_target.__glyphs_map, __glyphs_map);
             }
+            else if (_name == "__kerning_map")
+            {
+                // Each font owns its kerning map, including duplicated fonts.
+                ds_map_copy(_target.__kerning_map, __kerning_map);
+            }
             else if (_name == "__glyph_data_grid")
             {
                 ds_grid_copy(_target.__glyph_data_grid, __glyph_data_grid);
@@ -170,6 +175,7 @@ function __scribble_class_font(_name, _glyph_count, _render_type, _from_bundle, 
         if (__SCRIBBLE_DEBUG) __scribble_trace("Destroying font \"", __name, "\"");
         
         ds_map_destroy(__glyphs_map);
+        ds_map_destroy(__kerning_map);
         ds_grid_destroy(__glyph_data_grid);
         
         ds_map_delete(_font_data_map, __name);

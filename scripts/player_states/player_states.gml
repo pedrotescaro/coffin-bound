@@ -1,21 +1,44 @@
-/// @description Executa exclusivamente a função do estado de movimento atual.
-/// A ordem de colisão e animação permanece no Step do obj_player.
+/// @description Classifica os estados que compartilham a física humana.
+function player_is_human_state(_state) {
+    return _state == PlayerState.NORMAL || _state == PlayerState.JUMP
+        || _state == PlayerState.FALL || _state == PlayerState.DAMAGE;
+}
+
+/// @description Aproxima sem ultrapassar o alvo; unidades em pixels/frame.
+function player_approach(_value, _target, _amount) {
+    return _value + clamp(_target - _value, -_amount, _amount);
+}
+
+/// @description Seleciona o estado humano depois de atualizar movimento/contatos.
+function player_sync_human_state() {
+    if (!player_is_human_state(state) || (state == PlayerState.DAMAGE && damage_timer > 0)) return;
+    state = (on_ground && vsp >= 0) ? PlayerState.NORMAL
+        : ((vsp < 0) ? PlayerState.JUMP : PlayerState.FALL);
+}
+
+/// @description Executa a física do estado atual.
 function player_update_state() {
     switch (state) {
-        case PlayerState.NORMAL: player_state_normal(); break;
+        case PlayerState.NORMAL:
+        case PlayerState.JUMP:
+        case PlayerState.FALL:
+        case PlayerState.DAMAGE: player_state_normal(); break;
         case PlayerState.DASH: player_state_dash(); break;
         case PlayerState.WALL_SLIDE: player_state_wall_slide(); break;
         case PlayerState.TRANSFORM_TO_HUMAN: player_state_transform_human(); break;
         case PlayerState.BAT: player_state_bat(); break;
         case PlayerState.WIN: player_state_win(); break;
+        case PlayerState.DEATH: hsp = 0; vsp = 0; break;
     }
 }
 
-/// @description Controla caminhada, gravidade, pulo, wall jump e transições do estado normal.
+/// @description Caminhada, pulo variável e transições da forma humana.
 function player_state_normal() {
     if (wall_jump_timer <= 0) {
-        var _target_hsp = move_input * walk_spd;
-        hsp = lerp(hsp, _target_hsp, on_ground ? accel_ground : accel_air);
+        var _target = move_input * walk_spd;
+        var _acceleration = on_ground ? accel_ground : accel_air;
+        if (abs(move_input) < 0.01) _acceleration = on_ground ? friction_ground : friction_air;
+        hsp = player_approach(hsp, _target, _acceleration);
     }
 
     vsp = min(vsp + grv, max_vsp);
@@ -23,106 +46,94 @@ function player_state_normal() {
     if (on_ground) can_dash = true;
 
     if (buffer_counter > 0 && on_wall != 0 && !on_ground) {
-        hsp = -on_wall * wall_jump_hsp;
-        vsp = wall_jump_vsp;
-        buffer_counter = 0;
-        wall_stick_timer = 0;
-        wall_jump_timer = 10;
-        image_xscale = -on_wall;
+        player_start_wall_jump();
     } else if (buffer_counter > 0 && coyote_counter > 0) {
         vsp = jump_spd;
         buffer_counter = 0;
         coyote_counter = 0;
-        y -= 1;
+        on_ground = false;
+        move_remainder_y = 0;
+        state = PlayerState.JUMP;
         player_visual_start_jump();
     }
 
+    // Soltar o botão corta somente a subida, sem alterar o impulso horizontal.
     if (vsp < 0 && !input_jump_held) vsp = max(vsp, jump_spd / 2.5);
-    if (input_dash && can_dash) player_start_dash();
+    if (input_dash && can_dash) {
+        player_start_dash();
+        return;
+    }
     if (on_wall != 0 && !on_ground && vsp >= 0 && sign(move_input) == on_wall) {
         state = PlayerState.WALL_SLIDE;
         wall_stick_timer = wall_stick_max;
+        return;
     }
+    player_sync_human_state();
 }
 
-/// @description Aplica a velocidade fixa do dash e cria o rastro visual enquanto ele dura.
+/// @description Mantém a velocidade do dash pelo tempo configurado.
 function player_state_dash() {
+    if (dash_timer <= 0) {
+        hsp *= 0.5;
+        vsp *= 0.5;
+        state = PlayerState.FALL;
+        player_state_normal();
+        return;
+    }
     hsp = dash_hsp;
     vsp = dash_vsp;
     dash_timer--;
-    if (dash_timer % 2 == 0) {
+    if (dash_timer mod 2 == 0) {
         var _trail = instance_create_depth(x, y, depth + 1, obj_dash_trail);
-        _trail.sprite_index = sprite_index;
+        _trail.sprite_index = spr_vampire_dash;
         _trail.image_index = image_index;
+        _trail.image_speed = 0;
         _trail.image_xscale = image_xscale;
         _trail.image_blend = COLOR_GB_BRIGHT;
         _trail.image_alpha = 0.6;
     }
-    if (dash_timer <= 0) {
-        state = PlayerState.NORMAL;
-        hsp *= 0.5;
-        vsp *= 0.5;
-    }
 }
 
-/// @description Controla aderência na parede, descida limitada e wall jump.
+/// @description Valida a parede antes de aplicar salto ou aderência.
 function player_state_wall_slide() {
-    if (on_wall != 0) image_xscale = on_wall;
+    if (on_ground || on_wall == 0 || sign(move_input) == -on_wall) {
+        state = on_ground ? PlayerState.NORMAL : PlayerState.FALL;
+        wall_stick_timer = 0;
+        player_state_normal();
+        return;
+    }
+    image_xscale = on_wall;
+    if (buffer_counter > 0) {
+        player_start_wall_jump();
+        return;
+    }
+    if (input_dash && can_dash) {
+        player_start_dash();
+        return;
+    }
+    hsp = 0;
     if (wall_stick_timer > 0) {
         vsp = 0;
         wall_stick_timer--;
     } else {
         vsp = min(vsp + grv * 0.5, wall_slide_spd);
     }
-    hsp = 0;
-
-    if (buffer_counter > 0) {
-        state = PlayerState.NORMAL;
-        hsp = -on_wall * wall_jump_hsp;
-        vsp = wall_jump_vsp;
-        buffer_counter = 0;
-        wall_stick_timer = 0;
-        wall_jump_timer = 10;
-        image_xscale = -on_wall;
-        can_dash = true;
-        return;
-    }
-    if (on_ground || on_wall == 0 || sign(move_input) == -on_wall) {
-        state = PlayerState.NORMAL;
-        wall_stick_timer = 0;
-        if (on_ground) can_dash = true;
-    }
-    if (input_dash && can_dash) {
-        player_start_dash();
-        wall_stick_timer = 0;
-    }
 }
 
-/// @description Executa a transição de retorno e remove o vampiro de paredes, se necessário.
+/// @description Retorna à física humana; a máscara permanece constante entre formas.
 function player_state_transform_human() {
     hsp = 0;
     vsp = 0;
     transform_timer--;
-    if (transform_timer > 0) return;
-
-    state = PlayerState.NORMAL;
-    var _safe = 0;
-    // Push-out preserva o retorno seguro caso o vampiro esteja dentro de geometria.
-    while (place_meeting(x, y, [obj_wall, obj_ground]) && _safe < 64) {
-        if (!place_meeting(x, y - 1, [obj_wall, obj_ground])) y--;
-        else if (!place_meeting(x, y + 1, [obj_wall, obj_ground])) y++;
-        else if (!place_meeting(x + 1, y, [obj_wall, obj_ground])) x++;
-        else if (!place_meeting(x - 1, y, [obj_wall, obj_ground])) x--;
-        else y--;
-        _safe++;
+    if (transform_timer <= 0) {
+        state = PlayerState.NORMAL;
+        player_sync_human_state();
     }
-    if (!place_meeting(x, y + 1, [obj_wall, obj_ground])) vsp = -2;
 }
 
-/// @description Congela o player durante a vitória e reinicia a sala após o timer.
+/// @description Mantém vitória até o controlador apresentar a conclusão.
 function player_state_win() {
     hsp = 0;
     vsp = 0;
-    win_timer--;
-    if (win_timer <= 0) room_restart();
+    win_timer = max(0, win_timer - 1);
 }

@@ -15,5 +15,4 @@ function player_input() {
     input_move_x = InputX(INPUT_CLUSTER.PLAYER_MOVE);
     input_move_y = InputY(INPUT_CLUSTER.PLAYER_MOVE);
     move_input = input_move_x;
-    if (input_restart) room_restart();
 }

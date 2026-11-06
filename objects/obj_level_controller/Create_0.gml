@@ -52,19 +52,7 @@ start_dialogue = function(_speaker, _text) {
 respawn_player = function() {
     if (!instance_exists(obj_player)) return;
     with (obj_player) {
-        x = other.respawn_x;
-        y = other.respawn_y;
-        hsp = 0;
-        vsp = 0;
-        state = PlayerState.NORMAL;
-        can_dash = true;
-        bat_energy = bat_energy_max;
-        hp = max_hp;
-        display_hp = max_hp;
-        hp_damage_trail = max_hp;
-        sprite_index = spr_vampire_idle;
-        image_speed = 1;
-        flash_hit = 10;
+        player_reset(other.respawn_x, other.respawn_y);
     }
     respawn_cooldown = 24;
 };

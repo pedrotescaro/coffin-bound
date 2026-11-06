@@ -74,5 +74,7 @@ if (respawn_cooldown <= 0) {
             true
         ) != noone;
     }
-    if (_hit_hazard) respawn_player();
+    if (_hit_hazard && _player.state != PlayerState.WIN && _player.state != PlayerState.DEATH) {
+        with (_player) player_die();
+    }
 }

@@ -16,11 +16,6 @@ if (font_exists(fnt_monogram)) {
     draw_set_font(-1);
 }
 
-// === TOGGLE DEBUG COM F3 ===
-if (keyboard_check_pressed(vk_f3)) {
-    show_debug = !show_debug;
-}
-
 // === MENSAGEM DE VITÓRIA ===
 if (level_won) {
     draw_set_halign(fa_center);
@@ -135,6 +130,10 @@ draw_set_color(COLOR_GB_BRIGHT);
 var _estado_nome = "NORMAL";
 switch(state) {
     case PlayerState.NORMAL:             _estado_nome = "NORMAL"; break;
+    case PlayerState.JUMP:               _estado_nome = "PULO"; break;
+    case PlayerState.FALL:               _estado_nome = "QUEDA"; break;
+    case PlayerState.DAMAGE:             _estado_nome = "DANO"; break;
+    case PlayerState.DEATH:              _estado_nome = "MORTE"; break;
     case PlayerState.DASH:               _estado_nome = "DASH"; break;
     case PlayerState.WALL_SLIDE:         _estado_nome = "WALL SLIDE"; break;
     case PlayerState.TRANSFORM_TO_HUMAN: _estado_nome = "TRANSFORM -> HUMAN"; break;

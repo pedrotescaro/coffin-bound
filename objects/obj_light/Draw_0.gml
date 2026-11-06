@@ -77,3 +77,4 @@ for (var i = 0; i < array_length(light_particles); i++) {
 
 // Restaura Alpha Global para 1.0
 draw_set_alpha(1.0);
+draw_set_color(c_white);
