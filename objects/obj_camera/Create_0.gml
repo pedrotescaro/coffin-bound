@@ -17,3 +17,7 @@ if (instance_exists(obj_player)) {
     var _start_y = clamp(obj_player.y - (view_h / 2), 0, max(0, room_height - view_h));
     camera_set_view_pos(cam, _start_x, _start_y);
 }
+
+// Acumuladores suaves separados da posição inteira apresentada.
+follow_x = camera_get_view_x(cam);
+follow_y = camera_get_view_y(cam);

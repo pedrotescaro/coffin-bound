@@ -6,8 +6,9 @@ if (is_active) {
     if (flicker_timer >= flicker_speed) {
         flicker_timer = 0;
         flicker_speed = irandom_range(3, 8);
-        // Varia levemente a escala Y para simular a chama oscilando
-        image_yscale = base_yscale + random_range(-0.03, 0.03);
+        // Varia brilho sem deformar os pixels da chama.
+        image_yscale = base_yscale;
+        image_alpha = choose(0.85, 1);
     }
     
     // --- COLISÃO COM PLAYER: Recarrega o Dash! ---

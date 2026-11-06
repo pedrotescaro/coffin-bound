@@ -1,0 +1,487 @@
+{
+  "frames": [
+    {
+      "filename": "34109b5a-2a24-4c14-8658-abb862625bf0.png",
+      "frame": {
+        "x": 1,
+        "y": 1,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 33
+    },
+    {
+      "filename": "80424ffd-bb10-47e3-b6f3-9fd2aba58260.png",
+      "frame": {
+        "x": 1,
+        "y": 34,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 33
+    },
+    {
+      "filename": "85f18677-5276-4fc6-aa4d-9e06aedb60cc.png",
+      "frame": {
+        "x": 1,
+        "y": 67,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 33
+    },
+    {
+      "filename": "2bce1277-999f-41ce-a11d-40013d2d8df9.png",
+      "frame": {
+        "x": 1,
+        "y": 100,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 33
+    },
+    {
+      "filename": "53504aed-1110-40cf-9492-b867f032cc5f.png",
+      "frame": {
+        "x": 1,
+        "y": 133,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 33
+    },
+    {
+      "filename": "72a69bf8-c07a-40f0-94eb-afcfc93aa8c0.png",
+      "frame": {
+        "x": 1,
+        "y": 166,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 33
+    },
+    {
+      "filename": "f555880f-ece8-48be-b9b0-911b943d3d8f.png",
+      "frame": {
+        "x": 1,
+        "y": 199,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 33
+    },
+    {
+      "filename": "15bf2156-1c0f-498b-bebb-0e9a21fb6b9d.png",
+      "frame": {
+        "x": 1,
+        "y": 232,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 33
+    },
+    {
+      "filename": "2eb0a381-5c50-42a2-8efe-296da95f39b1.png",
+      "frame": {
+        "x": 1,
+        "y": 265,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 33
+    },
+    {
+      "filename": "5738dda1-8153-4c8d-98cf-5f82fa3f86c6.png",
+      "frame": {
+        "x": 1,
+        "y": 298,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 33
+    },
+    {
+      "filename": "2a9fc2aa-a1ec-47a2-ac45-b22dce1b0a18.png",
+      "frame": {
+        "x": 1,
+        "y": 331,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 33
+    },
+    {
+      "filename": "b2a89457-1dd2-488d-b6bf-31acb99d7b94.png",
+      "frame": {
+        "x": 1,
+        "y": 364,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 33
+    },
+    {
+      "filename": "ee7a37ab-10a1-4576-9728-baecced41db7.png",
+      "frame": {
+        "x": 1,
+        "y": 397,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 33
+    },
+    {
+      "filename": "576838c2-2887-4590-b0fe-0543c6efeebb.png",
+      "frame": {
+        "x": 1,
+        "y": 430,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 33
+    },
+    {
+      "filename": "e977e06b-d13d-4c71-8a26-d13bfdac4252.png",
+      "frame": {
+        "x": 1,
+        "y": 463,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 33
+    },
+    {
+      "filename": "78b09d49-b728-49b3-bf24-20e34008906c.png",
+      "frame": {
+        "x": 1,
+        "y": 496,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 33
+    },
+    {
+      "filename": "396b439e-006a-412c-a243-dc113c517908.png",
+      "frame": {
+        "x": 1,
+        "y": 529,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 33
+    },
+    {
+      "filename": "bb175b33-50fa-409f-9bae-0f79be5a4e3b.png",
+      "frame": {
+        "x": 1,
+        "y": 562,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 33
+    },
+    {
+      "filename": "d5f1ecc6-8d18-40e6-8dba-3490f5c85920.png",
+      "frame": {
+        "x": 1,
+        "y": 595,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 33
+    },
+    {
+      "filename": "c9316cbc-b5f5-4e48-9aed-bcd256541f49.png",
+      "frame": {
+        "x": 1,
+        "y": 628,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 33
+    }
+  ],
+  "meta": {
+    "app": "https://github.com/LibreSprite/LibreSprite/",
+    "version": "1.1-dev",
+    "image": "spr_vampire_dash.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 34,
+      "h": 661
+    },
+    "scale": "1"
+  },
+  "coffin_bound": {
+    "source_yy": "sprites/spr_vampire_dash/spr_vampire_dash.yy",
+    "fps": 30.0,
+    "origin": [
+      17,
+      26
+    ],
+    "frame_order": [
+      "34109b5a-2a24-4c14-8658-abb862625bf0",
+      "80424ffd-bb10-47e3-b6f3-9fd2aba58260",
+      "85f18677-5276-4fc6-aa4d-9e06aedb60cc",
+      "2bce1277-999f-41ce-a11d-40013d2d8df9",
+      "53504aed-1110-40cf-9492-b867f032cc5f",
+      "72a69bf8-c07a-40f0-94eb-afcfc93aa8c0",
+      "f555880f-ece8-48be-b9b0-911b943d3d8f",
+      "15bf2156-1c0f-498b-bebb-0e9a21fb6b9d",
+      "2eb0a381-5c50-42a2-8efe-296da95f39b1",
+      "5738dda1-8153-4c8d-98cf-5f82fa3f86c6",
+      "2a9fc2aa-a1ec-47a2-ac45-b22dce1b0a18",
+      "b2a89457-1dd2-488d-b6bf-31acb99d7b94",
+      "ee7a37ab-10a1-4576-9728-baecced41db7",
+      "576838c2-2887-4590-b0fe-0543c6efeebb",
+      "e977e06b-d13d-4c71-8a26-d13bfdac4252",
+      "78b09d49-b728-49b3-bf24-20e34008906c",
+      "396b439e-006a-412c-a243-dc113c517908",
+      "bb175b33-50fa-409f-9bae-0f79be5a4e3b",
+      "d5f1ecc6-8d18-40e6-8dba-3490f5c85920",
+      "c9316cbc-b5f5-4e48-9aed-bcd256541f49"
+    ],
+    "static": false,
+    "note": "Duração exportada a partir do .yy; image_speed do jogo pode modular o timing."
+  }
+}

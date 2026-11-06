@@ -5,8 +5,8 @@
 // ============================================================
 
 var _curr_rad = light_radius + flicker;
-var _c_bright = make_color_rgb(155, 188, 15); // Verde Brilhante #9bbc0f
-var _c_light  = make_color_rgb(139, 172, 15); // Verde Médio #8bac0f
+var _c_bright = make_color_rgb(182, 204, 139); // Verde Brilhante #9bbc0f
+var _c_light  = make_color_rgb(127, 166, 106); // Verde Médio #8bac0f
 
 // Pulse de respiração da luz
 var _pulse = dsin(pulse_timer * 70);
@@ -72,7 +72,7 @@ draw_set_color(_c_bright);
 for (var i = 0; i < array_length(light_particles); i++) {
     var _p = light_particles[i];
     draw_set_alpha(_p.alpha * 0.7);
-    draw_rectangle(_p.px, _p.py, _p.px + _p.size - 1, _p.py + _p.size - 1, false);
+    draw_rectangle(round(_p.px), round(_p.py), round(_p.px) + _p.size - 1, round(_p.py) + _p.size - 1, false);
 }
 
 // Restaura Alpha Global para 1.0

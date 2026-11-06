@@ -1,0 +1,73 @@
+{
+  "frames": [
+    {
+      "filename": "59c9a539-2f25-4a0b-be24-3b372bb1e53f.png",
+      "frame": {
+        "x": 1,
+        "y": 1,
+        "w": 77,
+        "h": 26
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 77,
+        "h": 26
+      },
+      "sourceSize": {
+        "w": 77,
+        "h": 26
+      },
+      "duration": 0
+    },
+    {
+      "filename": "de4ee40a-2e5f-45fa-bcb9-ec447e387f2d.png",
+      "frame": {
+        "x": 1,
+        "y": 28,
+        "w": 77,
+        "h": 26
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 77,
+        "h": 26
+      },
+      "sourceSize": {
+        "w": 77,
+        "h": 26
+      },
+      "duration": 0
+    }
+  ],
+  "meta": {
+    "app": "https://github.com/LibreSprite/LibreSprite/",
+    "version": "1.1-dev",
+    "image": "spr_hud.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 79,
+      "h": 55
+    },
+    "scale": "1"
+  },
+  "coffin_bound": {
+    "source_yy": "sprites/spr_hud/spr_hud.yy",
+    "fps": 0.0,
+    "origin": [
+      0,
+      0
+    ],
+    "frame_order": [
+      "59c9a539-2f25-4a0b-be24-3b372bb1e53f",
+      "de4ee40a-2e5f-45fa-bcb9-ec447e387f2d"
+    ],
+    "static": true,
+    "note": "Duração exportada a partir do .yy; image_speed do jogo pode modular o timing."
+  }
+}

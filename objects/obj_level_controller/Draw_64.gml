@@ -1,7 +1,7 @@
 /// @description Caixa de dialogo inspirada em Celeste, renderizada pelo Scribble.
 if (!variable_global_exists("dialogue_active") || !global.dialogue_active) exit;
 
-display_set_gui_size(480, 270);
+cb_gui_apply();
 draw_set_alpha(0.96);
 draw_set_color(COLOR_LEVEL_DARKEST);
 draw_rectangle(20, 174, 460, 254, false);
@@ -21,7 +21,7 @@ dialogue_name.draw(78, 182);
 dialogue_body.draw(78, 204, dialogue_typist);
 
 if (dialogue_typist.get_state() >= 1) {
-    dialogue_continue.draw(438, 232 + dsin(current_time * 0.4) * 2);
+    dialogue_continue.draw(438, 232 + round(dsin(current_time * 0.4) * 2));
 }
 
 draw_set_halign(fa_left);

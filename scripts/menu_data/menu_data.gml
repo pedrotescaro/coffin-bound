@@ -18,11 +18,11 @@ function menu_data_initialize()
     lerpAmt = 0.25;
     spacing = 18;
 
-    selectedCol = make_color_rgb(155, 188, 15);
-    notSelectedCol = make_color_rgb(15, 56, 15);
+    selectedCol = make_color_rgb(182, 204, 139);
+    notSelectedCol = make_color_rgb(11, 13, 23);
     titleCol = c_white;
     gameTitle = "COFFIN BOUND";
-    titleSize = 1.8;
+    titleSize = 2;
 }
 
 /// @description Retorna os itens correspondentes à página aberta.

@@ -7,7 +7,7 @@
 if (!global.is_paused) exit;
 
 // 1. Trava a resolução da camada GUI em 480x270 (Pixel-Perfect)
-display_set_gui_size(480, 270);
+cb_gui_apply();
 var _gui_w = 480;
 var _gui_h = 270;
 
@@ -19,7 +19,7 @@ if (font_exists(fnt_monogram)) {
 }
 
 // 2. Fundo Translúcido Escurecido sobre o jogo
-draw_set_color(make_color_rgb(15, 56, 15)); // #0f380f (COLOR_GB_DARKEST)
+draw_set_color(make_color_rgb(11, 13, 23)); // #0f380f (COLOR_GB_DARKEST)
 draw_set_alpha(0.75);
 draw_rectangle(0, 0, _gui_w, _gui_h, false);
 draw_set_alpha(1.0);
@@ -31,20 +31,20 @@ var _box_x = (_gui_w - _box_w) / 2;
 var _box_y = (_gui_h - _box_h) / 2;
 
 // Fundo da Caixa de Pausa (Verde Médio GameBoy)
-draw_set_color(make_color_rgb(48, 98, 48)); // #306230 (COLOR_GB_DARK)
+draw_set_color(make_color_rgb(28, 25, 45)); // #306230 (COLOR_GB_DARK)
 draw_rectangle(_box_x, _box_y, _box_x + _box_w, _box_y + _box_h, false);
 
 // Moldura Dupla Pixel Art
-draw_set_color(make_color_rgb(155, 188, 15)); // #9bbc0f (COLOR_GB_BRIGHT)
+draw_set_color(make_color_rgb(182, 204, 139)); // #9bbc0f (COLOR_GB_BRIGHT)
 draw_rectangle(_box_x, _box_y, _box_x + _box_w, _box_y + _box_h, true);
-draw_set_color(make_color_rgb(15, 56, 15));
+draw_set_color(make_color_rgb(11, 13, 23));
 draw_rectangle(_box_x + 1, _box_y + 1, _box_x + _box_w - 1, _box_y + _box_h - 1, true);
 
 // 4. Título do Mini Menu
 draw_set_halign(fa_center);
 draw_set_valign(fa_top);
 draw_set_color(titleCol);
-draw_text_transformed(_box_x + (_box_w / 2), _box_y + 12, "PAUSA", 1.4, 1.4, 0);
+draw_text_transformed(_box_x + (_box_w / 2), _box_y + 12, "PAUSA", 1, 1, 0);
 
 // 5. Lista de Opções (JOGAR, RECOMECAR, MENU)
 var _menu_x = _box_x + 44;
@@ -68,7 +68,7 @@ var _curs_x = _menu_x - _curs_w - 6 + cursorLevitate; // Offset seguro à esquer
 var _curs_y = _menu_y + (selectLerp * _spacing) + 4;
 
 if (sprite_exists(s_cursor)) {
-    draw_sprite(s_cursor, -1, _curs_x, _curs_y);
+    draw_sprite(s_cursor, -1, round(_curs_x), round(_curs_y));
 } else {
     draw_set_color(selectedCol);
     draw_text(_curs_x, _curs_y - 4, ">");

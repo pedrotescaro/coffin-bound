@@ -5,7 +5,7 @@
 // ============================================================
 
 // 1. Trava a resolução da camada GUI em 480x270 (Pixel-Perfect)
-display_set_gui_size(480, 270);
+cb_gui_apply();
 var _gui_w = 480;
 var _gui_h = 270;
 
@@ -21,7 +21,7 @@ if (level_won) {
     draw_set_halign(fa_center);
     draw_set_valign(fa_middle);
     draw_set_color(c_white);
-    draw_text_transformed(_gui_w / 2, _gui_h / 2, "COFFIN BOUND!", 1.5, 1.5, 0);
+    draw_text_transformed(_gui_w / 2, _gui_h / 2, "COFFIN BOUND!", 2, 2, 0);
     draw_set_color(c_white);
     draw_set_halign(fa_left);
     draw_set_valign(fa_top);
@@ -35,7 +35,7 @@ if (level_won) {
 
 var _hud_x = 8;
 var _hud_y = 8;
-var _scale = 1.2; // Escala nítida e perfeita no viewport de 480x270
+var _scale = 1; // Um pixel do HUD por pixel lógico.
 
 if (sprite_exists(spr_hud)) {
     // 1. Desenha a Moldura com Trilhos Vazios (Frame 1 do spr_hud)
@@ -100,8 +100,8 @@ if (array_length(burn_particles) > 0 && camera_get_view_width(view_camera[0]) > 
 
     for (var i = 0; i < array_length(burn_particles); i++) {
         var _p = burn_particles[i];
-        var _screen_x = (_p.px - _cam_x) * _scale_x;
-        var _screen_y = (_p.py - _cam_y) * _scale_y;
+        var _screen_x = round((_p.px - _cam_x) * _scale_x);
+        var _screen_y = round((_p.py - _cam_y) * _scale_y);
         
         draw_set_color(COLOR_GB_BRIGHT);
         draw_set_alpha(_p.alpha);
@@ -146,7 +146,7 @@ var _yy = 45;
 var _sep = 14;
 
 draw_text(_xx, _yy, "--- DEBUG PLAYER ---");
-_yy += _sep * 1.2;
+_yy += _sep;
 
 draw_text(_xx, _yy, "State: " + _estado_nome);
 _yy += _sep;

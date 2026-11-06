@@ -1,0 +1,50 @@
+{
+  "frames": [
+    {
+      "filename": "f72b2079-051b-40d0-97ca-aea3f42149bc.png",
+      "frame": {
+        "x": 1,
+        "y": 1,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 33
+    }
+  ],
+  "meta": {
+    "app": "https://github.com/LibreSprite/LibreSprite/",
+    "version": "1.1-dev",
+    "image": "spr_vampire_idle.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 34,
+      "h": 34
+    },
+    "scale": "1"
+  },
+  "coffin_bound": {
+    "source_yy": "sprites/spr_vampire_idle/spr_vampire_idle.yy",
+    "fps": 30.0,
+    "origin": [
+      17,
+      26
+    ],
+    "frame_order": [
+      "f72b2079-051b-40d0-97ca-aea3f42149bc"
+    ],
+    "static": true,
+    "note": "Duração exportada a partir do .yy; image_speed do jogo pode modular o timing."
+  }
+}

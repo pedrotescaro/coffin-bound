@@ -3,12 +3,12 @@
 // existentes sem regravar os dados comprimidos da room.
 
 depth = 150;
-display_set_gui_size(480, 270);
+cb_gui_apply();
 
-COLOR_LEVEL_DARKEST = make_color_rgb(15, 56, 15);
-COLOR_LEVEL_DARK    = make_color_rgb(48, 98, 48);
-COLOR_LEVEL_LIGHT   = make_color_rgb(139, 172, 15);
-COLOR_LEVEL_BRIGHT  = make_color_rgb(155, 188, 15);
+COLOR_LEVEL_DARKEST = make_color_rgb(11, 13, 23);
+COLOR_LEVEL_DARK    = make_color_rgb(28, 25, 45);
+COLOR_LEVEL_LIGHT   = make_color_rgb(127, 166, 106);
+COLOR_LEVEL_BRIGHT  = make_color_rgb(182, 204, 139);
 
 respawn_x = 56;
 respawn_y = 205;

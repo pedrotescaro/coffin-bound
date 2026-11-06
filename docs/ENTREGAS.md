@@ -57,3 +57,37 @@ que passam a usar os assets existentes, sem afirmar que suas poses já foram apr
 durante 9 frames. A tela de morte e o fluxo de conclusão serão ligados na fase 4; até lá DEATH
 espera o controlador. Arte, áudio, save e menus completos continuam nas fases seguintes.
 Nenhum asset apagado ou renomeado.
+
+## Fase 3 — arte e pixels
+
+**Mudou:** paleta gótica de 24 cores aplicada com LibreSprite batch a 20 sprites próprios,
+composites/layers/rascunhos preservados e caches dos 3 tilesets (215 PNGs). Exportadas 20
+folhas PNG/JSON. Idle/walk têm origem alinhada aos demais sprites do vampiro, mantendo o
+offset da máscara; vela agora é 14×16 e as instâncias usam escala 1. Tiles continuam 16×16.
+Pulo/queda seguram a pose legível 11, sem reproduzir no ar as deformações extremas das longas
+sequências-fonte; todos os frames e seus timings originais continuam nos assets/exportações.
+
+Apresentação 480×270 com escala inteira, barras, GUI alinhada e câmera arredondada. Filtro
+retro opcional inicia desligado. Interpolação HTML5 desligada; removidas escalas fracionárias
+de jogador, vela, HUD e títulos. Colisores têm bordas inteiras. Retiradas somente duas
+referências obsoletas a prefabs inexistentes e sem uso, conforme aviso, sem apagar assets.
+
+**Arquivos:** lista detalhada em `docs/ARTE.md`; `sprites/`, `tilesets/`, `assets/palette/`,
+`assets/spritesheets/`, `tools/arte/`, `scripts/cb_render/`, `scripts/player_animation/`,
+`scripts/menu_{data,draw}/`, apresentação em `objects/obj_{gameboy,camera,player,candle,light,menu,pause,level_controller}/`,
+`rooms/rm_{menu,level1}/*.yy`, `options/html5/options_html5.yy`, `.yyp`, `.gitignore`,
+`.gitattributes`, `docs/RENDERIZACAO.md` e esta entrega. O commit permite obter todos os caminhos.
+
+**Verificado:** remapeamento com validação de cores, dimensões, alpha e ausência de cortes;
+104 frames reconstruídos das folhas e comparados aos PNGs do projeto. Pipeline executado
+novamente para verificar idempotência da geometria. Amostras estáticas inspecionadas como
+imagens; nenhuma execução do jogo. Validador estrutural: 0 erros/0 avisos. Regressões de
+movimento continuam aprovadas.
+
+**Conferir manualmente:** instruções completas em `docs/RENDERIZACAO.md` e `docs/ARTE.md`.
+Conferir pés e máscaras entre animações, asas, legibilidade das poses 11, velas, frestas nos
+tiles, texto e barras em 960×540, 1366×768 e 1920×1080; Alt+Tab e fullscreen; HTML5 após compilar.
+
+**Pendente:** aprovação visual em movimento e revisão de timing/poses no runner; fontes e
+sprite branco técnico são exceções funcionais ao remapeamento de cores. Composição de luz e
+filtro pode produzir outras cores na tela. Origem/licença das artes continua por confirmar.

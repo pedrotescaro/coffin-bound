@@ -22,6 +22,6 @@ cursorTime = 0;
 leviRate = 1.5;
 
 // Cores Oficiais GameBoy Verde
-selectedCol     = make_color_rgb(155, 188, 15); // Verde Brilhante #9bbc0f
-notSelectedCol  = make_color_rgb(15, 56, 15);   // Verde Escuro #0f380f
+selectedCol     = make_color_rgb(182, 204, 139); // Verde Brilhante #9bbc0f
+notSelectedCol  = make_color_rgb(11, 13, 23);   // Verde Escuro #0f380f
 titleCol        = make_color_rgb(255, 255, 255); // Branco

@@ -1,27 +1,9 @@
-/// @description Desenha o sprite do player com squash/stretch e iluminação exclusivamente visuais.
-// ============================================================
-// obj_player — EVENTO DRAW
-// Desenha o player com interpolação de Squish & Stretch por código,
-// iluminação visual, e animações fluidas sem travamentos.
-// ============================================================
-
-// Efeito de piscar ao sofrer dano da luz
+/// @description Sprite inteiro com espelhamento; a máscara não depende do desenho.
 var _blend = c_white;
-var _alpha = image_alpha;
-
-if (flash_hit > 0 && floor(current_time / 40) % 2 == 0) {
-    _blend = make_color_rgb(255, 120, 120); // Tom avermelhado de queimadura
+if (flash_hit > 0 && floor(current_time / 40) mod 2 == 0) {
+    _blend = make_color_rgb(191, 89, 99);
 }
-
-// Desenha o sprite com xscale/yscale dinamicos de squish & stretch e angulo
-draw_sprite_ext(
-    sprite_index,
-    image_index,
-    x,
-    y,
-    image_xscale * xscale_draw,
-    yscale_draw,
-    angle_draw,
-    _blend,
-    _alpha
-);
+if (state != PlayerState.DEATH) {
+    draw_sprite_ext(sprite_index, image_index, round(x), round(y),
+        (image_xscale < 0) ? -1 : 1, 1, 0, _blend, image_alpha);
+}

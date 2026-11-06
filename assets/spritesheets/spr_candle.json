@@ -1,0 +1,50 @@
+{
+  "frames": [
+    {
+      "filename": "df22762f-c8b6-4b52-82f5-2a9a3ccea9bc.png",
+      "frame": {
+        "x": 1,
+        "y": 1,
+        "w": 14,
+        "h": 16
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 14,
+        "h": 16
+      },
+      "sourceSize": {
+        "w": 14,
+        "h": 16
+      },
+      "duration": 33
+    }
+  ],
+  "meta": {
+    "app": "https://github.com/LibreSprite/LibreSprite/",
+    "version": "1.1-dev",
+    "image": "spr_candle.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 16,
+      "h": 18
+    },
+    "scale": "1"
+  },
+  "coffin_bound": {
+    "source_yy": "sprites/spr_candle/spr_candle.yy",
+    "fps": 30.0,
+    "origin": [
+      0,
+      0
+    ],
+    "frame_order": [
+      "df22762f-c8b6-4b52-82f5-2a9a3ccea9bc"
+    ],
+    "static": true,
+    "note": "Duração exportada a partir do .yy; image_speed do jogo pode modular o timing."
+  }
+}

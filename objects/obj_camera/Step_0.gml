@@ -14,13 +14,15 @@ if (instance_exists(obj_player)) {
     _target_y = clamp(_target_y, 0, max(0, room_height - view_h));
     
     // Posição atual da câmera
-    var _cam_x = camera_get_view_x(cam);
-    var _cam_y = camera_get_view_y(cam);
+    var _cam_x = follow_x;
+    var _cam_y = follow_y;
     
     // Suavização com lerp (seguimento gradual)
     var _new_x = lerp(_cam_x, _target_x, follow_speed);
     var _new_y = lerp(_cam_y, _target_y, follow_speed);
     
     // Aplica a posição da câmera
-    camera_set_view_pos(cam, _new_x, _new_y);
+    follow_x = _new_x;
+    follow_y = _new_y;
+    camera_set_view_pos(cam, round(follow_x), round(follow_y));
 }

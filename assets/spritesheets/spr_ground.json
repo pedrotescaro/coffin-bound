@@ -1,0 +1,50 @@
+{
+  "frames": [
+    {
+      "filename": "a9b69428-e40b-4677-a0e9-a02cc2f737c6.png",
+      "frame": {
+        "x": 1,
+        "y": 1,
+        "w": 64,
+        "h": 64
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 64,
+        "h": 64
+      },
+      "sourceSize": {
+        "w": 64,
+        "h": 64
+      },
+      "duration": 33
+    }
+  ],
+  "meta": {
+    "app": "https://github.com/LibreSprite/LibreSprite/",
+    "version": "1.1-dev",
+    "image": "spr_ground.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 66,
+      "h": 66
+    },
+    "scale": "1"
+  },
+  "coffin_bound": {
+    "source_yy": "sprites/spr_ground/spr_ground.yy",
+    "fps": 30.0,
+    "origin": [
+      0,
+      0
+    ],
+    "frame_order": [
+      "a9b69428-e40b-4677-a0e9-a02cc2f737c6"
+    ],
+    "static": true,
+    "note": "Duração exportada a partir do .yy; image_speed do jogo pode modular o timing."
+  }
+}

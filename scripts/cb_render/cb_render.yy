@@ -1,0 +1,10 @@
+{
+  "$GMScript":"v1",
+  "%Name":"cb_render",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"cb_render",
+  "parent":{"name":"Scripts","path":"folders/Scripts.yy"},
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0"
+}

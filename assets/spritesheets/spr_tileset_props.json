@@ -1,0 +1,50 @@
+{
+  "frames": [
+    {
+      "filename": "070b00c3-5a94-4525-b8a2-425c89480af2.png",
+      "frame": {
+        "x": 1,
+        "y": 1,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "duration": 33
+    }
+  ],
+  "meta": {
+    "app": "https://github.com/LibreSprite/LibreSprite/",
+    "version": "1.1-dev",
+    "image": "spr_tileset_props.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 258,
+      "h": 258
+    },
+    "scale": "1"
+  },
+  "coffin_bound": {
+    "source_yy": "sprites/spr_tileset_props/spr_tileset_props.yy",
+    "fps": 30.0,
+    "origin": [
+      0,
+      0
+    ],
+    "frame_order": [
+      "070b00c3-5a94-4525-b8a2-425c89480af2"
+    ],
+    "static": true,
+    "note": "Duração exportada a partir do .yy; image_speed do jogo pode modular o timing."
+  }
+}

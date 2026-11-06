@@ -93,9 +93,7 @@
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "ForcedPrefabProjectReferences":[
-    {"link":"io.gamemaker.gm_filter_contrast-1.0.0","name":"io.gamemaker.gm_filter_contrast-1.0.0","path":"io.gamemaker.gm_filter_contrast-1.0.0.yyp",},
     {"link":"io.gamemaker.gm_filter_vignette-1.0.0","name":"io.gamemaker.gm_filter_vignette-1.0.0","path":"io.gamemaker.gm_filter_vignette-1.0.0.yyp",},
-    {"link":"io.gamemaker.gm_effect_blend_ext-1.0.0","name":"io.gamemaker.gm_effect_blend_ext-1.0.0","path":"io.gamemaker.gm_effect_blend_ext-1.0.0.yyp",},
     {"link":"io.gamemaker.gm_filter_colourise-1.0.0","name":"io.gamemaker.gm_filter_colourise-1.0.0","path":"io.gamemaker.gm_filter_colourise-1.0.0.yyp",},
   ],
   "IncludedFiles":[
@@ -110,6 +108,7 @@
   },
   "name":"Coffin Bound final",
   "resources":[
+    {"id":{"name":"cb_render","path":"scripts/cb_render/cb_render.yy",},},
     {"id":{"name":"fnt_monogram","path":"fonts/fnt_monogram/fnt_monogram.yy",},},
     {"id":{"name":"scribble_fallback_font","path":"fonts/scribble_fallback_font/scribble_fallback_font.yy",},},
     {"id":{"name":"__InputUpdateController","path":"objects/__InputUpdateController/__InputUpdateController.yy",},},

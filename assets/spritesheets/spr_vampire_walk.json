@@ -1,0 +1,119 @@
+{
+  "frames": [
+    {
+      "filename": "b814ba3c-aaba-4e49-93e4-0409f0440804.png",
+      "frame": {
+        "x": 1,
+        "y": 1,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 125
+    },
+    {
+      "filename": "7ad29304-46f7-4c25-a5c5-c16e60c20301.png",
+      "frame": {
+        "x": 1,
+        "y": 34,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 125
+    },
+    {
+      "filename": "f5cc59a6-4235-415f-9093-97b6dc6265d9.png",
+      "frame": {
+        "x": 1,
+        "y": 67,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 125
+    },
+    {
+      "filename": "966ed829-e392-474b-a414-ae628e022161.png",
+      "frame": {
+        "x": 1,
+        "y": 100,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 125
+    }
+  ],
+  "meta": {
+    "app": "https://github.com/LibreSprite/LibreSprite/",
+    "version": "1.1-dev",
+    "image": "spr_vampire_walk.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 34,
+      "h": 133
+    },
+    "scale": "1"
+  },
+  "coffin_bound": {
+    "source_yy": "sprites/spr_vampire_walk/spr_vampire_walk.yy",
+    "fps": 8.0,
+    "origin": [
+      17,
+      26
+    ],
+    "frame_order": [
+      "b814ba3c-aaba-4e49-93e4-0409f0440804",
+      "7ad29304-46f7-4c25-a5c5-c16e60c20301",
+      "f5cc59a6-4235-415f-9093-97b6dc6265d9",
+      "966ed829-e392-474b-a414-ae628e022161"
+    ],
+    "static": false,
+    "note": "Duração exportada a partir do .yy; image_speed do jogo pode modular o timing."
+  }
+}

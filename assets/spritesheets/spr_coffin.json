@@ -1,0 +1,50 @@
+{
+  "frames": [
+    {
+      "filename": "ec72b191-1e2f-4b34-ac55-b98c65764a35.png",
+      "frame": {
+        "x": 1,
+        "y": 1,
+        "w": 21,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 21,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 21,
+        "h": 32
+      },
+      "duration": 1000
+    }
+  ],
+  "meta": {
+    "app": "https://github.com/LibreSprite/LibreSprite/",
+    "version": "1.1-dev",
+    "image": "spr_coffin.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 23,
+      "h": 34
+    },
+    "scale": "1"
+  },
+  "coffin_bound": {
+    "source_yy": "sprites/spr_coffin/spr_coffin.yy",
+    "fps": 1.0,
+    "origin": [
+      0,
+      0
+    ],
+    "frame_order": [
+      "ec72b191-1e2f-4b34-ac55-b98c65764a35"
+    ],
+    "static": true,
+    "note": "Duração exportada a partir do .yy; image_speed do jogo pode modular o timing."
+  }
+}

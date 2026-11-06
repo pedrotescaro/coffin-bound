@@ -6,7 +6,7 @@
 // ============================================================
 
 // REGULA A RESOLUÇÃO DA GUI PARA 480x270 (Alinha 1:1 com a sala e ajusta a escala no viewport!)
-display_set_gui_size(480, 270);
+cb_gui_apply();
 
 // ===== STATE MACHINE =====
 state = PlayerState.NORMAL;   // Estado inicial
@@ -124,10 +124,10 @@ on_wall = 0;                  // -1=esquerda, 0=sem parede, 1=direita
 move_input = 0;               // -1=esquerda, 0=parado, 1=direita
 
 // ===== PALETA GAMEBOY VERDE =====
-COLOR_GB_DARKEST = make_color_rgb(15, 56, 15);   // #0f380f - Fundo escuro
-COLOR_GB_DARK    = make_color_rgb(48, 98, 48);   // #306230 - Sombra/Card
-COLOR_GB_LIGHT   = make_color_rgb(139, 172, 15); // #8bac0f - Verde Médio
-COLOR_GB_BRIGHT  = make_color_rgb(155, 188, 15); // #9bbc0f - Verde Brilhante
+COLOR_GB_DARKEST = make_color_rgb(11, 13, 23);   // #0f380f - Fundo escuro
+COLOR_GB_DARK    = make_color_rgb(28, 25, 45);   // #306230 - Sombra/Card
+COLOR_GB_LIGHT   = make_color_rgb(127, 166, 106); // #8bac0f - Verde Médio
+COLOR_GB_BRIGHT  = make_color_rgb(182, 204, 139); // #9bbc0f - Verde Brilhante
 
 // ===== CORES E HUD MODERNO =====
 COLOR_HUD_BG     = make_color_rgb(18, 20, 28);    // Fundo escuro fosco

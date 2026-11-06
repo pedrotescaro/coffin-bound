@@ -1,0 +1,199 @@
+{
+  "sprites": 20,
+  "pngs_processed": 215,
+  "active_frames_verified": 104,
+  "palette_size": 24,
+  "engine": "LibreSprite 1.1-dev --batch --script",
+  "checks": [
+    "dimensions",
+    "palette",
+    "alpha",
+    "shift_without_clipping"
+  ],
+  "excluded": [
+    "scribble_fallback_bulletpoint (branco técnico)",
+    "fonts/ (texturas de fonte)"
+  ],
+  "sheets": [
+    {
+      "sprite": "s_background",
+      "frames": 1,
+      "fps": 15.0,
+      "canvas": [
+        320,
+        256
+      ]
+    },
+    {
+      "sprite": "s_cursor",
+      "frames": 1,
+      "fps": 15.0,
+      "canvas": [
+        16,
+        16
+      ]
+    },
+    {
+      "sprite": "spr_bat",
+      "frames": 4,
+      "fps": 10.0,
+      "canvas": [
+        32,
+        32
+      ]
+    },
+    {
+      "sprite": "spr_candle",
+      "frames": 1,
+      "fps": 30.0,
+      "canvas": [
+        14,
+        16
+      ]
+    },
+    {
+      "sprite": "spr_coffin",
+      "frames": 1,
+      "fps": 1.0,
+      "canvas": [
+        21,
+        32
+      ]
+    },
+    {
+      "sprite": "spr_coffin_open",
+      "frames": 1,
+      "fps": 1.0,
+      "canvas": [
+        21,
+        32
+      ]
+    },
+    {
+      "sprite": "spr_ground",
+      "frames": 1,
+      "fps": 30.0,
+      "canvas": [
+        64,
+        64
+      ]
+    },
+    {
+      "sprite": "spr_hud",
+      "frames": 2,
+      "fps": 0.0,
+      "canvas": [
+        77,
+        26
+      ]
+    },
+    {
+      "sprite": "Spr_hud_full",
+      "frames": 1,
+      "fps": 30.0,
+      "canvas": [
+        188,
+        84
+      ]
+    },
+    {
+      "sprite": "spr_light",
+      "frames": 1,
+      "fps": 30.0,
+      "canvas": [
+        64,
+        64
+      ]
+    },
+    {
+      "sprite": "spr_spike",
+      "frames": 1,
+      "fps": 30.0,
+      "canvas": [
+        16,
+        16
+      ]
+    },
+    {
+      "sprite": "spr_tileset",
+      "frames": 1,
+      "fps": 30.0,
+      "canvas": [
+        256,
+        256
+      ]
+    },
+    {
+      "sprite": "spr_tileset_grama",
+      "frames": 1,
+      "fps": 30.0,
+      "canvas": [
+        512,
+        512
+      ]
+    },
+    {
+      "sprite": "spr_tileset_props",
+      "frames": 1,
+      "fps": 30.0,
+      "canvas": [
+        256,
+        256
+      ]
+    },
+    {
+      "sprite": "spr_vampire_dash",
+      "frames": 20,
+      "fps": 30.0,
+      "canvas": [
+        32,
+        32
+      ]
+    },
+    {
+      "sprite": "spr_vampire_fall",
+      "frames": 37,
+      "fps": 60.0,
+      "canvas": [
+        32,
+        32
+      ]
+    },
+    {
+      "sprite": "spr_vampire_idle",
+      "frames": 1,
+      "fps": 30.0,
+      "canvas": [
+        32,
+        32
+      ]
+    },
+    {
+      "sprite": "spr_vampire_jump",
+      "frames": 23,
+      "fps": 30.0,
+      "canvas": [
+        32,
+        32
+      ]
+    },
+    {
+      "sprite": "spr_vampire_walk",
+      "frames": 4,
+      "fps": 8.0,
+      "canvas": [
+        32,
+        32
+      ]
+    },
+    {
+      "sprite": "spr_wall",
+      "frames": 1,
+      "fps": 30.0,
+      "canvas": [
+        64,
+        64
+      ]
+    }
+  ]
+}

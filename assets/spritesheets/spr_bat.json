@@ -1,0 +1,119 @@
+{
+  "frames": [
+    {
+      "filename": "3fb84a47-f759-46db-9c38-6310f559c1bf.png",
+      "frame": {
+        "x": 1,
+        "y": 1,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 100
+    },
+    {
+      "filename": "e9fd764e-0d89-46a7-b140-0f86b090a403.png",
+      "frame": {
+        "x": 1,
+        "y": 34,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 100
+    },
+    {
+      "filename": "54ecbce8-13af-4026-8dba-f47b88a91403.png",
+      "frame": {
+        "x": 1,
+        "y": 67,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 100
+    },
+    {
+      "filename": "f4559f8a-ba7b-4a83-bda1-13d692da4df7.png",
+      "frame": {
+        "x": 1,
+        "y": 100,
+        "w": 32,
+        "h": 32
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 32,
+        "h": 32
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "duration": 100
+    }
+  ],
+  "meta": {
+    "app": "https://github.com/LibreSprite/LibreSprite/",
+    "version": "1.1-dev",
+    "image": "spr_bat.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 34,
+      "h": 133
+    },
+    "scale": "1"
+  },
+  "coffin_bound": {
+    "source_yy": "sprites/spr_bat/spr_bat.yy",
+    "fps": 10.0,
+    "origin": [
+      16,
+      30
+    ],
+    "frame_order": [
+      "3fb84a47-f759-46db-9c38-6310f559c1bf",
+      "e9fd764e-0d89-46a7-b140-0f86b090a403",
+      "54ecbce8-13af-4026-8dba-f47b88a91403",
+      "f4559f8a-ba7b-4a83-bda1-13d692da4df7"
+    ],
+    "static": false,
+    "note": "Duração exportada a partir do .yy; image_speed do jogo pode modular o timing."
+  }
+}
