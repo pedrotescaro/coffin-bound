@@ -19,7 +19,7 @@ if (_player.state == PlayerState.DEATH) {
         cb_save_progress();
         cb_play_sfx(snd_cb_death);
         cb_shake(2, 10);
-        emit_burst(_player.x, _player.y - 8, 24, make_color_rgb(191, 89, 99));
+        emit_burst(_player.x, _player.y - 8, 24, make_color_rgb(139,172,15));
     }
     if (_player.death_timer >= 24) {
         if (InputPressed(INPUT_VERB.MENU_ACCEPT) || keyboard_check_pressed(ord("R"))) respawn_player();
@@ -107,6 +107,6 @@ if (respawn_cooldown <= 0) {
 }
 
 if (_player.on_ground && !last_grounded) emit_burst(_player.x, _player.bbox_bottom, 6, COLOR_LEVEL_LIGHT);
-if (_player.state == PlayerState.BAT && !last_bat) emit_burst(_player.x, _player.y - 8, 12, make_color_rgb(127, 155, 176));
+if (_player.state == PlayerState.BAT && !last_bat) emit_burst(_player.x, _player.y - 8, 12, make_color_rgb(139,172,15));
 last_grounded = _player.on_ground;
 last_bat = _player.state == PlayerState.BAT;

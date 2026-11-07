@@ -2,7 +2,7 @@
 // Arte estática da fase: pixels escritos exclusivamente pelo LibreSprite.
 // A room é lida, nunca modificada. Objetos de gameplay aparecem somente nas prévias.
 var job=cryptMapJob,W=1920,H=540,pc=app.pixelColor;
-var P=[[11,13,23],[28,25,45],[48,38,63],[75,54,87],[109,77,104],[152,115,138],[192,162,173],[229,210,208],[29,51,52],[49,83,78],[80,115,93],[127,166,106],[182,204,139],[233,237,197],[52,63,86],[82,103,129],[127,155,176],[182,203,210],[84,35,52],[136,63,76],[191,89,99],[227,141,130],[180,136,91],[241,201,128]],C=[];
+var P=[[15, 56, 15], [15, 56, 15], [48, 98, 48], [48, 98, 48], [139, 172, 15], [139, 172, 15], [155, 188, 15], [155, 188, 15], [48, 98, 48], [48, 98, 48], [139, 172, 15], [139, 172, 15], [155, 188, 15], [155, 188, 15], [48, 98, 48], [139, 172, 15], [139, 172, 15], [155, 188, 15], [48, 98, 48], [48, 98, 48], [139, 172, 15], [139, 172, 15], [139, 172, 15], [155, 188, 15]],C=[];
 for(var i=0;i<P.length;i++)C.push(pc.rgba(P[i][0],P[i][1],P[i][2],255));
 var doc=app.open('tools/arte/.work/mapa/canvas.png'),spr=doc.sprite,img=spr.layer(0).cel(0).image;
 img.clear(C[0]);spr.width=W;spr.height=H;
@@ -45,11 +45,11 @@ for(var b=0;b<job.solids.length;b++){var bulk=job.solids[b];if(bulk.h<96||bulk.w
 for(var y=0;y<H;y++){var x=0;while(x<W){if(mask[y*W+x]&&(y===0||!mask[(y-1)*W+x])){var start=x;while(x<W&&mask[y*W+x]&&(y===0||!mask[(y-1)*W+x]))x++;var end=x;for(var tx=start;tx<end;tx+=16){var index=tx===start?1:((tx+16>=end)?4:(((tx-start)/16)%2?2:3));for(var yy=0;yy<16&&y+yy<H;yy++)for(var xx=0;xx<16&&tx+xx<end;xx++){if(!mask[(y+yy)*W+tx+xx])continue;var c=tiles.getPixel((index%8)*16+xx,Math.floor(index/8)*16+yy);if(pc.rgbaA(c))pixel(tx+xx,y+yy,c);}}}else x++;}}
 for(var y=0;y<H;y++)for(var x=0;x<W;x++)if(mask[y*W+x]){if(x===0||!mask[y*W+x-1])pixel(x,y,C[15]);if(x===W-1||!mask[y*W+x+1])pixel(x,y,C[1]);if(y===H-1||!mask[(y+1)*W+x])pixel(x,y,C[0]);}
 
-spr.loadPalette('assets/palette/coffin-gothic-24.gpl');spr.saveAs('assets/environment/crypt_map.aseprite',true);spr.saveAs('assets/environment/crypt_map.png',true);
+spr.loadPalette('art/palette/gameboy-green.gpl');spr.saveAs('assets/environment/crypt_map.aseprite',true);spr.saveAs('assets/environment/crypt_map.png',true);
 // Prévias de composição incluem instâncias existentes; o mapa usado no jogo NÃO as incorpora.
 var sourceDocs=[];job.instances.sort(function(a,b){return b.depth-a.depth;});
 for(var k=0;k<job.instances.length;k++){var o=job.instances[k];if(!o.source)continue;var sd=app.open(o.source);sourceDocs.push(sd);var si=sd.sprite.layer(0).cel(0).image;var sw=Math.round(si.width*Math.abs(o.sx)),sh=Math.round(si.height*Math.abs(o.sy));for(var y=0;y<sh;y++)for(var x=0;x<sw;x++){var sx=Math.floor(x/Math.abs(o.sx)),sy=Math.floor(y/Math.abs(o.sy));if(o.sx<0)sx=si.width-1-sx;if(o.sy<0)sy=si.height-1-sy;var c=si.getPixel(sx,sy);if(pc.rgbaA(c))pixel(Math.round(o.x-o.origin[0]*o.sx)+x,Math.round(o.y-o.origin[1]*o.sy)+y,c);}}
 spr.saveAs('assets/environment/crypt_map_overview.png',true);
 var snapshots=[['crypt_map_entrance.png',0,64],['crypt_map_nave.png',672,16],['crypt_map_crypt.png',1440,270]];
-for(var k=0;k<snapshots.length;k++){var shot=snapshots[k],pixels=[];for(var y=0;y<270;y++)for(var x=0;x<480;x++)pixels.push(img.getPixel(shot[1]+x,shot[2]+y));var pd=app.open('tools/arte/.work/mapa/canvas.png'),ps=pd.sprite,pi=ps.layer(0).cel(0).image;pi.clear(C[0]);ps.width=480;ps.height=270;for(var y=0;y<270;y++)for(var x=0;x<480;x++)pi.putPixel(x,y,pixels[y*480+x]);ps.loadPalette('assets/palette/coffin-gothic-24.gpl');ps.saveAs('assets/environment/'+shot[0],true);pd.close();}
+for(var k=0;k<snapshots.length;k++){var shot=snapshots[k],pixels=[];for(var y=0;y<270;y++)for(var x=0;x<480;x++)pixels.push(img.getPixel(shot[1]+x,shot[2]+y));var pd=app.open('tools/arte/.work/mapa/canvas.png'),ps=pd.sprite,pi=ps.layer(0).cel(0).image;pi.clear(C[0]);ps.width=480;ps.height=270;for(var y=0;y<270;y++)for(var x=0;x<480;x++)pi.putPixel(x,y,pixels[y*480+x]);ps.loadPalette('art/palette/gameboy-green.gpl');ps.saveAs('assets/environment/'+shot[0],true);pd.close();}
 for(var k=0;k<sourceDocs.length;k++)sourceDocs[k].close();tileDoc.close();decorDoc.close();doc.close();console.log('Mapa catedral 1920x540 exportado; geometria original preservada, prévias estáticas separadas.');

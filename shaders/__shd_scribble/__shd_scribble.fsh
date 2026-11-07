@@ -1,3 +1,4 @@
+vec3 gb(vec3 c){vec3 a=vec3(15.,56.,15.)/255.,b=vec3(48.,98.,48.)/255.,d=vec3(139.,172.,15.)/255.,e=vec3(155.,188.,15.)/255.;vec3 q=a;float n=dot(c-a,c-a);float x=dot(c-b,c-b);if(x<n){q=b;n=x;}x=dot(c-d,c-d);if(x<n){q=d;n=x;}x=dot(c-e,c-e);if(x<n)q=e;return q;}
 //   @jujuadams   v8.0.0   2020-03-16
 precision highp float;
 
@@ -97,4 +98,5 @@ void main()
     {
         gl_FragColor.rgb *= gl_FragColor.a;
     }
+gl_FragColor.rgb=gb(gl_FragColor.rgb);gl_FragColor.a=step(.5,gl_FragColor.a);
 }

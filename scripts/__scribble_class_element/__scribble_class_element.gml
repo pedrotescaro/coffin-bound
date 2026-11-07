@@ -215,7 +215,7 @@ function __scribble_class_element(_string, _unique_id) constructor
         
         //Make sure we reset the world matrix
         matrix_set(matrix_world, _old_matrix);
-        shader_reset();
+        shader_set(shd_gameboy);
         
         if (SCRIBBLE_SHOW_WRAP_BOUNDARY) debug_draw_bbox(_x, _y);
         

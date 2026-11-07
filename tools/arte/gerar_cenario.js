@@ -1,13 +1,6 @@
 // SPDX-License-Identifier: GPL-3.0-only
 // Arte original de cripta: todos os pixels são desenhados dentro do LibreSprite.
-var palette = [
- [11,13,23],[28,25,45],[48,38,63],[75,54,87],
- [109,77,104],[152,115,138],[192,162,173],[229,210,208],
- [29,51,52],[49,83,78],[80,115,93],[127,166,106],
- [182,204,139],[233,237,197],[52,63,86],[82,103,129],
- [127,155,176],[182,203,210],[84,35,52],[136,63,76],
- [191,89,99],[227,141,130],[180,136,91],[241,201,128]
-];
+var palette = [[15, 56, 15], [15, 56, 15], [48, 98, 48], [48, 98, 48], [139, 172, 15], [139, 172, 15], [155, 188, 15], [155, 188, 15], [48, 98, 48], [48, 98, 48], [139, 172, 15], [139, 172, 15], [155, 188, 15], [155, 188, 15], [48, 98, 48], [139, 172, 15], [139, 172, 15], [155, 188, 15], [48, 98, 48], [48, 98, 48], [139, 172, 15], [139, 172, 15], [139, 172, 15], [155, 188, 15]];
 var colors=[],pc=app.pixelColor;
 for(var i=0;i<palette.length;i++)colors.push(pc.rgba(palette[i][0],palette[i][1],palette[i][2],255));
 var doc,sprite,img,W,H,ox=0,oy=0,cw=0,ch=0;
@@ -38,7 +31,7 @@ function poly(p,c){
  }
 }
 function ellipse(cx,cy,rx,ry,c){for(var y=cy-ry;y<=cy+ry;y++)for(var x=cx-rx;x<=cx+rx;x++)if((x-cx)*(x-cx)/(rx*rx)+(y-cy)*(y-cy)/(ry*ry)<=1)dot(x,y,c);}
-function save(name){sprite.loadPalette('assets/palette/coffin-gothic-24.gpl');sprite.saveAs('assets/environment/'+name+'.aseprite',true);sprite.saveAs('assets/environment/'+name+'.png',true);doc.close();}
+function save(name){sprite.loadPalette('art/palette/gameboy-green.gpl');sprite.saveAs('assets/environment/'+name+'.aseprite',true);sprite.saveAs('assets/environment/'+name+'.png',true);doc.close();}
 
 // Tijolos esculpidos em clusters: bordas gastas e juntas alternadas, sem ruído.
 function brick(v,dark){

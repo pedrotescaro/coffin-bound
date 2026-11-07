@@ -20,9 +20,9 @@ if (font_exists(fnt_monogram)) {
 if (level_won) {
     draw_set_halign(fa_center);
     draw_set_valign(fa_middle);
-    draw_set_color(c_white);
+    draw_set_color(make_color_rgb(155,188,15));
     draw_text_transformed(_gui_w / 2, _gui_h / 2, "COFFIN BOUND!", 2, 2, 0);
-    draw_set_color(c_white);
+    draw_set_color(make_color_rgb(155,188,15));
     draw_set_halign(fa_left);
     draw_set_valign(fa_top);
     exit;
@@ -104,17 +104,17 @@ if (array_length(burn_particles) > 0 && camera_get_view_width(view_camera[0]) > 
         var _screen_y = round((_p.py - _cam_y) * _scale_y);
         
         draw_set_color(COLOR_GB_BRIGHT);
-        draw_set_alpha(_p.alpha);
+        draw_set_alpha(1);
         draw_rectangle(_screen_x, _screen_y, _screen_x + _p.size, _screen_y + _p.size, false);
     }
-    draw_set_alpha(1.0);
+    draw_set_alpha(1);
 }
 
 if (flash_hit > 0) {
     draw_set_color(COLOR_GB_BRIGHT);
-    draw_set_alpha(0.15);
+    draw_set_alpha(1);
     draw_rectangle(0, 0, _gui_w, _gui_h, false);
-    draw_set_alpha(1.0);
+    draw_set_alpha(1);
 }
 
 
@@ -160,4 +160,4 @@ if (state == PlayerState.BAT) {
     _yy += _sep;
 }
 
-draw_set_color(c_white);
+draw_set_color(make_color_rgb(155,188,15));

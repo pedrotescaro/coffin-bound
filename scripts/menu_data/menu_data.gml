@@ -8,8 +8,8 @@ function menu_data_initialize() {
     leviRate = 1.5;
     lerpAmt = 0.25;
     spacing = 22;
-    selectedCol = make_color_rgb(182, 204, 139);
-    notSelectedCol = make_color_rgb(233, 237, 197);
+    selectedCol = make_color_rgb(155,188,15);
+    notSelectedCol = make_color_rgb(155,188,15);
     titleCol = notSelectedCol;
     gameTitle = "COFFIN BOUND";
     titleSize = 2;

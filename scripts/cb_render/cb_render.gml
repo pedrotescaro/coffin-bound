@@ -28,6 +28,7 @@ function cb_render_layout() {
 
 /// @description A GUI usa o mesmo retângulo inteiro da imagem do jogo.
 function cb_gui_apply() {
+    shader_set(shd_gameboy);
     cb_render_layout();
     display_set_gui_maximise(global.cb_render_scale, global.cb_render_scale,
         global.cb_render_x, global.cb_render_y);
@@ -47,13 +48,15 @@ function cb_render_prepare() {
 /// @description Post Draw: apresenta a surface sobre barras pretas sem reamostrar pixels.
 function cb_render_present() {
     cb_render_layout();
-    draw_clear_alpha(c_black, 1);
+    draw_clear_alpha(make_color_rgb(15,56,15), 1);
     if (!surface_exists(application_surface)) return;
     gpu_set_texfilter(false);
     gpu_set_blendenable(false);
+    shader_set(shd_gameboy);
     draw_surface_stretched(application_surface, global.cb_render_x, global.cb_render_y,
         480 * global.cb_render_scale, 270 * global.cb_render_scale);
+    shader_reset();
     gpu_set_blendenable(true);
     draw_set_alpha(1);
-    draw_set_color(c_white);
+    draw_set_color(make_color_rgb(155,188,15));
 }

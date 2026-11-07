@@ -1,10 +1,10 @@
 /// @description Interface em 480x270, ampliada pelo compositor com escala inteira.
 function menu_draw() {
     cb_gui_apply();
-    var _background = make_color_rgb(11, 13, 23);
-    var _card = make_color_rgb(28, 25, 45);
-    var _border = make_color_rgb(75, 54, 87);
-    draw_set_alpha(0.96);
+    var _background = make_color_rgb(15,56,15);
+    var _card = make_color_rgb(15,56,15);
+    var _border = make_color_rgb(48,98,48);
+    draw_set_alpha(1);
     draw_set_color(_background);
     draw_rectangle(24, 12, 456, 232, false);
     draw_set_alpha(1);
@@ -56,7 +56,7 @@ function menu_draw() {
     if (menu_notice_timer > 0) _footer = menu_notice;
     menu_scribble_draw(_footer, "menu_footer", 42, 240, 1, titleCol);
     draw_set_alpha(1);
-    draw_set_color(c_white);
+    draw_set_color(make_color_rgb(155,188,15));
     draw_set_halign(fa_left);
     draw_set_valign(fa_top);
 }

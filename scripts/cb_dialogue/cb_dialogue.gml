@@ -30,18 +30,18 @@ function cb_dialogue_jewel(_x, _y, _radius, _colour) {
 
 /// @description Diálogo gótico em 480x270; retrato e fonte em escala 1.
 function cb_dialogue_draw() {
-    var _ink = make_color_rgb(11, 13, 23);
-    var _plate = make_color_rgb(28, 25, 45);
-    var _shadow = make_color_rgb(48, 38, 63);
-    var _line = make_color_rgb(75, 54, 87);
-    var _edge = make_color_rgb(109, 77, 104);
-    var _bone = make_color_rgb(233, 237, 197);
-    var _muted = make_color_rgb(152, 115, 138);
-    var _ruby = make_color_rgb(191, 89, 99);
-    var _gold = make_color_rgb(180, 136, 91);
-    var _glint = make_color_rgb(241, 201, 128);
+    var _ink = make_color_rgb(15,56,15);
+    var _plate = make_color_rgb(15,56,15);
+    var _shadow = make_color_rgb(48,98,48);
+    var _line = make_color_rgb(48,98,48);
+    var _edge = make_color_rgb(139,172,15);
+    var _bone = make_color_rgb(155,188,15);
+    var _muted = make_color_rgb(139,172,15);
+    var _ruby = make_color_rgb(139,172,15);
+    var _gold = make_color_rgb(139,172,15);
+    var _glint = make_color_rgb(155,188,15);
 
-    draw_set_alpha(0.55);
+    draw_set_alpha(1);
     cb_dialogue_frame(18, 143, 448, 118, 6, _ink, _ink);
     draw_set_alpha(1);
     cb_dialogue_frame(16, 140, 448, 118, 6, _ink, _edge);
@@ -104,5 +104,5 @@ function cb_dialogue_draw() {
     draw_set_halign(fa_left);
     draw_set_valign(fa_top);
     draw_set_alpha(1);
-    draw_set_color(c_white);
+    draw_set_color(make_color_rgb(155,188,15));
 }

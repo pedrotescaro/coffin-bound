@@ -6,10 +6,10 @@ cb_boot();
 depth = -100;
 cb_gui_apply();
 
-COLOR_LEVEL_DARKEST = make_color_rgb(11, 13, 23);
-COLOR_LEVEL_DARK    = make_color_rgb(28, 25, 45);
-COLOR_LEVEL_LIGHT   = make_color_rgb(127, 166, 106);
-COLOR_LEVEL_BRIGHT  = make_color_rgb(182, 204, 139);
+COLOR_LEVEL_DARKEST = make_color_rgb(15,56,15);
+COLOR_LEVEL_DARK    = make_color_rgb(15,56,15);
+COLOR_LEVEL_LIGHT   = make_color_rgb(139,172,15);
+COLOR_LEVEL_BRIGHT  = make_color_rgb(155,188,15);
 
 respawn_x = 56;
 respawn_y = 205;
@@ -28,7 +28,7 @@ dialogue_typist = scribble_typist();
 dialogue_serial = 0;
 dialogue_speaker = "";
 dialogue_body = scribble("", "level_dialogue_empty")
-    .starting_format(dialogue_font, make_color_rgb(233, 237, 197))
+    .starting_format(dialogue_font, make_color_rgb(155,188,15))
     .align(fa_left, fa_top)
     .line_height(20, 20)
     .line_spacing(20)
@@ -37,7 +37,7 @@ dialogue_name = scribble("", "level_dialogue_name_empty")
     .starting_format(dialogue_font, COLOR_LEVEL_BRIGHT)
     .align(fa_left, fa_top);
 dialogue_continue = scribble("ENTER / A", "level_dialogue_continue")
-    .starting_format(dialogue_font, make_color_rgb(233, 237, 197))
+    .starting_format(dialogue_font, make_color_rgb(155,188,15))
     .align(fa_left, fa_top);
 
 start_dialogue = function(_speaker, _text) {
@@ -45,10 +45,10 @@ start_dialogue = function(_speaker, _text) {
     dialogue_speaker = _speaker;
     dialogue_name = scribble(_speaker, "level_dialogue_name_" + string(dialogue_serial))
         .starting_format(dialogue_font, (_speaker == "VAMPIRO")
-            ? make_color_rgb(241, 201, 128) : COLOR_LEVEL_BRIGHT)
+            ? make_color_rgb(155,188,15) : COLOR_LEVEL_BRIGHT)
         .align(fa_left, fa_top);
     dialogue_body = scribble(_text, "level_dialogue_body_" + string(dialogue_serial))
-        .starting_format(dialogue_font, make_color_rgb(233, 237, 197))
+        .starting_format(dialogue_font, make_color_rgb(155,188,15))
         .align(fa_left, fa_top)
         .line_height(20, 20)
         .line_spacing(20)
