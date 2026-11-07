@@ -1,25 +1,13 @@
 {
-  "files_checked": 311,
+  "files_checked": 632,
   "visible_pixels_outside_palette_or_partial_alpha": 0,
   "violations": [],
-  "animation_frames_checked": 314,
+  "animation_frames_checked": 635,
   "palette": [
-    "#061A0B",
-    "#0A280E",
     "#0F380F",
-    "#1D461B",
-    "#285625",
     "#306230",
-    "#3C6D2E",
-    "#4B7A32",
-    "#5C8735",
-    "#6F9638",
-    "#7FA43A",
     "#8BAC0F",
-    "#95B840",
-    "#9BBC0F",
-    "#ADCB62",
-    "#C5DB87"
+    "#9BBC0F"
   ],
   "shaders": [
     {

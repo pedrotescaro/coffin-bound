@@ -3,16 +3,18 @@ from pathlib import Path
 import json,os,subprocess,argparse,re
 from PIL import Image, ImageSequence
 ROOT=Path(__file__).resolve().parents[2]
-PALETTE_PATH=ROOT/'art/palette/gameboy-green-16.gpl'
+PALETTE_PATH=ROOT/'art/palette/gb_green.gpl'
 COLORS=[tuple(map(int,line.split()[:3])) for line in PALETTE_PATH.read_text(encoding='utf-8').splitlines() if line.strip() and line.split()[0].isdigit()]
-assert len(COLORS)==16 and {(15,56,15),(48,98,48),(139,172,15),(155,188,15)}.issubset(COLORS)
+assert len(COLORS)==4 and {(15,56,15),(48,98,48),(139,172,15),(155,188,15)}.issubset(COLORS)
 
 def nearest(rgb):
     return min(COLORS,key=lambda c:sum((a-b)**2 for a,b in zip(rgb,c)))
 def files():
-    for folder in ('sprites','fonts','tilesets','assets','prefabs'):
-        yield from (ROOT/folder).rglob('*.png')
-        yield from (ROOT/folder).rglob('*.gif')
+    import subprocess
+    names=subprocess.check_output(['git','ls-files','--cached','--others','--exclude-standard','-z'],cwd=ROOT).decode().split('\0')
+    for name in sorted(set(names)):
+        path=ROOT/name
+        if path.is_file() and path.suffix.lower() in ('.png','.gif'):yield path
 def audit():
     bad=[];total=0;count=0;frames=0
     for p in files():
@@ -21,7 +23,10 @@ def audit():
         with Image.open(p) as im:
             for frame in ImageSequence.Iterator(im):
                 frames+=1
-                n+=sum(1 for r,g,b,a in frame.convert('RGBA').get_flattened_data() if a and ((r,g,b) not in COLORS or a!=255))
+                for amount,(r,g,b,a) in frame.convert('RGBA').getcolors(frame.width*frame.height):
+                    if a and ((r,g,b) not in COLORS or a!=255):
+                        n+=amount
+                        print(p.relative_to(ROOT), 'frame',im.tell(),'RGBA',(r,g,b,a),'pixels',amount)
         total+=n
         if n:bad.append({'file':p.relative_to(ROOT).as_posix(),'pixels':n})
     shaders=[]
