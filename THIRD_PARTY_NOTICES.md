@@ -27,3 +27,6 @@ alongside the project license and corresponding source information.
 
 The 0.2.1 portrait and forest menu adapt images supplied by Pedro Tescaro. Their original
 provenance and reuse terms have not been documented. They remain outside the code license.
+
+The 0.2.3 cathedral backgrounds adapt another reference image supplied by Pedro Tescaro.
+Its original provenance/reuse terms remain undocumented; the code license does not cover it.

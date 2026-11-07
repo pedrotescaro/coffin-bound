@@ -33,3 +33,22 @@ O wrapper atualiza os PNGs composite/layer mantendo os IDs existentes. Fontes ed
 prévias estáticas ficam em `assets/challenges/`. Regenerar sobrescreve edições manuais.
 A máscara alfa do espinho conserva os limites anteriores (0,2)–(15,15).
 Veja [a entrega e o roteiro manual](../../docs/PLATAFORMAS_INIMIGOS.md).
+
+## Pipeline atual do cenário (0.2.3)
+
+```powershell
+python tools/arte/catedral_detalhada.py --libresprite 'CAMINHO/libresprite.exe'
+python tools/arte/gameboy.py
+```
+
+Paleta atual: `art/palette/gameboy-green-16.gpl`. Os quatro verdes clássicos são um
+subconjunto dos 16 tons; os geradores históricos de quatro cores continuam válidos para
+os assets antigos. A auditoria atual usa os 16 valores, verifica todos os frames dos GIFs
+e confere os dois shaders. `gameboy.py --apply` também utiliza a paleta atual.
+
+A catedral é adaptada da imagem fornecida, ampliada por nearest 2×, com reaplicação do
+material aos sólidos reais, sombreamento e preservação das passagens. As fontes editáveis
+estão em `assets/cathedral/`; os PNGs registrados são sincronizados mantendo IDs/origens.
+Se executar também geradores antigos de cenário/revestimento, execute **catedral_detalhada.py
+por último**: ele produz os fundos atuais. Regenerar sobrescreve edições manuais das fontes.
+Veja [entrega e limitações](../../docs/CATEDRAL_DETALHADA.md).

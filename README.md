@@ -1,5 +1,9 @@
 # Coffin Bound
 
+![Catedral com sombras e 16 verdes](assets/cathedral/level2_nave.png)
+
+*Cenário 0.2.3 adaptado da referência fornecida, com 16 tons no estilo Game Boy. Prévia estática; [produção e testes](docs/CATEDRAL_DETALHADA.md).*
+
 [English](README.en.md)
 
 Um platformer 2D em pixel art sobre um vampiro tentando encontrar seu caixão. Atravesse uma cripta, evite luz e espinhos, escale paredes e transforme-se em morcego para alcançar o caminho de volta. Criado por **Pedro Tescaro** em **GameMaker**, com movimento inspirado em Celeste.

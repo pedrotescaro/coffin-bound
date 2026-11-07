@@ -11,9 +11,15 @@ Interpolação está desligada no Windows, HTML5 e na GPU. A câmera guarda posi
 espelhamento ±1 e sem rotação. As variáveis antigas de squash/stretch continuam isoladas
 da física, mas não deformam a arte no modo estrito. HUD e títulos usam escala inteira.
 
-O filtro retro continua disponível em G, desligado por padrão para exibir a paleta original.
-Ele altera as cores exibidas quando ativado. Luz, transparência e efeitos podem produzir
-cores intermediárias por composição; os pixels opacos dos arquivos de arte usam a paleta.
+A versão 0.2.3 usa uma paleta de **16 verdes**, ampliada por solicitação do autor e definida
+em `art/palette/gameboy-green-16.gpl`. Os quatro tons clássicos continuam presentes. Os shaders
+`shd_gameboy` e `__shd_scribble` escolhem o tom mais próximo nessa mesma paleta e usam alpha
+binário. A auditoria também confere os valores de ambos os shaders. A arte nova não é reduzida
+a quatro tons na apresentação final. O antigo arquivo de paleta de quatro cores foi preservado.
+
+G/Opções conserva a preferência antiga do filtro, mas os filtros antigos das rooms estão
+desativados. Alterar G não deve remover os novos meios-tons. A apresentação limitada à paleta
+permanece ativa para que o cenário, os sprites e a GUI respeitem os 16 verdes.
 
 A surface de aplicação pertence ao runner e não deve ser liberada com `surface_free`.
 O código verifica existência e tamanho após perda de contexto. Não foi criada outra surface.
@@ -24,7 +30,7 @@ O código verifica existência e tamanho após perda de contexto. Não foi criad
 2. Testar janela 960×540, fullscreen 1920×1080 e 1366×768. Escalas esperadas: 2×, 4× e 2×.
 3. Caminhar lentamente e mover câmera: nenhum pixel deve cintilar por posição fracionária.
 4. Comparar pés entre idle, walk, jump, fall e dash; verificar asas nas bordas dos frames.
-5. Alternar G: filtro deve mudar somente a apresentação; repetir ao trocar de room.
+5. Alternar G e trocar de room: os 16 tons devem permanecer, sem redução a quatro cores.
 6. Alternar fullscreen e Alt+Tab várias vezes: conferir recuperação da surface e das barras.
 7. Compilar HTML5 e testar dentro do iframe, incluindo fullscreen permitido pelo navegador.
 

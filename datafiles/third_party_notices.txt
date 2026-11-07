@@ -353,3 +353,6 @@ No external recordings, samples or soundfonts were used.
 
 0.2.1 portrait and menu forest: adapted from references supplied by Pedro Tescaro.
 Original provenance/reuse terms remain undocumented; excluded from the code license.
+
+0.2.3 cathedral backgrounds: adapted from a reference supplied by Pedro Tescaro.
+Original provenance/reuse terms remain undocumented; excluded from the code license.

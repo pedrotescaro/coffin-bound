@@ -1,5 +1,9 @@
 # Coffin Bound
 
+![Cathedral with shadows and 16 greens](assets/cathedral/level2_nave.png)
+
+*Version 0.2.3 scenery adapted from the supplied reference with a 16-green Game Boy style palette. Static art preview; [production and manual checks](docs/CATEDRAL_DETALHADA.md), in Portuguese.*
+
 ![Static preview of the gothic dialogue UI and vampire portrait](assets/dialogue/dialogue_preview.png)
 
 *Static UI composition for 0.2.1, adapted from Pedro's supplied reference in four Game Boy

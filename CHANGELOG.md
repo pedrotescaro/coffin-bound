@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.3 — 2026-11-07
+
+- Cenário adaptado da referência detalhada fornecida: janelas, colunas esculpidas, raízes, teias e pedra em relevo.
+- Paleta ampliada a 16 verdes por solicitação do autor, preservando os quatro tons clássicos.
+- Sombras profundas, meios-tons e realces; plataformas texturizadas dentro dos colisores existentes.
+- Shaders da apresentação e do Scribble preservam os 16 tons; auditoria inclui todos os frames dos GIFs e consistência dos shaders.
+- Três fundos e fontes LibreSprite atualizados; túneis de morcego visualmente desobstruídos.
+- Layout/física preservados; verificação visual e desempenho no runner pendentes.
+
 ## 0.2.2 — 2026-11-07
 
 - Plataformas fixas com blocos maiores, cornijas, peças de canto esculpidas e musgo lateral.

@@ -1,0 +1,48 @@
+{
+  "unchanged_gameplay_files": [
+    "rooms/rm_level1/rm_level1.yy",
+    "rooms/rm_level2/rm_level2.yy",
+    "rooms/rm_level3/rm_level3.yy",
+    "objects/obj_challenges/Create_0.gml",
+    "objects/obj_challenges/Step_1.gml",
+    "scripts/cb_challenges/cb_challenges.gml",
+    "objects/obj_player/obj_player.yy"
+  ],
+  "levels": [
+    {
+      "room": "rm_level1",
+      "size": [
+        1920,
+        540
+      ],
+      "colors_used": 16,
+      "composite_and_layer_match": true,
+      "sha256": "ca4af49ca96f7701828867bf54df2513e7fe31e4c714a1aee29838ff93ca42b4",
+      "bat_passage_clear": null
+    },
+    {
+      "room": "rm_level2",
+      "size": [
+        1920,
+        540
+      ],
+      "colors_used": 16,
+      "composite_and_layer_match": true,
+      "sha256": "bb0b693248e330c42753d55e151d1c207d3b9634edae908bf3996bf5136632fa",
+      "bat_passage_clear": true
+    },
+    {
+      "room": "rm_level3",
+      "size": [
+        1920,
+        540
+      ],
+      "colors_used": 16,
+      "composite_and_layer_match": true,
+      "sha256": "fea97e276224995979fa09f492cb57eb4a235e757037626515f91d3e239b6aa8",
+      "bat_passage_clear": true
+    }
+  ],
+  "reference": "art/reference/cathedral-detailed-reference.png",
+  "palette": "art/palette/gameboy-green-16.gpl"
+}

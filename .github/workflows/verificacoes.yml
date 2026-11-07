@@ -15,7 +15,7 @@ jobs:
           node-version: '22'
       - name: Instalar leitor de imagens
         run: python -m pip install Pillow
-      - name: Auditar quatro cores
+      - name: Auditar paleta de 16 verdes
         run: python tools/arte/gameboy.py
       - name: Validar recursos e referências
         run: python tools/validate_project.py --strict-warnings
