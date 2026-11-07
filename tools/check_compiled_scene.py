@@ -7,7 +7,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-LAYERS = ('Pedra_Distante', 'Nave_Media', 'Reliquias', 'Piso_Modular')
+LAYERS = ('Pedra_Distante', 'Piso_Modular')
 
 def source_cells(layer):
     tiles = layer['tiles']

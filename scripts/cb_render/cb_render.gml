@@ -21,14 +21,14 @@ function cb_render_init() {
 function cb_render_layout() {
     var _width = max(1, window_get_width());
     var _height = max(1, window_get_height());
-    global.cb_render_scale = max(1, floor(min(_width / 480, _height / 270)));
+    var _fit = min(_width / 480, _height / 270);
+    global.cb_render_scale = (_fit >= 1) ? floor(_fit) : _fit;
     global.cb_render_x = floor((_width - 480 * global.cb_render_scale) / 2);
     global.cb_render_y = floor((_height - 270 * global.cb_render_scale) / 2);
 }
 
 /// @description A GUI usa o mesmo retângulo inteiro da imagem do jogo.
 function cb_gui_apply() {
-    shader_set(shd_gameboy);
     cb_render_layout();
     display_set_gui_maximise(global.cb_render_scale, global.cb_render_scale,
         global.cb_render_x, global.cb_render_y);
@@ -36,6 +36,7 @@ function cb_gui_apply() {
 
 /// @description A surface de aplicação pertence ao runner; não criar/free manualmente.
 function cb_render_prepare() {
+    shader_reset();
     gpu_set_texfilter(false);
     if (surface_exists(application_surface)) {
         if (surface_get_width(application_surface) != 480

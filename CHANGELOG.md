@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.3.2 — 2026-11-07
+
+- Câmera em End Step, com dead zones, antecipação horizontal e de queda, suavização por delta_time e limites da room.
+- Parallax a 0,10×, 0,25×, 0,50× e 0,75×; peças apoiadas nas plataformas seguem o mundo a 1×.
+- Colunas, vitrais e decoração usam elementos nativos inteiros, com variantes sombreadas exportadas pelo LibreSprite.
+- Fundo distante usa um tile de tijolo repetível; prévias incluem o enquadramento de início, meio e fim.
+- Escala inteira e letterbox, com ajuste proporcional para janelas menores que a resolução lógica 480×270.
+- Testes automatizados de câmera, escala, frames e integridade dos recortes.
+- Shader da paleta limitado à apresentação da surface; Scribble restaura o shader padrão após o texto.
+
 ## 0.2.4 — 2026-11-07
 
 - Tileset modular 1024×512 adaptado da referência: materiais, pilares, arcos, janelas, raízes, grades e decoração.

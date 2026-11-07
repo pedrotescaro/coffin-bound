@@ -1,6 +1,6 @@
 # Coffin Bound
 
-Version 0.3.0 uses individual pieces, four greens and parallax tile layers in all three stages.
+Version 0.3.2 uses individual pieces, four greens and parallax by depth in all three stages. The camera has dead zones and movement look-ahead. [Changes and manual checks](docs/CAMERA_PARALLAX_032.md), in Portuguese.
 
 ![Nave](assets/pecas/cena_nave.png)
 

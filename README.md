@@ -1,6 +1,6 @@
 # Coffin Bound
 
-Versão 0.3.0. As três fases usam peças individuais, quatro verdes e camadas com parallax.
+Versão 0.3.2. As três fases usam peças individuais, quatro verdes e parallax por profundidade. A câmera tem zonas de tolerância e antecipação de movimento. [Correções e testes manuais](docs/CAMERA_PARALLAX_032.md).
 
 ![Nave](assets/pecas/cena_nave.png)
 

@@ -51,12 +51,9 @@ if (sprite_exists(spr_hud)) {
     // Rastro atrasado
     if (_trail_fill_w > _hp_fill_w) {
         var _diff_w = _trail_fill_w - _hp_fill_w;
-        draw_sprite_part_ext(
-            spr_hud, 0,
-            18 + _hp_fill_w, 1, _diff_w, 10,
-            _hud_x + ((18 + _hp_fill_w) * _scale), _hud_y + (1 * _scale),
-            _scale, _scale, COLOR_GB_LIGHT, 0.7
-        );
+        draw_set_color(COLOR_GB_LIGHT);
+        draw_rectangle(_hud_x + 18 + _hp_fill_w, _hud_y + 1,
+            _hud_x + 18 + _trail_fill_w - 1, _hud_y + 10, false);
     }
 
     // 3. Preenchimento de Vida (HP) a partir do Frame 0 (Recorte X:18, Y:1 -> 51x10)
@@ -75,7 +72,7 @@ if (sprite_exists(spr_hud)) {
 
     var _voo_alpha = 1.0;
     if (bat_energy < 20 || state == PlayerState.BAT) {
-        _voo_alpha = 0.5 + (dsin(current_time * 0.8) * 0.5); // Efeito de piscar sutil ao voar ou em bateria baixa
+        _voo_alpha = (floor(current_time / 160) mod 2); // Pisca sem criar cores intermediárias.
     }
 
     if (_bat_fill_w > 0) {

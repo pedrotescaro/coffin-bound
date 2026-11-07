@@ -146,11 +146,7 @@ respawn_player = function() {
 
         with (obj_camera) {
 
-            follow_x = clamp(obj_player.x - view_w / 2, 0, max(0, room_width - view_w));
-
-            follow_y = clamp(obj_player.y - view_h / 2, 0, max(0, room_height - view_h));
-
-            camera_set_view_pos(cam, round(follow_x), round(follow_y));
+            cb_camera_snap();
 
         }
 
@@ -160,7 +156,7 @@ respawn_player = function() {
 
 
 
-// Posições seguras do catálogo da fase, sem gravar coordenadas arbitrárias no save.
+// PosiÃ§Ãµes seguras do catÃ¡logo da fase, sem gravar coordenadas arbitrÃ¡rias no save.
 
 checkpoint_spawns = (global.cb.level==2) ? [[48,448],[672,320],[1216,336],[1536,272]] : ((global.cb.level==1) ? [[48,448],[672,320],[1216,320],[1536,272]] : [[48,448],[672,320],[1216,288],[1536,272]]);
 
