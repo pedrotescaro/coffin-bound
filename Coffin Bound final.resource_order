@@ -81,6 +81,7 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"spr_crypt_map","order":23,"path":"sprites/spr_crypt_map/spr_crypt_map.yy",},
     {"name":"spr_portrait_vampire","order":22,"path":"sprites/spr_portrait_vampire/spr_portrait_vampire.yy",},
     {"name":"fnt_monogram","order":1,"path":"fonts/fnt_monogram/fnt_monogram.yy",},
     {"name":"scribble_fallback_font","order":24,"path":"fonts/scribble_fallback_font/scribble_fallback_font.yy",},

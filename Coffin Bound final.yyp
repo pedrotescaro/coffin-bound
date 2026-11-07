@@ -113,6 +113,7 @@
   },
   "name":"Coffin Bound final",
   "resources":[
+    {"id":{"name":"spr_crypt_map","path":"sprites/spr_crypt_map/spr_crypt_map.yy",},},
     {"id":{"name":"cb_dialogue","path":"scripts/cb_dialogue/cb_dialogue.yy",},},
     {"id":{"name":"spr_portrait_vampire","path":"sprites/spr_portrait_vampire/spr_portrait_vampire.yy",},},
     {"id":{"name":"cb_services","path":"scripts/cb_services/cb_services.yy",},},

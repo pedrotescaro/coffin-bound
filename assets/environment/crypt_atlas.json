@@ -1,0 +1,704 @@
+{
+  "generator": "tools/arte/gerar_cenario.js",
+  "editor": "LibreSprite 1.1-dev --batch --script",
+  "palette": "Coffin Gothic 24",
+  "tile_sheet": {
+    "image": "crypt_tiles.png",
+    "source": "crypt_tiles.aseprite",
+    "width": 128,
+    "height": 128,
+    "cell": [
+      16,
+      16
+    ],
+    "columns": 8,
+    "tiles": [
+      {
+        "index": 0,
+        "name": "empty",
+        "x": 0,
+        "y": 0,
+        "w": 16,
+        "h": 16,
+        "role": "empty"
+      },
+      {
+        "index": 1,
+        "name": "top_left",
+        "x": 16,
+        "y": 0,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 2,
+        "name": "top_mid_a",
+        "x": 32,
+        "y": 0,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 3,
+        "name": "top_mid_b",
+        "x": 48,
+        "y": 0,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 4,
+        "name": "top_right",
+        "x": 64,
+        "y": 0,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 5,
+        "name": "fill_a",
+        "x": 80,
+        "y": 0,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 6,
+        "name": "fill_b",
+        "x": 96,
+        "y": 0,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 7,
+        "name": "fill_moss",
+        "x": 112,
+        "y": 0,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 8,
+        "name": "edge_left",
+        "x": 0,
+        "y": 16,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 9,
+        "name": "edge_right",
+        "x": 16,
+        "y": 16,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 10,
+        "name": "bottom_left",
+        "x": 32,
+        "y": 16,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 11,
+        "name": "bottom_mid",
+        "x": 48,
+        "y": 16,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 12,
+        "name": "bottom_right",
+        "x": 64,
+        "y": 16,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 13,
+        "name": "cracked_fill",
+        "x": 80,
+        "y": 16,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 14,
+        "name": "ledge_thin_left",
+        "x": 96,
+        "y": 16,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 15,
+        "name": "ledge_thin_mid",
+        "x": 112,
+        "y": 16,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 16,
+        "name": "ledge_thin_right",
+        "x": 0,
+        "y": 32,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 17,
+        "name": "pillar_cap",
+        "x": 16,
+        "y": 32,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 18,
+        "name": "pillar_body",
+        "x": 32,
+        "y": 32,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 19,
+        "name": "pillar_foot",
+        "x": 48,
+        "y": 32,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 20,
+        "name": "moss_overlay",
+        "x": 64,
+        "y": 32,
+        "w": 16,
+        "h": 16,
+        "role": "overlay"
+      },
+      {
+        "index": 21,
+        "name": "ornament_rune",
+        "x": 80,
+        "y": 32,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 22,
+        "name": "drain",
+        "x": 96,
+        "y": 32,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 23,
+        "name": "dark_slab",
+        "x": 112,
+        "y": 32,
+        "w": 16,
+        "h": 16,
+        "role": "background"
+      },
+      {
+        "index": 24,
+        "name": "background_brick_a",
+        "x": 0,
+        "y": 48,
+        "w": 16,
+        "h": 16,
+        "role": "background"
+      },
+      {
+        "index": 25,
+        "name": "background_brick_b",
+        "x": 16,
+        "y": 48,
+        "w": 16,
+        "h": 16,
+        "role": "background"
+      },
+      {
+        "index": 26,
+        "name": "background_brick_c",
+        "x": 32,
+        "y": 48,
+        "w": 16,
+        "h": 16,
+        "role": "background"
+      },
+      {
+        "index": 27,
+        "name": "basalt_chipped",
+        "x": 48,
+        "y": 48,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 28,
+        "name": "background_moss",
+        "x": 64,
+        "y": 48,
+        "w": 16,
+        "h": 16,
+        "role": "background"
+      },
+      {
+        "index": 29,
+        "name": "hanging_root",
+        "x": 80,
+        "y": 48,
+        "w": 16,
+        "h": 16,
+        "role": "overlay"
+      },
+      {
+        "index": 30,
+        "name": "chain",
+        "x": 96,
+        "y": 48,
+        "w": 16,
+        "h": 16,
+        "role": "overlay"
+      },
+      {
+        "index": 31,
+        "name": "iron_stud",
+        "x": 112,
+        "y": 48,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 32,
+        "name": "stone_variant_32",
+        "x": 0,
+        "y": 64,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 33,
+        "name": "stone_variant_33",
+        "x": 16,
+        "y": 64,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 34,
+        "name": "stone_variant_34",
+        "x": 32,
+        "y": 64,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 35,
+        "name": "stone_variant_35",
+        "x": 48,
+        "y": 64,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 36,
+        "name": "stone_variant_36",
+        "x": 64,
+        "y": 64,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 37,
+        "name": "stone_variant_37",
+        "x": 80,
+        "y": 64,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 38,
+        "name": "stone_variant_38",
+        "x": 96,
+        "y": 64,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 39,
+        "name": "stone_variant_39",
+        "x": 112,
+        "y": 64,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 40,
+        "name": "stone_variant_40",
+        "x": 0,
+        "y": 80,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 41,
+        "name": "stone_variant_41",
+        "x": 16,
+        "y": 80,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 42,
+        "name": "stone_variant_42",
+        "x": 32,
+        "y": 80,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 43,
+        "name": "stone_variant_43",
+        "x": 48,
+        "y": 80,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 44,
+        "name": "stone_variant_44",
+        "x": 64,
+        "y": 80,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 45,
+        "name": "stone_variant_45",
+        "x": 80,
+        "y": 80,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 46,
+        "name": "stone_variant_46",
+        "x": 96,
+        "y": 80,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 47,
+        "name": "stone_variant_47",
+        "x": 112,
+        "y": 80,
+        "w": 16,
+        "h": 16,
+        "role": "terrain"
+      },
+      {
+        "index": 48,
+        "name": "background_variant_48",
+        "x": 0,
+        "y": 96,
+        "w": 16,
+        "h": 16,
+        "role": "background"
+      },
+      {
+        "index": 49,
+        "name": "background_variant_49",
+        "x": 16,
+        "y": 96,
+        "w": 16,
+        "h": 16,
+        "role": "background"
+      },
+      {
+        "index": 50,
+        "name": "background_variant_50",
+        "x": 32,
+        "y": 96,
+        "w": 16,
+        "h": 16,
+        "role": "background"
+      },
+      {
+        "index": 51,
+        "name": "background_variant_51",
+        "x": 48,
+        "y": 96,
+        "w": 16,
+        "h": 16,
+        "role": "background"
+      },
+      {
+        "index": 52,
+        "name": "background_variant_52",
+        "x": 64,
+        "y": 96,
+        "w": 16,
+        "h": 16,
+        "role": "background"
+      },
+      {
+        "index": 53,
+        "name": "background_variant_53",
+        "x": 80,
+        "y": 96,
+        "w": 16,
+        "h": 16,
+        "role": "background"
+      },
+      {
+        "index": 54,
+        "name": "background_variant_54",
+        "x": 96,
+        "y": 96,
+        "w": 16,
+        "h": 16,
+        "role": "background"
+      },
+      {
+        "index": 55,
+        "name": "background_variant_55",
+        "x": 112,
+        "y": 96,
+        "w": 16,
+        "h": 16,
+        "role": "background"
+      },
+      {
+        "index": 56,
+        "name": "background_variant_56",
+        "x": 0,
+        "y": 112,
+        "w": 16,
+        "h": 16,
+        "role": "background"
+      },
+      {
+        "index": 57,
+        "name": "background_variant_57",
+        "x": 16,
+        "y": 112,
+        "w": 16,
+        "h": 16,
+        "role": "background"
+      },
+      {
+        "index": 58,
+        "name": "background_variant_58",
+        "x": 32,
+        "y": 112,
+        "w": 16,
+        "h": 16,
+        "role": "background"
+      },
+      {
+        "index": 59,
+        "name": "background_variant_59",
+        "x": 48,
+        "y": 112,
+        "w": 16,
+        "h": 16,
+        "role": "background"
+      },
+      {
+        "index": 60,
+        "name": "background_variant_60",
+        "x": 64,
+        "y": 112,
+        "w": 16,
+        "h": 16,
+        "role": "background"
+      },
+      {
+        "index": 61,
+        "name": "background_variant_61",
+        "x": 80,
+        "y": 112,
+        "w": 16,
+        "h": 16,
+        "role": "background"
+      },
+      {
+        "index": 62,
+        "name": "background_variant_62",
+        "x": 96,
+        "y": 112,
+        "w": 16,
+        "h": 16,
+        "role": "background"
+      },
+      {
+        "index": 63,
+        "name": "background_variant_63",
+        "x": 112,
+        "y": 112,
+        "w": 16,
+        "h": 16,
+        "role": "background"
+      }
+    ]
+  },
+  "decor_sheet": {
+    "image": "crypt_decor.png",
+    "source": "crypt_decor.aseprite",
+    "width": 256,
+    "height": 192,
+    "cell": [
+      64,
+      96
+    ],
+    "columns": 4,
+    "modules": [
+      {
+        "name": "arch",
+        "x": 0,
+        "y": 0,
+        "w": 64,
+        "h": 96,
+        "origin": [
+          0,
+          0
+        ],
+        "role": "background_decoration"
+      },
+      {
+        "name": "stained_glass",
+        "x": 64,
+        "y": 0,
+        "w": 64,
+        "h": 96,
+        "origin": [
+          0,
+          0
+        ],
+        "role": "background_decoration"
+      },
+      {
+        "name": "pillar",
+        "x": 128,
+        "y": 0,
+        "w": 64,
+        "h": 96,
+        "origin": [
+          0,
+          0
+        ],
+        "role": "background_decoration"
+      },
+      {
+        "name": "iron_gate",
+        "x": 192,
+        "y": 0,
+        "w": 64,
+        "h": 96,
+        "origin": [
+          0,
+          0
+        ],
+        "role": "background_decoration"
+      },
+      {
+        "name": "banner",
+        "x": 0,
+        "y": 96,
+        "w": 64,
+        "h": 96,
+        "origin": [
+          0,
+          0
+        ],
+        "role": "background_decoration"
+      },
+      {
+        "name": "tombstones",
+        "x": 64,
+        "y": 96,
+        "w": 64,
+        "h": 96,
+        "origin": [
+          0,
+          0
+        ],
+        "role": "background_decoration"
+      },
+      {
+        "name": "roots",
+        "x": 128,
+        "y": 96,
+        "w": 64,
+        "h": 96,
+        "origin": [
+          0,
+          0
+        ],
+        "role": "background_decoration"
+      },
+      {
+        "name": "urn_crystals",
+        "x": 192,
+        "y": 96,
+        "w": 64,
+        "h": 96,
+        "origin": [
+          0,
+          0
+        ],
+        "role": "background_decoration"
+      }
+    ]
+  },
+  "note": "Arte visual apenas. A geometria de colisão pertence à room/objetos existentes."
+}

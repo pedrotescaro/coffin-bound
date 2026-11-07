@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.2 — 2026-11-06
+
+- Rosto do vampiro redesenhado no LibreSprite: face maior, olhos rubi, volumes e presas legíveis.
+- Novos atlas góticos e composição do mapa com arcos, colunas, vitrais, estandartes e mausoléu.
+- Materiais de travessia mais claros, arquitetura de fundo escura e piso antes invisível texturizado.
+- Percurso, colisores, armadilhas e checkpoints preservados; camadas visuais antigas mantidas ocultas.
+- Fontes editáveis e geradores reproduzíveis para retrato, atlas e mapa.
+
 ## 0.1.1 — 2026-11-06
 
 - Caixa de diálogo com moldura gótica, joias, separadores, placa do falante e rodapé de avanço.

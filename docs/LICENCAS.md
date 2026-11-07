@@ -14,6 +14,7 @@ o código próprio; não substitui os avisos de bibliotecas nem atribui uma lice
 | `datafiles/gamecontrollerdb.txt` | zlib, SDL_GameControllerDB / Sam Lantinga | [Licença](../licenses/SDL_GameControllerDB-zlib.txt) |
 | Nove WAVs originais em `sounds/snd_cb_*/` | CC0-1.0, Pedro Tescaro | [Dedicação](../licenses/Audio-CC0.txt), [manifesto](../assets/audio_manifest.json) |
 | Novo retrato do vampiro, fonte LibreSprite e prévias em `assets/dialogue/` e `spr_portrait_vampire` | Arte original criada para Coffin Bound nesta etapa; nenhuma licença adicional de reutilização declarada; excluída da GPL do código | [Produção e fonte editável](DIALOGOS.md) |
+| Cenário novo, atlas e fontes LibreSprite em `assets/environment/` e `spr_crypt_map` | Arte original criada para Coffin Bound; nenhuma licença adicional de reutilização declarada; excluída da GPL do código | [Rosto e mapa](ROSTO_E_MAPA.md) |
 | Paleta Coffin Gothic 24 | Paleta definida nesta preparação; não modifica direitos das imagens | [Paleta](../assets/palette/README.md) |
 | Sprites, tiles, backgrounds, HUD e derivações/exportações/prévia | Autoria e licença original ainda não documentadas; excluídos da GPL do código | Confirmar procedência e permissão com o titular |
 | Prefabs/filtros fornecidos com GameMaker | Termos próprios da distribuição GameMaker; nenhuma relicença GPL é atribuída aqui | Manter metadados e observar os termos da instalação |

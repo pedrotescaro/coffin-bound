@@ -19,6 +19,14 @@ try {
     $portraitPreviewArguments = @('--batch', ('"' + (Join-Path $portraitOutput 'vampire_portrait.png') + '"'), '--scale', '3', '--save-as', ('"' + (Join-Path $portraitOutput 'vampire_portrait_preview.png') + '"'))
     $portraitPreviewProcess = Start-Process -FilePath $LibreSprite -ArgumentList $portraitPreviewArguments -WorkingDirectory $portraitRoot -WindowStyle Hidden -Wait -PassThru
     if ($portraitPreviewProcess.ExitCode -ne 0) { throw 'Falha na prévia nearest 3x.' }
+    $portraitFaceCrop = Join-Path $portraitWork 'face-crop.png'
+    # LibreSprite aplica escala antes de crop em um mesmo comando; separar as etapas.
+    $portraitFaceArguments = @('--batch', ('"' + (Join-Path $portraitOutput 'vampire_portrait.png') + '"'), '--crop', '17,16,54,62', '--save-as', ('"' + $portraitFaceCrop + '"'))
+    $portraitFaceProcess = Start-Process -FilePath $LibreSprite -ArgumentList $portraitFaceArguments -WorkingDirectory $portraitRoot -WindowStyle Hidden -Wait -PassThru
+    if ($portraitFaceProcess.ExitCode -ne 0) { throw 'Falha no recorte de prévia do rosto.' }
+    $portraitFacePreviewArguments = @('--batch', ('"' + $portraitFaceCrop + '"'), '--scale', '4', '--save-as', ('"' + (Join-Path $portraitOutput 'vampire_face_preview.png') + '"'))
+    $portraitFacePreviewProcess = Start-Process -FilePath $LibreSprite -ArgumentList $portraitFacePreviewArguments -WorkingDirectory $portraitRoot -WindowStyle Hidden -Wait -PassThru
+    if ($portraitFacePreviewProcess.ExitCode -ne 0) { throw 'Falha na prévia do rosto nearest 4x.' }
     $portraitSource = Join-Path $portraitOutput 'vampire_portrait.png'
     $portraitHeader = [IO.File]::ReadAllBytes($portraitSource)
     # PNG usa inteiros big-endian no IHDR. Somente leitura; pixels são do LibreSprite.
@@ -43,4 +51,4 @@ try {
 } finally {
     $env:APPDATA = $portraitPriorAppData
 }
-Write-Output 'Retrato 88x96 e fonte ASEprite gerados no LibreSprite; prévia nearest 3x: 264x288.'
+Write-Output 'Retrato 88x96 e fonte ASEprite gerados no LibreSprite; prévia nearest 3x: 264x288; rosto nearest 4x: 216x248.'
