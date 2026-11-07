@@ -26,7 +26,7 @@ for level in range(1,4):
  paint=grids[names[1]]
  for k,c in enumerate(range(-3,120,15)):
   r=7+(k*3+level)%6
-  stamp('pilar_'+str(1+(k+level)%4),c,r)
+  stamp(['pilar_1','pilar_2','pilar_3','pilar_raizes','pilar_partido'][(k+level)%5],c,r)
   for row in range(r+10,34,4):stamp('apoio',c+1,row)
   if k%3!=1:stamp('janela_'+str(1+(k+level)%3),c+5,r-2)
   else:anim.append(['estandarte_'+str(1+(k+level)%5),(c+6)*16,(r-1)*16,'Nave_Animada'])
@@ -67,8 +67,15 @@ for level in range(1,4):
   l=copy.deepcopy(template);l.update(name=name,depth=depth,visible=True,gridX=16,gridY=16,effectEnabled=False,effectType=None,properties=[],tilesetId=dict(name='ts_modular',path='tilesets/ts_modular/ts_modular.yy'),tiles=dict(SerialiseWidth=120,SerialiseHeight=34,TileCompressedData=compress(grids[name])));l['%Name']=name;layers.append(l)
  layers.sort(key=lambda l:l['depth']);write(path,room)
  flags.append('if (room == rm_level'+str(level)+') {\n'+'\n'.join(f'    layer_sprite_create("{layer}", {x}, {y}, spr_mod_{name});' for name,x,y,layer in anim)+'\n}')
- plans.append(dict(level=level,grids=list(grids.values()),anim=anim))
-p=ROOT/'objects/obj_level_controller/Create_0.gml';s=p.read_text().split('// Decoração modular por room.')[0];p.write_text(s.rstrip()+'\n\n// Decoração modular por room.\nlayer_create(545,"Nave_Animada");\nlayer_create(345,"Reliquias_Animadas");\n'+'\n'.join(flags)+'\n')
+ pose=json.loads(subprocess.check_output(['node','--preserve-symlinks-main',str(ROOT/'tools/arte/pose_desafios.cjs'),str(level-1)],text=True))
+ props=[]
+ for i in instances:
+  name=i['objectId']['name']
+  if name not in ('obj_spike','obj_player','obj_coffin'):continue
+  obj=read(ROOT/i['objectId']['path']);sprite=read(ROOT/obj['spriteId']['path'])
+  props.append(dict(name=name,x=i['x'],y=i['y'],sx=i['scaleX'],sy=i['scaleY'],ox=sprite['sequence']['xorigin'],oy=sprite['sequence']['yorigin'],path='sprites/'+sprite['name']+'/'+sprite['frames'][0]['name']+'.png'))
+ plans.append(dict(level=level,grids=list(grids.values()),anim=anim,pose=pose,props=props))
+p=ROOT/'objects/obj_level_controller/Create_0.gml';s=p.read_text(encoding='utf-8').split('// Modular room decoration.')[0];p.write_text(s.rstrip()+'\n\n// Modular room decoration.\nlayer_create(545,"Nave_Animada");\nlayer_create(345,"Reliquias_Animadas");\n'+'\n'.join(flags)+'\n',encoding='utf-8')
 work=ROOT/'tools/arte/.work/pecas';script=work/'preview.js';script.write_text('var rooms='+json.dumps(plans)+';var kit='+json.dumps(kit)+';\n'+(ROOT/'tools/arte/preview_modular.js').read_text())
 res=subprocess.run([sys.argv[1],'--batch','--script',str(script)],cwd=ROOT,env=dict(os.environ,APPDATA=str(work)),capture_output=True)
 if res.returncode or b'Error:' in res.stdout+res.stderr:raise RuntimeError(res.stdout[-500:])

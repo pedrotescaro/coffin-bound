@@ -10,12 +10,12 @@ add_platform=function(_x,_y,_w,_kind,_range,_speed) {
 add_platform(272,400,64,"oneway",0,0);
 if (_level>=1) {
     add_platform(352,368,80,"moving",96,0.025);
-    add_platform(1328,320,64,"falling",0,0);
-    add_platform(1424,288,64,"falling",0,0);
+    add_platform(1328,304,48,"falling",0,0);
+    add_platform(1424,272,48,"falling",0,0);
 }
 if (_level==2) {
-    add_platform(448,336,64,"falling",0,0);
-    add_platform(1664,288,64,"moving",56,0.035);
+    add_platform(448,320,48,"falling",0,0);
+    add_platform(1664,304,48,"moving",56,0.035);
 }
 hazards=[];
 add_hazard=function(_x,_y,_kind,_range,_phase) {
@@ -26,7 +26,7 @@ if (_level>=1) {
     add_hazard(760,180,"pendulum",88,0);
     add_hazard(1460,240,"blade",48,60);
     add_hazard(1540,252,"bat",64,0);
-    add_hazard(1248,(_level==2)?326:310,"skeleton",36,0);
+    add_hazard(1268,(_level==2)?326:310,"skeleton",24,0);
 }
 if (_level==2) {
     add_hazard(540,304,"saw",54,40);

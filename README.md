@@ -1,5 +1,9 @@
 # Coffin Bound
 
+Versão 0.3.0. As três fases usam peças individuais, quatro verdes e camadas com parallax.
+
+![Nave](assets/pecas/cena_nave.png)
+
 ![Tileset modular da catedral](assets/tileset/catalogue.png)
 
 *Atlas modular 0.2.4: base de 16px, 16 verdes, peças editáveis no LibreSprite e tileset nativo no GameMaker. [Como usar na IDE](docs/TILESET_CATEDRAL.md).*

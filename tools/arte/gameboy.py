@@ -26,6 +26,10 @@ def audit():
                 for amount,(r,g,b,a) in frame.convert('RGBA').getcolors(frame.width*frame.height):
                     if a and ((r,g,b) not in COLORS or a!=255):
                         n+=amount
+                        rgba=frame.convert('RGBA')
+                        for y in range(frame.height):
+                            for x in range(frame.width):
+                                if rgba.getpixel((x,y))==(r,g,b,a):print(p.relative_to(ROOT),im.tell(),x,y,(r,g,b,a))
                         print(p.relative_to(ROOT), 'frame',im.tell(),'RGBA',(r,g,b,a),'pixels',amount)
         total+=n
         if n:bad.append({'file':p.relative_to(ROOT).as_posix(),'pixels':n})

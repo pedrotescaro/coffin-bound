@@ -1,5 +1,9 @@
 # Coffin Bound
 
+Version 0.3.0 uses individual pieces, four greens and parallax tile layers in all three stages.
+
+![Nave](assets/pecas/cena_nave.png)
+
 ![Modular cathedral tileset](assets/tileset/catalogue.png)
 
 *Version 0.2.4 modular atlas: 16px grid, 16 greens, editable LibreSprite source and native GameMaker tileset. [Editor guide](docs/TILESET_CATEDRAL.md), in Portuguese.*
