@@ -52,3 +52,17 @@ estão em `assets/cathedral/`; os PNGs registrados são sincronizados mantendo I
 Se executar também geradores antigos de cenário/revestimento, execute **catedral_detalhada.py
 por último**: ele produz os fundos atuais. Regenerar sobrescreve edições manuais das fontes.
 Veja [entrega e limitações](../../docs/CATEDRAL_DETALHADA.md).
+
+## Tileset modular atual (0.2.4)
+
+```powershell
+python tools/arte/tileset_catedral.py --libresprite 'CAMINHO/libresprite.exe'
+```
+
+Exporta o atlas/fonte 1024×512 e registra `spr_tileset_catedral`, `ts_catedral_16` e duas
+camadas nativas nas três rooms. A camada de frente é repintada da união dos colisores e
+a camada decorativa é reinicializada vazia. **Não execute o gerador após pintar manualmente
+essas camadas sem preservar suas edições**. IDs dos recursos são mantidos em reexecuções.
+As prévias são composições estáticas do LibreSprite. Nomes de entrada temporários sem
+números evitam a importação acidental dos fundos como sequência de animação.
+[Guia da IDE](../../docs/TILESET_CATEDRAL.md).

@@ -1,0 +1,19 @@
+{
+  "rooms": [
+    {
+      "room": 1,
+      "painted_cells": 265,
+      "half_tiles": 4
+    },
+    {
+      "room": 2,
+      "painted_cells": 455,
+      "half_tiles": 18
+    },
+    {
+      "room": 3,
+      "painted_cells": 459,
+      "half_tiles": 20
+    }
+  ]
+}

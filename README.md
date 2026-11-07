@@ -1,5 +1,9 @@
 # Coffin Bound
 
+![Tileset modular da catedral](assets/tileset/catalogue.png)
+
+*Atlas modular 0.2.4: base de 16px, 16 verdes, peças editáveis no LibreSprite e tileset nativo no GameMaker. [Como usar na IDE](docs/TILESET_CATEDRAL.md).*
+
 ![Catedral com sombras e 16 verdes](assets/cathedral/level2_nave.png)
 
 *Cenário 0.2.3 adaptado da referência fornecida, com 16 tons no estilo Game Boy. Prévia estática; [produção e testes](docs/CATEDRAL_DETALHADA.md).*

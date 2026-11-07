@@ -642,6 +642,8 @@
     {"id":{"name":"ts_fundo","path":"tilesets/ts_fundo/ts_fundo.yy",},},
     {"id":{"name":"ts_grass","path":"tilesets/ts_grass/ts_grass.yy",},},
     {"id":{"name":"ts_props","path":"tilesets/ts_props/ts_props.yy",},},
+    {"id": {"name": "spr_tileset_catedral", "path": "sprites/spr_tileset_catedral/spr_tileset_catedral.yy"}},
+    {"id": {"name": "ts_catedral_16", "path": "tilesets/ts_catedral_16/ts_catedral_16.yy"}},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

@@ -1,5 +1,9 @@
 # Coffin Bound
 
+![Modular cathedral tileset](assets/tileset/catalogue.png)
+
+*Version 0.2.4 modular atlas: 16px grid, 16 greens, editable LibreSprite source and native GameMaker tileset. [Editor guide](docs/TILESET_CATEDRAL.md), in Portuguese.*
+
 ![Cathedral with shadows and 16 greens](assets/cathedral/level2_nave.png)
 
 *Version 0.2.3 scenery adapted from the supplied reference with a 16-green Game Boy style palette. Static art preview; [production and manual checks](docs/CATEDRAL_DETALHADA.md), in Portuguese.*

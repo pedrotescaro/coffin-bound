@@ -1,0 +1,31 @@
+{
+  "atlas_size": [
+    1024,
+    512
+  ],
+  "tile_size": 16,
+  "empty_tile_transparent": true,
+  "rooms": [
+    {
+      "room": 1,
+      "decoded_cells": 4080,
+      "visual_solid_mask_mismatches": 0,
+      "existing_layers_and_instances_unchanged": true,
+      "decorative_layer_empty": true
+    },
+    {
+      "room": 2,
+      "decoded_cells": 4080,
+      "visual_solid_mask_mismatches": 0,
+      "existing_layers_and_instances_unchanged": true,
+      "decorative_layer_empty": true
+    },
+    {
+      "room": 3,
+      "decoded_cells": 4080,
+      "visual_solid_mask_mismatches": 0,
+      "existing_layers_and_instances_unchanged": true,
+      "decorative_layer_empty": true
+    }
+  ]
+}

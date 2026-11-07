@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.4 — 2026-11-07
+
+- Tileset modular 1024×512 adaptado da referência: materiais, pilares, arcos, janelas, raízes, grades e decoração.
+- Recurso nativo ts_catedral_16, grade de 16px, tile0 vazio e borda de textura de 2px.
+- Camada Tiles_Catedral_Frente aplicada aos sólidos das três fases; meios tiles preservam os túneis.
+- Camada Tiles_Catedral_Decor pronta para pintura de módulos no editor.
+- Fonte LibreSprite, catálogo PNG e manifesto de módulos; física/instâncias anteriores preservadas.
+
 ## 0.2.3 — 2026-11-07
 
 - Cenário adaptado da referência detalhada fornecida: janelas, colunas esculpidas, raízes, teias e pedra em relevo.

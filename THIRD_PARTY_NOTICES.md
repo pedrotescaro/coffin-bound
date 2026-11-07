@@ -30,3 +30,6 @@ provenance and reuse terms have not been documented. They remain outside the cod
 
 The 0.2.3 cathedral backgrounds adapt another reference image supplied by Pedro Tescaro.
 Its original provenance/reuse terms remain undocumented; the code license does not cover it.
+
+The 0.2.4 modular cathedral tileset adapts another image supplied by Pedro Tescaro. Its
+original provenance/reuse terms remain undocumented; it is outside the code license.

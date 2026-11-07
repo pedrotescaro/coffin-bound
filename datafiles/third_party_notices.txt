@@ -356,3 +356,6 @@ Original provenance/reuse terms remain undocumented; excluded from the code lice
 
 0.2.3 cathedral backgrounds: adapted from a reference supplied by Pedro Tescaro.
 Original provenance/reuse terms remain undocumented; excluded from the code license.
+
+0.2.4 modular cathedral tileset: adapted from a reference supplied by Pedro Tescaro.
+Original provenance/reuse terms remain undocumented; excluded from the code license.
