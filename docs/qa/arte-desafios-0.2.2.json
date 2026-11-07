@@ -1,0 +1,39 @@
+{
+  "level_art": [
+    {
+      "room": 1,
+      "changed_pixels": 36464,
+      "pixels_changed_outside_solids": 0
+    },
+    {
+      "room": 2,
+      "changed_pixels": 70785,
+      "pixels_changed_outside_solids": 0
+    },
+    {
+      "room": 3,
+      "changed_pixels": 70616,
+      "pixels_changed_outside_solids": 0
+    }
+  ],
+  "spike_alpha_bbox_before": [
+    0,
+    2,
+    16,
+    16
+  ],
+  "spike_alpha_bbox_after": [
+    0,
+    2,
+    16,
+    16
+  ],
+  "unchanged_physics_files": [
+    "objects/obj_challenges/Create_0.gml",
+    "objects/obj_challenges/Step_1.gml",
+    "rooms/rm_level1/rm_level1.yy",
+    "rooms/rm_level2/rm_level2.yy",
+    "rooms/rm_level3/rm_level3.yy",
+    "sprites/spr_spike/spr_spike.yy"
+  ]
+}

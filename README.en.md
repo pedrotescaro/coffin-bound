@@ -22,6 +22,10 @@ The project contains one level with three checkpoints, menus, pause, a death scr
 
 **Release status:** publication preparation. Static checks and regression coverage are recorded in [Phase deliveries](docs/ENTREGAS.md), in Portuguese. Full playthrough, visuals, audio and runner performance still need approval in the [QA checklist](docs/QA.md). The original artwork's provenance and redistribution license remain undocumented and are excluded from the code's GPL. The owner requested publication of the repository; this does not grant an additional reuse license for those images.
 
+![Platforms, enemies and traps artwork](assets/challenges/preview_sheet.png)
+
+*Static asset preview for 0.2.2, drawn/exported in LibreSprite with four colors. [Files and pending manual checks](docs/PLATAFORMAS_INIMIGOS.md), in Portuguese.*
+
 ## Default controls
 
 | Action | Keyboard | Xbox-style controller |

@@ -22,6 +22,10 @@ O projeto contém três fases com checkpoints, menu, pausa, tela de morte, créd
 
 **Estado da versão:** preparação para publicação. Os testes estáticos e as regressões estão descritos em [Entregas por fase](docs/ENTREGAS.md). A aprovação do percurso completo, do visual, do áudio e da performance no runner está pendente no [checklist de QA](docs/QA.md). A origem/licença das artes originais continua por documentar e não está incluída na GPL do código. A publicação do repositório foi solicitada pelo titular; isso não concede uma licença adicional para reutilizar essas imagens.
 
+![Arte de plataformas, inimigos e armadilhas](assets/challenges/preview_sheet.png)
+
+*Prévia estática dos sprites 0.2.2, desenhados/exportados no LibreSprite em quatro cores. [Arquivos e testes manuais](docs/PLATAFORMAS_INIMIGOS.md).*
+
 ## Controles padrão
 
 | Ação | Teclado | Controle com layout Xbox |

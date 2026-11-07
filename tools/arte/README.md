@@ -19,3 +19,17 @@ O ajuste geométrico é idempotente: idle/walk só se deslocam quando ainda têm
 A versão 1.1-dev retorna `app.activeSprite=null` no batch, por isso o script usa `app.open(caminho).sprite`. Esse comportamento é consistente com a [implementação da API de LibreSprite 1.1](https://github.com/LibreSprite/LibreSprite/blob/v1.1/src/app/script/api/app_script.cpp). A API de pixels é documentada no [código oficial de Image](https://github.com/LibreSprite/LibreSprite/blob/v1.1/src/app/script/api/image_script.cpp).
 
 Não se alteram fontes, o sprite branco técnico do Scribble ou nomes de assets. O pipeline não compila o projeto nem confirma o resultado visual na IDE.
+
+## Plataformas, inimigos e armadilhas (0.2.2)
+
+```powershell
+python tools/arte/polir_desafios.py --libresprite 'CAMINHO/libresprite.exe'
+python tools/arte/gameboy.py
+```
+
+O LibreSprite desenha o atlas 256×160 (células de 32), espinho 16×16 e revestimento dos
+sólidos das três rooms. As áreas fora dos sólidos são preservadas; a geometria não é alterada.
+O wrapper atualiza os PNGs composite/layer mantendo os IDs existentes. Fontes editáveis e
+prévias estáticas ficam em `assets/challenges/`. Regenerar sobrescreve edições manuais.
+A máscara alfa do espinho conserva os limites anteriores (0,2)–(15,15).
+Veja [a entrega e o roteiro manual](../../docs/PLATAFORMAS_INIMIGOS.md).

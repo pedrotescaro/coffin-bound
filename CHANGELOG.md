@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.2 — 2026-11-07
+
+- Plataformas fixas com blocos maiores, cornijas, peças de canto esculpidas e musgo lateral.
+- Passarelas, plataformas móveis e frágeis com arte modular própria, sem esticar pixels.
+- Morcegos hostis e esqueletos com quatro poses; serras, machados de pêndulo e lâminas distintas.
+- Lâmina recolhida e aviso visual; pedras frágeis com rachaduras/farelos durante a contagem existente.
+- Espinhos de metal facetado repetidos em peças de 16px; limites da máscara preservados.
+- Quatro verdes, física/posições/ciclos preservados; teste visual no runner pendente.
+
 ## 0.2.1 — 2026-11-07
 
 - Menu com floresta e ruínas da referência fornecida, título em blocos e painéis legíveis.

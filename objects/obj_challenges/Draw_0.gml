@@ -1,40 +1,59 @@
-/// @description Silhuetas de armadilha e aviso antes de ativar; somente quatro verdes.
+/// @description Arte modular; poses discretas acompanham o tick congelado pela pausa.
 draw_set_alpha(1);
-for(var _i=0;_i<array_length(platforms);_i++) {
-    var _p=platforms[_i];if(_p.y>room_height+32)continue;
-    draw_set_color(make_color_rgb(15,56,15));
-    draw_rectangle(_p.x,_p.y,_p.x+_p.w-1,_p.y+7,false);
-    draw_set_color(make_color_rgb(139,172,15));
-    draw_rectangle(_p.x,_p.y,_p.x+_p.w-1,_p.y+2,false);
-    draw_set_color(make_color_rgb(48,98,48));
-    for(var _j=8;_j<_p.w;_j+=16)draw_line(_p.x+_j,_p.y+3,_p.x+_j+3,_p.y+6);
-    if(_p.timer>0){draw_set_color(make_color_rgb(155,188,15));draw_text(_p.x,_p.y+8,"!");}
-}
-for(var _i=0;_i<array_length(hazards);_i++) {
-    var _h=hazards[_i];
-    var _active=_h.kind!="blade" || ((tick+_h.phase) mod 150)>=50;
-    draw_set_color(make_color_rgb(48,98,48));
-    if(_h.kind=="pendulum")draw_line(_h.bx,_h.by,_h.x,_h.y);
-    if(_h.kind=="bat") {
-        draw_sprite_ext(spr_bat,0,_h.x,_h.y+12,1,1,0,c_white,1);
-    }else if(_h.kind=="skeleton") {
-        draw_set_color(make_color_rgb(155,188,15));
-        draw_rectangle(_h.x-4,_h.y-10,_h.x+4,_h.y-3,false);
-        draw_line(_h.x,_h.y-2,_h.x,_h.y+6);
-        draw_line(_h.x-6,_h.y,_h.x+6,_h.y);
-        draw_line(_h.x,_h.y+6,_h.x-4,_h.y+11);
-        draw_line(_h.x,_h.y+6,_h.x+4,_h.y+11);
-        draw_set_color(make_color_rgb(15,56,15));draw_point(_h.x-2,_h.y-7);draw_point(_h.x+2,_h.y-7);
-    }else{
-        draw_set_color(_active?make_color_rgb(155,188,15):make_color_rgb(48,98,48));
-        draw_circle(_h.x,_h.y,9,false);
-        for(var _j=0;_j<8;_j++){
-            var _a=tick*3+_j*45;
-            draw_triangle(_h.x+lengthdir_x(7,_a-16),_h.y+lengthdir_y(7,_a-16),
-                _h.x+lengthdir_x(13,_a),_h.y+lengthdir_y(13,_a),
-                _h.x+lengthdir_x(7,_a+16),_h.y+lengthdir_y(7,_a+16),false);
+for (var _i=0; _i<array_length(platforms); _i++) {
+    var _p=platforms[_i];
+    if (_p.y>room_height+32) continue;
+    var _base=(_p.kind=="moving") ? 3 : ((_p.kind=="falling") ? 6 : 0);
+    if (_p.timer>0 && ((_p.timer div 4) mod 2)==0) _base=9;
+    for (var _j=0; _j<_p.w; _j+=16) {
+        var _cap=(_j==0) ? 0 : ((_j+16>=_p.w) ? 2 : 1);
+        cb_challenge_tile(_base+_cap,_p.x+_j,_p.y,min(16,_p.w-_j),16);
+    }
+    // Farelos visuais determinísticos: não criam instâncias nem mudam colisões.
+    if (_p.timer>0) {
+        draw_set_color(make_color_rgb(139,172,15));
+        for (var _j=0; _j<3; _j++) {
+            var _cx=round(_p.x+10+_j*17), _cy=round(_p.y+14+(tick+_j*5) mod 9);
+            draw_rectangle(_cx,_cy,_cx+1,_cy+1,false);
         }
-        draw_set_color(make_color_rgb(15,56,15));draw_circle(_h.x,_h.y,3,false);
     }
 }
+for (var _i=0; _i<array_length(hazards); _i++) {
+    var _h=hazards[_i], _t=tick+_h.phase;
+    var _frame=(_t div 7) mod 4;
+    if (_h.kind=="pendulum") {
+        var _length=point_distance(_h.bx,_h.by,_h.x,_h.y);
+        for (var _link=0; _link<_length; _link+=6) {
+            var _amount=_link/max(1,_length);
+            var _lx=round(lerp(_h.bx,_h.x,_amount)), _ly=round(lerp(_h.by,_h.y,_amount));
+            draw_set_color(make_color_rgb(15,56,15));
+            draw_rectangle(_lx-1,_ly,_lx+2,_ly+4,false);
+            draw_set_color(make_color_rgb(139,172,15));
+            draw_line(_lx,_ly,_lx,_ly+2);
+            draw_set_color(make_color_rgb(48,98,48));
+            draw_line(_lx+1,_ly+2,_lx+1,_ly+3);
+        }
+        draw_set_color(make_color_rgb(139,172,15));
+        draw_rectangle(_h.bx-3,_h.by-3,_h.bx+3,_h.by+3,false);
+        draw_set_color(make_color_rgb(15,56,15));
+        draw_rectangle(_h.bx-1,_h.by-1,_h.bx+1,_h.by+1,false);
+    }
+    var _index=20+_frame;
+    var _flip=false;
+    switch (_h.kind) {
+        case "bat": _index=12+_frame; break;
+        case "skeleton":
+            _index=16+_frame;
+            _flip=cos(_t*.03)<0;
+            break;
+        case "pendulum": _index=24+_frame; break;
+        case "blade":
+            var _phase=_t mod 150;
+            _index=(_phase>=50) ? 28+_frame : 32;
+            if (_phase>=25 && ((_phase div 4) mod 2)==0) _index=33;
+            break;
+    }
+    cb_challenge_tile(_index,_h.x-16,_h.y-16,32,32,_flip);
+}
+draw_set_alpha(1);
 draw_set_color(make_color_rgb(155,188,15));

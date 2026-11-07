@@ -112,6 +112,7 @@
   },
   "name":"Coffin Bound final",
   "resources":[
+    {"id": {"name": "spr_challenge_atlas", "path": "sprites/spr_challenge_atlas/spr_challenge_atlas.yy"}},
     {"id":{"name":"fnt_monogram","path":"fonts/fnt_monogram/fnt_monogram.yy",},},
     {"id":{"name":"scribble_fallback_font","path":"fonts/scribble_fallback_font/scribble_fallback_font.yy",},},
     {"id":{"name":"__InputUpdateController","path":"objects/__InputUpdateController/__InputUpdateController.yy",},},

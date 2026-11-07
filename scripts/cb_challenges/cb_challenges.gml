@@ -11,3 +11,10 @@ function cb_oneway_at(_x, _y) {
     }
     return false;
 }
+
+/// @description Recorta peças do atlas sem esticar os pixels ou interpolar poses.
+function cb_challenge_tile(_index, _x, _y, _width=32, _height=32, _flip=false) {
+    draw_sprite_part_ext(spr_challenge_atlas, 0,
+        (_index % 8)*32, floor(_index / 8)*32, _width, _height,
+        round(_x)+(_flip ? _width : 0), round(_y), _flip ? -1 : 1, 1, c_white, 1);
+}
