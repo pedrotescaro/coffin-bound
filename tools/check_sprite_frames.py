@@ -28,4 +28,20 @@ challenge=Image.open(ROOT/'assets/challenges/challenge_atlas.png')
 for index in range(34):
     x,y=index%8*32,index//8*32
     assert x+32<=challenge.width and y+32<=challenge.height,index
+for level in range(1,4):
+    room=read(ROOT/f'rooms/rm_level{level}/rm_level{level}.yy')
+    layers={layer['name']:layer for layer in room['layers']}
+    back=layers['Fundo_Distante']
+    assert back['visible'] and back['htiled'] and back['vtiled']
+    assert back['depth']<layers['Background']['depth']
+    assert back['spriteId']['name']=='spr_bg_parede'
+    for name in ['Nave_Media','Nave_Animada','Ornamentos_Proximos','Reliquias']:
+        layer=layers[name]
+        assert layer['visible'] and layer['resourceType']=='GMRAssetLayer' and layer['assets'],(level,name)
+        for graphic in layer['assets']:
+            assert graphic['scaleX']==graphic['scaleY']==1
+            assert graphic['x']==round(graphic['x']) and graphic['y']==round(graphic['y'])
+    for name in ['Pedra_Distante','Piso_Modular']:
+        assert layers[name]['tiles']['TileDataFormat']==1 and layers[name]['visible']
 print(f'OK {count} frames com dimensões e índices válidos; {len(kit)} recortes modulares íntegros; 34 recortes de obstáculos dentro do atlas.')
+print('OK montagem nativa e cobertura do fundo nas três rooms.')
