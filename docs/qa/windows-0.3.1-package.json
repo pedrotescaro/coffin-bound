@@ -1,9 +1,9 @@
 {
   "archive": "CoffinBound-windows-0.3.1.zip",
-  "sha256": "072d9be4eec17b328917b1ae50e6cf5958bb438fd5d951b0a5ca9651bd9ba5f1",
-  "archive_size": 4890912,
+  "sha256": "1a76359c7c8536f6ad3a3d5ac6fee7d066ed1f98cb5b0ad4fc60da5ac00e8848",
+  "archive_size": 4890848,
   "uncompressed_size": 11332432,
-  "checked_at_utc": "2026-11-07T17:05:42.599437+00:00",
+  "checked_at_utc": "2026-11-07T17:06:40.226745+00:00",
   "package_root": ".",
   "files": [
     {
@@ -21,8 +21,8 @@
     {
       "path": "data.win",
       "size": 1813590,
-      "crc32": "728b02c4",
-      "sha256": "9a79a1950b418d8ae37ed47eff511fcee38ab6376482a99a192e7b380e215abb"
+      "crc32": "72f14af0",
+      "sha256": "d50f94b4612179eff9ed4b9e05309111021e8e143299ca7cd5716b17b1306a60"
     },
     {
       "path": "gamecontrollerdb.txt",

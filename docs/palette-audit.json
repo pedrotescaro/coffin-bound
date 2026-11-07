@@ -1,12 +1,7 @@
 {
   "files_checked": 636,
-  "visible_pixels_outside_palette_or_partial_alpha": 256,
-  "violations": [
-    {
-      "file": "tilesets/ts_modular/output_tileset.png",
-      "pixels": 256
-    }
-  ],
+  "visible_pixels_outside_palette_or_partial_alpha": 0,
+  "violations": [],
   "animation_frames_checked": 639,
   "palette": [
     "#0F380F",
