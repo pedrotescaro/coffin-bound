@@ -100,6 +100,8 @@ for(var n=32;n<64;n++){
  if(n%5===0)moss(3,5);
  if(n%7===0){box(2,11,4,12,n>=48?2:14);line(11,2,13,2,n>=48?3:16);}
 }
+// Bordas lascadas, juntas quebradas e musgo em variantes dedicadas.
+for(var n=20;n<24;n++){tile(n);top(n,true,true);for(var a=0;a<3;a++){box(a,0,a,2-a,0);box(15-a,13+a,15,15,0);}line(6,2,7,6,0);line(7,6,5,10,0);moss(9,11);}
 save('crypt_tiles');
 
 // Arquitetura de fundo: valores contidos deixam as bordas jogáveis mais claras.
