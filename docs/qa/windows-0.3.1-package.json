@@ -1,0 +1,67 @@
+{
+  "archive": "CoffinBound-windows-0.3.1.zip",
+  "sha256": "072d9be4eec17b328917b1ae50e6cf5958bb438fd5d951b0a5ca9651bd9ba5f1",
+  "archive_size": 4890912,
+  "uncompressed_size": 11332432,
+  "checked_at_utc": "2026-11-07T17:05:42.599437+00:00",
+  "package_root": ".",
+  "files": [
+    {
+      "path": "audiogroup_music.dat",
+      "size": 940872,
+      "crc32": "ceb7a132",
+      "sha256": "ec74c62d605cfb75ad12bc8950204c38927de94445cc040daf074d2c2784a42b"
+    },
+    {
+      "path": "CoffinBound.exe",
+      "size": 7931392,
+      "crc32": "c91e0f4e",
+      "sha256": "9f65ababd5015d38ecf9192aa2309048ec8b87248be5140522a07e7eda868249"
+    },
+    {
+      "path": "data.win",
+      "size": 1813590,
+      "crc32": "728b02c4",
+      "sha256": "9a79a1950b418d8ae37ed47eff511fcee38ab6376482a99a192e7b380e215abb"
+    },
+    {
+      "path": "gamecontrollerdb.txt",
+      "size": 589500,
+      "crc32": "73935b04",
+      "sha256": "83dc9a22face43692f3165818f1dfad555b96792c4efdd4f022da84cb1ec0667"
+    },
+    {
+      "path": "GPL-3.0.txt",
+      "size": 35149,
+      "crc32": "97673d00",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "path": "input_license.txt",
+      "size": 2699,
+      "crc32": "edad6e93",
+      "sha256": "526054dac963e3926cb93a8cec0fb7721b588792c682544cbc373ee60cc9ca07"
+    },
+    {
+      "path": "options.ini",
+      "size": 27,
+      "crc32": "bb00e4d2",
+      "sha256": "8a8a8276fdcc014544dc5851bfd7986def326d2b6a5243d55c5da8e32531cafc"
+    },
+    {
+      "path": "scribble_license.txt",
+      "size": 1090,
+      "crc32": "b4ce8c77",
+      "sha256": "86c6d9d02af03870ec686c48a4ccb9d71a258cb25f6ffc57b00e97250325dc1b"
+    },
+    {
+      "path": "third_party_notices.txt",
+      "size": 18113,
+      "crc32": "7fbcb438",
+      "sha256": "554db27b6fb9b3d8340fab763f5995d95269d05fb378b8e8bfe77afff1e64a94"
+    }
+  ],
+  "errors": [],
+  "passed": true,
+  "limits": "Inspeção de arquivos e CRC; não executa o jogo nem valida gameplay, assinatura ou procedência das artes."
+}

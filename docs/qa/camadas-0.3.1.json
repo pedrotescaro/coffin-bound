@@ -1,0 +1,20 @@
+{
+  "rm_level1": {
+    "Pedra_Distante": 2400,
+    "Nave_Media": 566,
+    "Reliquias": 152,
+    "Piso_Modular": 265
+  },
+  "rm_level2": {
+    "Pedra_Distante": 2330,
+    "Nave_Media": 558,
+    "Reliquias": 249,
+    "Piso_Modular": 465
+  },
+  "rm_level3": {
+    "Pedra_Distante": 2388,
+    "Nave_Media": 572,
+    "Reliquias": 239,
+    "Piso_Modular": 469
+  }
+}

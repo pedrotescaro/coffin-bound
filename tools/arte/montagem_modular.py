@@ -2,8 +2,8 @@
 from interface_referencias import ROOT,read,write
 from tileset_catedral import compress,EMPTY
 from pathlib import Path
-import copy,subprocess,os,json,sys
-kit=read(ROOT/'assets/pecas/catalogo.json');plans=[];flags=[]
+import copy,subprocess,os,json,sys,uuid
+kit=read(ROOT/'assets/pecas/catalogo.json');plans=[]
 for level in range(1,4):
  path=ROOT/f'rooms/rm_level{level}/rm_level{level}.yy';room=read(path);layers=room['layers']
  template=copy.deepcopy(next(l for l in layers if l['resourceType']=='GMRTileLayer'))
@@ -62,11 +62,38 @@ for level in range(1,4):
     bits=sum((1<<i) for i,(dx,dy) in enumerate([(0,-1),(1,0),(0,1),(-1,0)]) if inside(x+dx*16,y+8+dy*16))
     m=kit['auto_'+str(bits)];idx=m['y']//16*64+m['x']//16
    paint[r*120+c]=idx
- layers[:]=[l for l in layers if l['name'] not in names]
+ sprite_layers=['Nave_Animada','Reliquias_Animadas']
+ layers[:]=[l for l in layers if l['name'] not in names+sprite_layers]
  for name,depth in zip(names,[750,550,350,180]):
-  l=copy.deepcopy(template);l.update(name=name,depth=depth,visible=True,gridX=16,gridY=16,effectEnabled=False,effectType=None,properties=[],tilesetId=dict(name='ts_modular',path='tilesets/ts_modular/ts_modular.yy'),tiles=dict(SerialiseWidth=120,SerialiseHeight=34,TileCompressedData=compress(grids[name])));l['%Name']=name;layers.append(l)
+  l=copy.deepcopy(template);l.update(name=name,depth=depth,visible=True,gridX=16,gridY=16,effectEnabled=False,effectType=None,properties=[],tilesetId=dict(name='ts_modular',path='tilesets/ts_modular/ts_modular.yy'),tiles=dict(SerialiseWidth=120,SerialiseHeight=34,TileDataFormat=1,TileCompressedData=compress([0 if tile==EMPTY else tile for tile in grids[name]])));l['%Name']=name;layers.append(l)
+ # Salva os sprites animados como elementos nativos para a IDE mostrá-los ao abrir.
+ for layer_name,depth in zip(sprite_layers,[545,345]):
+  asset_layer=copy.deepcopy(template)
+  for key in ('$GMRTileLayer','tiles','tilesetId','x','y'):asset_layer.pop(key,None)
+  asset_layer.update(name=layer_name,depth=depth,visible=True,effectEnabled=False,effectType=None,properties=[],assets=[],resourceType='GMRAssetLayer')
+  asset_layer['$GMRAssetLayer']='';asset_layer['%Name']=layer_name
+  for piece,x,y,target in anim:
+   if target!=layer_name:continue
+   graphic='graphic_'+uuid.uuid5(uuid.NAMESPACE_URL,f'coffin/{level}/{piece}/{x}/{y}').hex[:12]
+   sprite='spr_mod_'+piece
+   asset_layer['assets'].append({'$GMRSpriteGraphic':'v1','%Name':graphic,'name':graphic,'resourceType':'GMRSpriteGraphic','resourceVersion':'2.0','animationSpeed':1.0,'colour':4294967295,'frozen':False,'headPosition':0.0,'ignore':False,'inheritedItemId':None,'inheritItemSettings':False,'rotation':0,'scaleX':1,'scaleY':1,'spriteId':dict(name=sprite,path=f'sprites/{sprite}/{sprite}.yy'),'x':x,'y':y})
+  asset_layer['assets']=[dict(sorted(a.items())) for a in asset_layer['assets']]
+  layers.append(dict(sorted(asset_layer.items())))
  layers.sort(key=lambda l:l['depth']);write(path,room)
- flags.append('if (room == rm_level'+str(level)+') {\n'+'\n'.join(f'    layer_sprite_create("{layer}", {x}, {y}, spr_mod_{name});' for name,x,y,layer in anim)+'\n}')
+ saved=read(path)['layers'];disk_grids=[];disk_anim=[]
+ for name in names:
+  tiles=next(l for l in saved if l['name']==name)['tiles']
+  assert tiles['TileDataFormat']==1
+  data=iter(tiles['TileCompressedData']);cells=[]
+  for count in data:
+   if count<0:cells.extend([next(data)]*(-count))
+   else:cells.extend(next(data) for _ in range(count))
+  assert len(cells)==4080 and any(cells)
+  assert cells==[0 if t==EMPTY else t for t in grids[name]]
+  disk_grids.append([t if t else EMPTY for t in cells])
+ for name in sprite_layers:
+  for a in next(l for l in saved if l['name']==name)['assets']:
+   disk_anim.append([a['spriteId']['name'].removeprefix('spr_mod_'),a['x'],a['y'],name])
  pose=json.loads(subprocess.check_output(['node','--preserve-symlinks-main',str(ROOT/'tools/arte/pose_desafios.cjs'),str(level-1)],text=True))
  props=[]
  for i in instances:
@@ -74,8 +101,7 @@ for level in range(1,4):
   if name not in ('obj_spike','obj_player','obj_coffin'):continue
   obj=read(ROOT/i['objectId']['path']);sprite=read(ROOT/obj['spriteId']['path'])
   props.append(dict(name=name,x=i['x'],y=i['y'],sx=i['scaleX'],sy=i['scaleY'],ox=sprite['sequence']['xorigin'],oy=sprite['sequence']['yorigin'],path='sprites/'+sprite['name']+'/'+sprite['frames'][0]['name']+'.png'))
- plans.append(dict(level=level,grids=list(grids.values()),anim=anim,pose=pose,props=props))
-p=ROOT/'objects/obj_level_controller/Create_0.gml';s=p.read_text(encoding='utf-8').split('// Modular room decoration.')[0];p.write_text(s.rstrip()+'\n\n// Modular room decoration.\nlayer_create(545,"Nave_Animada");\nlayer_create(345,"Reliquias_Animadas");\n'+'\n'.join(flags)+'\n',encoding='utf-8')
+ plans.append(dict(level=level,grids=disk_grids,anim=disk_anim,pose=pose,props=props))
 work=ROOT/'tools/arte/.work/pecas';script=work/'preview.js';script.write_text('var rooms='+json.dumps(plans)+';var kit='+json.dumps(kit)+';\n'+(ROOT/'tools/arte/preview_modular.js').read_text())
 res=subprocess.run([sys.argv[1],'--batch','--script',str(script)],cwd=ROOT,env=dict(os.environ,APPDATA=str(work)),capture_output=True)
 if res.returncode or b'Error:' in res.stdout+res.stderr:raise RuntimeError(res.stdout[-500:])
