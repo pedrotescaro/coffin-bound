@@ -1,76 +1,52 @@
-# Fase 7 — diálogos góticos e retrato do vampiro
+# Diálogos — apresentação 0.2.1
 
-## O que mudou
+A moldura atual segue a segunda referência visual fornecida por Pedro: borda dupla,
+cantoneiras esculpidas, florões, janela do retrato, placa do falante e indicação de avanço.
+O retrato foi recortado da referência e adaptado no LibreSprite para 88×96, com origem (0,0).
+Não é apresentado como desenho original: a fonte está em `art/reference/dialogue-design-reference.png`.
 
-A caixa de diálogo agora tem cantos recortados, moldura dupla em pedra, filetes dourados,
-joias de rubi, painel do retrato com arco e divisória vertical. O nome do falante tem uma
-placa própria; texto em cor de osso, separadores e indicação **REVELAR TEXTO / CONTINUAR**
-com **ENTER / A** organizam a leitura.
+A GUI permanece em 480×270 e escala inteira. A caixa ocupa (26,132)–(453,257), com arte
+`spr_dialogue_frame` de 428×126. Retrato em (44,147), placa em (146,144), corpo em (148,173),
+rodapé em y=232. O texto fica separado da imagem; wrap de 294 pixels e linhas de 20 pixels.
+A maior linha existente tem 270 pixels. O mesmo retrato acompanha o protagonista enquanto
+o nome distingue VAMPIRO de ECO DA CRIPTA. As quatro falas e o comportamento Enter/A
+foram preservados. Nenhum asset foi removido ou renomeado.
 
-O novo retrato original do vampiro foi desenhado e exportado no **LibreSprite**, em batch:
-cabelo azul-prateado, pele pálida com sombras em clusters, olhos avermelhados, orelhas
-pontudas, presas, gola alta vermelha, casaco ornamentado e broche facetado. Não utiliza
-fotografia, retrato externo nem pixels reaproveitados de outra arte.
+Todas as cores visíveis são #0F380F, #306230, #8BAC0F e #9BBC0F. A referência tem tons
+adicionais; os tons pálidos foram aproximados à paleta exigida. Não há gradientes ou AA;
+redução nearest e alpha binário. A imagem de referência bruta não é renderizada no jogo.
 
-Resolução do retrato: **88×96**, origem superior esquerda (0,0), alpha 0/255, **19 cores**
-da paleta Coffin Gothic 24. Ele aparece em escala 1 na GUI lógica de 480×270. A prévia
-ampliada usa nearest 3×; não há antialiasing nem escala fracionária na arte.
+## Fontes e reprodução
 
-## Integração
-
-- Recurso novo: `spr_portrait_vampire`; seus PNGs composite/layer correspondem à exportação.
-- Renderização reutilizável: `scripts/cb_dialogue/cb_dialogue.gml`.
-- `obj_level_controller/Draw_64.gml` chama a renderização somente durante diálogo.
-- `Create_0.gml` mantém nome do falante, cores, wrap de 306 pixels e passo de linha de 20 pixels.
-- As quatro falas existentes têm duas linhas; a maior linha ocupa 270 dos 306 pixels disponíveis.
-- Tipografia, retrato e ornamentos respeitam os limites da caixa (16,140)–(463,257).
-- A revelação do texto, Enter/A, pausa, morte, checkpoints e conteúdo das falas foram preservados.
-- Nenhum asset anterior foi apagado ou renomeado. A versão do pacote passou a **0.1.1**.
-
-O retrato permanece o do protagonista quando o texto vem do Eco da Cripta; o nome e a cor
-do falante diferenciam a voz. Não foi inventado outro personagem ou outra sequência de diálogo.
-
-## Editar e exportar no LibreSprite
-
-Fonte editável: [vampire_portrait.aseprite](../assets/dialogue/vampire_portrait.aseprite).
-Exportação: [vampire_portrait.png](../assets/dialogue/vampire_portrait.png).
-
-Para reproduzir o desenho procedural original e atualizar o recurso GameMaker:
+- `assets/dialogue/vampire_portrait.aseprite`: retrato editável.
+- `assets/interface/dialogue_frame.aseprite`: moldura sem texto, editável.
+- `assets/dialogue/dialogue_preview.png`: composição estática, não captura do runner.
+- `tools/arte/interface_referencias.py`: gera toda a nova interface via LibreSprite e
+  sincroniza PNGs composite/layer e metadados, preservando IDs existentes.
+- `tools/arte/gerar_retrato.ps1`: reproduz apenas o retrato escolhido e prévias nearest.
+- `tools/arte/gerar_preview_dialogo.ps1`: exporta as prévias estáticas de diálogo/menu.
 
 ```powershell
+python tools/arte/interface_referencias.py --libresprite 'CAMINHO/libresprite.exe'
 ./tools/arte/gerar_retrato.ps1 -LibreSprite 'CAMINHO/libresprite.exe'
+./tools/arte/gerar_preview_dialogo.ps1 -LibreSprite 'CAMINHO/libresprite.exe'
+python tools/arte/gameboy.py
 ```
 
-O script executa `gerar_retrato.js` no LibreSprite, grava a fonte e os PNGs e sincroniza os
-IDs do frame/layer já registrados. A configuração temporária do editor fica isolada em
-`tools/arte/.work/`, fora do Git. Python/Pillow foram usados apenas para leitura e validação.
+Os geradores sobrescrevem as exportações. Após editar manualmente uma fonte `.aseprite`,
+exporte pelo LibreSprite e sincronize os PNGs do frame/layer em vez de regenerar a arte.
+As referências fornecidas não recebem automaticamente licença de reutilização por estarem
+no repositório; veja [Licenças](LICENCAS.md).
 
-O gerador **redesenha** a fonte: depois de fazer mudanças manuais no `.aseprite`, use a
-exportação do próprio LibreSprite em vez de executar o gerador novamente sobre sua edição.
-Copie o PNG resultante para o composite/layer indicados no `.yy`, preservando os IDs.
+## Conferir na IDE
 
-## Verificações e limites
+Abra `Coffin Bound final.yyp`, selecione Windows / VM e execute Run:
 
-Verificados: dimensões/alpha/paleta, ampliação nearest, fonte ASEprite, correspondência dos
-PNGs do GameMaker e geometria/tamanho das quatro falas. Compilação Windows VM e empacotamento
-por Igor 2026.0.0.23. As prévias de arte/interface são estáticas, não capturas de gameplay.
+1. Novo jogo: confira retrato inteiro, moldura dupla e as duas linhas sem corte.
+2. Enter: primeiro revela o texto e depois fecha, sem pulo ou dash involuntário.
+3. Na fala ECO DA CRIPTA, confira nome e a maior linha dentro da moldura.
+4. Pause/retome, reinicie com R e alterne F11; confira caixa, pixels e posição da GUI.
+5. Teste A no controle nas mesmas etapas; a confirmação anterior do teclado não cobre isto.
 
-Pacote local: `.build/windows/package/CoffinBound-windows-0.1.1.zip`.
-[Manifesto do pacote](qa/windows-0.1.1-package.json): nove arquivos esperados, CRCs e hashes
-verificados. O verificador rejeitou o pacote intermediário com resíduo e aprovou a geração isolada.
-
-O usuário aprovou a rodada básica da versão 0.1.0, registrada em [QA Windows](QA_WINDOWS.md).
-Essa aprovação **não** foi transferida para a nova interface 0.1.1 sem testá-la no runner.
-
-No novo pacote, conferir exatamente:
-
-1. **Novo jogo:** após a introdução, o retrato deve aparecer inteiro, com arco e moldura.
-2. **Texto:** as duas linhas devem caber, sem encostar no retrato, na placa do nome ou no rodapé.
-3. **Enter:** primeiro revela o restante do texto; depois fecha o diálogo sem disparar pulo.
-4. **Eco da Cripta:** confirmar nome/cor corretos e ausência de corte na fala mais longa.
-5. **Pausa/retomada e R:** não devem deixar a caixa presa nem provocar ações involuntárias.
-6. **Fullscreen:** conferir alinhamento e legibilidade em escala inteira; comparar filtro G ligado/desligado.
-
-O percurso completo, controle, audição, performance, capturas reais e HTML5 continuam no
-[checklist de QA](QA.md). O retrato é arte nova do projeto; os avisos de terceiros e a
-pendência de procedência das artes antigas continuam separados em [Licenças](LICENCAS.md).
+Compilação e auditoria de arquivos não aprovam a apresentação no runner.
+Resultados desta alteração e menu: [Interface e menu](INTERFACE_MENU.md).

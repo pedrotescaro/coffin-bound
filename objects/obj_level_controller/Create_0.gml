@@ -34,7 +34,7 @@ dialogue_body = scribble("", "level_dialogue_empty")
     .align(fa_left, fa_top)
     .line_height(20, 20)
     .line_spacing(20)
-    .wrap(306);
+    .wrap(294);
 dialogue_name = scribble("", "level_dialogue_name_empty")
     .starting_format(dialogue_font, COLOR_LEVEL_BRIGHT)
     .align(fa_left, fa_top);
@@ -54,7 +54,7 @@ start_dialogue = function(_speaker, _text) {
         .align(fa_left, fa_top)
         .line_height(20, 20)
         .line_spacing(20)
-        .wrap(306);
+        .wrap(294);
     dialogue_typist.reset().in(0.65, 2);
     global.dialogue_active = true;
 };

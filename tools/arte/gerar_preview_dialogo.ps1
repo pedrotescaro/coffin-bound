@@ -10,6 +10,11 @@ $taskJob = @{
     canvas = (Join-Path $taskRoot ('sprites/spr_tileset_grama/' + $taskTile.frames[0].name + '.png')).Replace('\','/')
     atlas = (Join-Path $taskRoot 'fonts/fnt_monogram/fnt_monogram.png').Replace('\','/')
     portrait = (Join-Path $taskRoot 'assets/dialogue/vampire_portrait.png').Replace('\','/')
+    frame = (Join-Path $taskRoot 'assets/interface/dialogue_frame.png').Replace('\','/')
+    border = (Join-Path $taskRoot 'assets/interface/screen_border.png').Replace('\','/')
+    title = (Join-Path $taskRoot 'assets/interface/title_coffin.png').Replace('\','/')
+    forest = (Join-Path $taskRoot 'assets/interface/menu_forest.png').Replace('\','/')
+    menuOutput = (Join-Path $taskRoot 'assets/interface/menu_preview.png').Replace('\','/')
     output = $taskOutput.Replace('\','/')
     glyphs = $taskFont.glyphs
 }

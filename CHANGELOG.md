@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.1 — 2026-11-07
+
+- Menu com floresta e ruínas da referência fornecida, título em blocos e painéis legíveis.
+- Diálogo com moldura dupla ornamentada e retrato adaptado da segunda referência.
+- Arte exportada no LibreSprite, com quatro cores exatas e fontes editáveis.
+- Conteúdo das falas e ações dos menus preservados; validação visual no runner pendente.
+
 ## 0.2.0 — 2026-11-07
 
 - Paleta Game Boy fixa em toda arte/UI/partículas, auditada no LibreSprite.

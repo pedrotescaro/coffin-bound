@@ -1,4 +1,17 @@
-var doc=app.open('assets/dialogue/vampire_portrait.png'),s=doc.sprite,im=s.layer(0).cel(0).image;var r=app.open('art/reference/portrait-reference.png'),ri=r.sprite.layer(0).cel(0).image;im.clear(app.pixelColor.rgba(15,56,15,0));for(var y=0;y<88;y++)for(var x=0;x<88;x++){var sx=Math.floor(x*ri.width/88),sy=Math.floor(y*ri.height/88);im.putPixel(x,y+4,ri.getPixel(sx,sy));}// Pixels escritos exclusivamente pelo LibreSprite batch.
-var gb=[[15,56,15],[48,98,48],[139,172,15],[155,188,15]],pc=app.pixelColor;
-function gbColor(c){var a=pc.rgbaA(c);for(var z=0;z<4;z++){var v=gb[z];if(pc.rgbaR(c)==v[0]&&pc.rgbaG(c)==v[1]&&pc.rgbaB(c)==v[2])return pc.rgba(v[0],v[1],v[2],a<128?0:255);}if(a<128)return pc.rgba(15,56,15,0);var l=(pc.rgbaR(c)*.2126+pc.rgbaG(c)*.7152+pc.rgbaB(c)*.0722)/255;var q=gb[l<.13?0:l<.32?1:l<.65?2:3];return pc.rgba(q[0],q[1],q[2],255);}
-for(var yy=0;yy<96;yy++)for(var xx=0;xx<88;xx++)im.putPixel(xx,yy,gbColor(im.getPixel(xx,yy)));s.saveAs('assets/dialogue/vampire_portrait.png',true);s.saveAs('assets/dialogue/vampire_portrait.aseprite',true);doc.close();r.close();
+// Adaptação nearest do retrato da referência escolhida, escrita no LibreSprite.
+var pc=app.pixelColor, palette=[[15,56,15],[48,98,48],[139,172,15],[155,188,15]];
+function nearest(c) {
+ var best=0,distance=1e20;
+ for(var i=0;i<4;i++){
+  var v=palette[i],r=pc.rgbaR(c)-v[0],g=pc.rgbaG(c)-v[1],b=pc.rgbaB(c)-v[2];
+  var d=r*r+g*g+b*b;if(d<distance){best=i;distance=d;}
+ }
+ var v=palette[best];return pc.rgba(v[0],v[1],v[2],255);
+}
+var refDoc=app.open('art/reference/dialogue-design-reference.png'),ref=refDoc.sprite.layer(0).cel(0).image;
+var doc=app.open('assets/dialogue/vampire_portrait.png'),spr=doc.sprite,img=spr.layer(0).cel(0).image;
+for(var y=0;y<96;y++)for(var x=0;x<88;x++)
+ img.putPixel(x,y,nearest(ref.getPixel(96+Math.floor((x+.5)*187/88),313+Math.floor((y+.5)*204/96))));
+spr.loadPalette('art/palette/gameboy-green.gpl');
+spr.saveAs('assets/dialogue/vampire_portrait.png',true);spr.saveAs('assets/dialogue/vampire_portrait.aseprite',true);
+refDoc.close();doc.close();

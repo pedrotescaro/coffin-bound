@@ -3908,6 +3908,30 @@
         "name": "spr_level_green_3",
         "path": "sprites/spr_level_green_3/spr_level_green_3.yy"
       }
+    },
+    {
+      "id": {
+        "name": "spr_menu_forest",
+        "path": "sprites/spr_menu_forest/spr_menu_forest.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "spr_dialogue_frame",
+        "path": "sprites/spr_dialogue_frame/spr_dialogue_frame.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "spr_ui_border",
+        "path": "sprites/spr_ui_border/spr_ui_border.yy"
+      }
+    },
+    {
+      "id": {
+        "name": "spr_title_coffin",
+        "path": "sprites/spr_title_coffin/spr_title_coffin.yy"
+      }
     }
   ],
   "resourceType": "GMProject",

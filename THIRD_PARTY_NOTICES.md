@@ -24,3 +24,6 @@ license. Consult [license scope](docs/LICENCAS.md) before reusing them.
 
 For binary packages, retain [the consolidated notices](datafiles/third_party_notices.txt)
 alongside the project license and corresponding source information.
+
+The 0.2.1 portrait and forest menu adapt images supplied by Pedro Tescaro. Their original
+provenance and reuse terms have not been documented. They remain outside the code license.

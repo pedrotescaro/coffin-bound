@@ -2,13 +2,7 @@
 // A imagem não representa uma captura do jogo em execução.
 var job = dialoguePreviewJob;
 var pc = app.pixelColor;
-function rgb(r,g,b) { var l=(r*.2126+g*.7152+b*.0722)/255;var a=[[15,56,15],[48,98,48],[139,172,15],[155,188,15]][l<.13?0:l<.32?1:l<.65?2:3];return pc.rgba(a[0],a[1],a[2],255); }
-var C = {
- ink:rgb(11,13,23),plate:rgb(28,25,45),shadow:rgb(48,38,63),
- line:rgb(75,54,87),edge:rgb(109,77,104),bone:rgb(233,237,197),
- muted:rgb(152,115,138),ruby:rgb(191,89,99),gold:rgb(180,136,91),
- glint:rgb(241,201,128)
-};
+var C={ink:pc.rgba(15,56,15,255),shade:pc.rgba(48,98,48,255),edge:pc.rgba(139,172,15,255),light:pc.rgba(155,188,15,255)};
 var doc = app.open(job.canvas);
 var spr = doc.sprite;
 var img = spr.layer(0).cel(0).image;
@@ -57,30 +51,40 @@ function text(s,x,y,c) {
   cursor+=glyph.shift;
  }
 }
-rect(0,0,479,269,C.ink);
-text('COFFIN BOUND',190,38,C.gold);
-text('PREVIA DA INTERFACE',159,66,C.muted);
-line(148,96,331,96,C.shadow);jewel(240,96,2,C.ruby);
-frame(18,143,448,118,6,C.ink,C.ink);
-frame(16,140,448,118,6,C.ink,C.edge);
-frame(18,142,444,114,5,C.plate,C.shadow);
-line(29,144,451,144,C.gold);line(29,253,451,253,C.gold);
-jewel(24,148,2,C.ruby);jewel(455,148,2,C.ruby);jewel(24,249,2,C.ruby);jewel(455,249,2,C.ruby);
-pixel(24,147,C.glint);pixel(455,147,C.glint);
-frame(22,150,92,100,3,C.ink,C.gold);
-line(30,242,30,173,C.shadow);line(30,173,68,155,C.shadow);line(68,155,105,173,C.shadow);line(105,173,105,242,C.shadow);
-line(34,242,34,177,C.line);line(34,177,68,161,C.line);line(68,161,101,177,C.line);line(101,177,101,242,C.line);
-var portraitDoc=app.open(job.portrait);
-var portrait=portraitDoc.sprite.layer(0).cel(0).image;
-for(var py=0;py<96;py++) for(var px=0;px<88;px++) {
- var c=portrait.getPixel(px,py);if(pc.rgbaA(c))pixel(24+px,152+py,c);
+function blit(path,x,y) {
+ var sourceDoc=app.open(path),source=sourceDoc.sprite.layer(0).cel(0).image;
+ for(var yy=0;yy<source.height;yy++)for(var xx=0;xx<source.width;xx++){
+  var c=source.getPixel(xx,yy);if(pc.rgbaA(c))pixel(x+xx,y+yy,c);
+ }
+ sourceDoc.close();
 }
-line(122,158,122,241,C.line);jewel(122,153,2,C.gold);jewel(122,246,2,C.gold);
-frame(128,148,98,25,3,C.shadow,C.line);text('VAMPIRO',134,151,C.glint);
-line(134,176,443,176,C.line);line(134,176,157,176,C.ruby);
-text('A noite engoliu a trilha.',134,181,C.bone);
-text('Meu caixao deve estar adiante.',134,201,C.bone);
-line(134,230,443,230,C.line);
-text('CONTINUAR',134,235,C.muted);text('ENTER / A',344,235,C.bone);jewel(441,244,2,C.glint);
+function rule(x,y,w) {
+ var mid=x+Math.floor(w/2);line(x+8,y,mid-6,y,C.edge);line(mid+6,y,x+w-8,y,C.edge);
+ jewel(mid,y,3,C.light);jewel(x+2,y,2,C.edge);jewel(x+w-2,y,2,C.edge);
+}
+rect(0,0,479,269,C.ink);
+blit(job.border,0,0);blit(job.title,106,35);rule(100,68,280);
+text('PRÉVIA DA INTERFACE',159,78,C.light);rule(120,104,240);
+blit(job.frame,26,132);blit(job.portrait,44,147);
+frame(146,144,98,25,2,C.shade,C.shade);line(148,169,243,169,C.edge);
+text('VAMPIRO',151,145,C.light);
+text('A noite engoliu a trilha.',148,173,C.light);
+text('Meu caixao deve estar adiante.',148,193,C.light);
+text('CONTINUAR',162,232,C.light);text('ENTER / A',358,232,C.light);
+jewel(151,242,2,C.light);line(148,242,154,242,C.edge);jewel(443,242,2,C.light);
 spr.saveAs(job.output,true);
-portraitDoc.close();atlasDoc.close();doc.close();
+// Prévia do menu com save: o quinto item também deve caber no painel.
+rect(0,0,479,269,C.ink);blit(job.forest,0,0);blit(job.border,0,0);
+frame(86,16,308,55,4,C.ink,C.shade);blit(job.title,106,27);rule(100,64,280);
+frame(106,74,268,23,3,C.ink,C.shade);
+text('ENCONTRE SEU LUGAR NA NOITE.',123,75,C.light);
+frame(278,105,174,125,4,C.ink,C.edge);frame(280,107,170,121,3,C.ink,C.shade);
+var items=['CONTINUAR','NOVO JOGO','OPCOES','CREDITOS','SAIR'];
+for(var i=0;i<items.length;i++){
+ var y=109+i*23;if(i===0)rect(299,y+2,441,y+22,C.shade);
+ text(items[i],306,y,i===0?C.light:C.edge);
+}
+jewel(290,120,3,C.light);frame(26,239,428,24,3,C.ink,C.shade);
+text('SETAS: NAVEGAR   ENTER: CONFIRMAR',42,240,C.light);
+spr.saveAs(job.menuOutput,true);
+atlasDoc.close();doc.close();

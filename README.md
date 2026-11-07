@@ -10,9 +10,13 @@ Um platformer 2D em pixel art sobre um vampiro tentando encontrar seu caixão. A
 
 ![Prévia estática do diálogo gótico com retrato do vampiro](assets/dialogue/dialogue_preview.png)
 
-*Interface de diálogo da versão 0.1.1, com retrato original desenhado e exportado no
-LibreSprite. Esta é uma composição estática para revisão visual. Fonte editável e
-instruções em [Diálogos](docs/DIALOGOS.md).*
+*Composição estática da interface 0.2.1, com moldura e retrato adaptados da referência
+fornecida por Pedro, em quatro cores Game Boy. Produção no LibreSprite; veja [Diálogos](docs/DIALOGOS.md).*
+
+![Prévia estática do menu com floresta e ruínas](assets/interface/menu_preview.png)
+
+*Composição para revisão visual; não é captura do runner. Fontes editáveis e testes em
+[Interface e menu](docs/INTERFACE_MENU.md).*
 
 O projeto contém três fases com checkpoints, menu, pausa, tela de morte, créditos, opções, progresso salvo e áudio original. O código de movimento inclui coyote time, buffer de pulo, altura variável, wall jump, dash e transformação em morcego. A apresentação usa resolução lógica de 480×270, tiles de 16×16 e escala inteira.
 

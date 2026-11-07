@@ -28,81 +28,50 @@ function cb_dialogue_jewel(_x, _y, _radius, _colour) {
     }
 }
 
-/// @description Diálogo gótico em 480x270; retrato e fonte em escala 1.
+/// @description Filete ornamental compartilhado pelo menu e pelos painéis.
+function cb_ui_rule(_x, _y, _width) {
+    var _mid = _x + _width div 2;
+    draw_set_color(make_color_rgb(139,172,15));
+    draw_line(_x + 8, _y, _mid - 6, _y);
+    draw_line(_mid + 6, _y, _x + _width - 8, _y);
+    cb_dialogue_jewel(_mid, _y, 3, make_color_rgb(155,188,15));
+    cb_dialogue_jewel(_x + 2, _y, 2, make_color_rgb(139,172,15));
+    cb_dialogue_jewel(_x + _width - 2, _y, 2, make_color_rgb(139,172,15));
+}
+
+/// @description Arte do LibreSprite em escala 1; texto permanece editável no GML.
 function cb_dialogue_draw() {
     var _ink = make_color_rgb(15,56,15);
-    var _plate = make_color_rgb(15,56,15);
-    var _shadow = make_color_rgb(48,98,48);
-    var _line = make_color_rgb(48,98,48);
+    var _shade = make_color_rgb(48,98,48);
     var _edge = make_color_rgb(139,172,15);
-    var _bone = make_color_rgb(155,188,15);
-    var _muted = make_color_rgb(139,172,15);
-    var _ruby = make_color_rgb(139,172,15);
-    var _gold = make_color_rgb(139,172,15);
-    var _glint = make_color_rgb(155,188,15);
-
+    var _light = make_color_rgb(155,188,15);
     draw_set_alpha(1);
-    cb_dialogue_frame(18, 143, 448, 118, 6, _ink, _ink);
-    draw_set_alpha(1);
-    cb_dialogue_frame(16, 140, 448, 118, 6, _ink, _edge);
-    cb_dialogue_frame(18, 142, 444, 114, 5, _plate, _shadow);
+    draw_sprite_ext(spr_dialogue_frame, 0, 26, 132, 1, 1, 0, c_white, 1);
+    draw_sprite_ext(spr_portrait_vampire, 0, 44, 147, 1, 1, 0, c_white, 1);
 
-    // Filetes e joias acompanham o recorte da moldura.
-    draw_set_color(_gold);
-    draw_line(29, 144, 451, 144);
-    draw_line(29, 253, 451, 253);
-    cb_dialogue_jewel(24, 148, 2, _ruby);
-    cb_dialogue_jewel(455, 148, 2, _ruby);
-    cb_dialogue_jewel(24, 249, 2, _ruby);
-    cb_dialogue_jewel(455, 249, 2, _ruby);
-    draw_set_color(_glint);
-    draw_point(24, 147);
-    draw_point(455, 147);
+    var _name_width = clamp(string_length(dialogue_speaker) * 9 + 20, 98, 294);
+    cb_dialogue_frame(146, 144, _name_width, 25, 2, _shade, _shade);
+    draw_set_color(_edge);
+    draw_line(148, 169, 146 + _name_width - 1, 169);
+    dialogue_name.draw(151, 145);
+    // 294px comportam a maior fala atual (270px); duas linhas de 20px.
+    dialogue_body.draw(148, 173, dialogue_typist);
 
-    // Fundo arquitetônico permanece visível nas áreas transparentes do retrato.
-    cb_dialogue_frame(22, 150, 92, 100, 3, _ink, _gold);
-    draw_set_color(_shadow);
-    draw_line(30, 242, 30, 173);
-    draw_line(30, 173, 68, 155);
-    draw_line(68, 155, 105, 173);
-    draw_line(105, 173, 105, 242);
-    draw_set_color(_line);
-    draw_line(34, 242, 34, 177);
-    draw_line(34, 177, 68, 161);
-    draw_line(68, 161, 101, 177);
-    draw_line(101, 177, 101, 242);
-    draw_sprite(spr_portrait_vampire, 0, 24, 152);
-
-    draw_set_color(_line);
-    draw_line(122, 158, 122, 241);
-    cb_dialogue_jewel(122, 153, 2, _gold);
-    cb_dialogue_jewel(122, 246, 2, _gold);
-
-    var _name_width = clamp(string_length(dialogue_speaker) * 9 + 20, 98, 306);
-    cb_dialogue_frame(128, 148, _name_width, 25, 3, _shadow, _line);
-    dialogue_name.draw(134, 151);
-
-    draw_set_color(_line);
-    draw_line(134, 176, 443, 176);
-    draw_set_color(_ruby);
-    draw_line(134, 176, 157, 176);
-    // As quatro falas existentes têm duas linhas de até 270px; a área mede 306x44.
-    dialogue_body.draw(134, 181, dialogue_typist);
-
-    draw_set_color(_line);
-    draw_line(134, 230, 443, 230);
     var _ready = dialogue_typist.get_state() >= 1;
     draw_set_font(fnt_monogram);
     draw_set_halign(fa_left);
     draw_set_valign(fa_top);
-    draw_set_color(_muted);
-    draw_text(134, 235, _ready ? "CONTINUAR" : "REVELAR TEXTO");
-    dialogue_continue.draw(344, 235);
-    var _arrow_x = 440 + ((_ready && floor(current_time / 400) mod 2 == 0) ? 1 : 0);
-    cb_dialogue_jewel(_arrow_x, 244, 2, _ready ? _glint : _muted);
-
+    draw_set_color(_light);
+    draw_text(162, 232, _ready ? "CONTINUAR" : "REVELAR TEXTO");
+    dialogue_continue.draw(358, 232);
+    cb_dialogue_jewel(151, 242, 2, _ready ? _light : _edge);
+    draw_set_color(_edge);
+    draw_line(148, 242, 154, 242);
+    if (_ready && floor(current_time / 400) mod 2 == 0) {
+        cb_dialogue_jewel(443, 242, 2, _light);
+    }
     draw_set_halign(fa_left);
     draw_set_valign(fa_top);
     draw_set_alpha(1);
-    draw_set_color(make_color_rgb(155,188,15));
+    draw_set_color(_light);
 }
