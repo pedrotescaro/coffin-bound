@@ -49,6 +49,11 @@ O projeto não inclui executáveis do GameMaker, runtimes ou credenciais. A conf
 
 Para Windows, selecione **Windows / VM**, use **Create Executable** e gere um ZIP com todos os arquivos do runner. Extraia e teste esse pacote fora da IDE antes de enviá-lo. YYC exige o SDK/Visual Studio suportado pela sua versão do GameMaker. Veja as [instruções oficiais de Windows](https://gamemaker.io/en/help/articles/windows-compiling-your-app).
 
+Também é possível gerar o ZIP por Igor com `tools/build.ps1 -Package` e conferir seus arquivos
+com `tools/check_package.py`. A fase 6 gerou um pacote local e recebeu confirmação do usuário
+de que o menu inicial aparece normalmente. Veja [QA Windows](docs/QA_WINDOWS.md) para os
+comandos e testes ainda necessários; o build ainda não é uma release de jogabilidade aprovada.
+
 HTML5 é um alvo **condicionado a compilação e teste**. Selecione HTML5, teste por servidor e exporte um ZIP com `index.html` na raiz, mantendo as dependências e os caminhos relativos. Não use abrir o arquivo diretamente pelo Explorer como teste de publicação. Confira [configuração HTML5 do GameMaker](https://gamemaker.io/en/help/articles/setting-up-for-html5) e o [guia de publicação](docs/ITCH_IO.md), com comandos butler e orientações de capturas.
 
 Ao distribuir um executável GPL, acompanhe a licença e disponibilize o código-fonte correspondente à mesma versão, incluindo os arquivos necessários para reconstruí-la. Consulte [Licenças e escopos](docs/LICENCAS.md). Não inclua arquivos pessoais, tokens ou caches no ZIP de distribuição.

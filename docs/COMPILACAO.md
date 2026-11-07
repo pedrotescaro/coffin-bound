@@ -20,7 +20,15 @@ release jogável sem QA. Para compilar novamente, com seus caminhos locais:
 
 Use a pasta de usuário da instalação autenticada do GameMaker; não coloque arquivos de
 licença, tokens ou configurações pessoais no repositório. Esse script somente compila.
-Para pacote executável completo, use Create Executable/ZIP na IDE, conforme `ITCH_IO.md`.
+Para pacote executável completo, use Create Executable/ZIP na IDE ou a opção `-Package`:
+
+```powershell
+./tools/build.ps1 -RuntimePath 'CAMINHO_DO_RUNTIME' -UserPath 'PASTA_DO_USUARIO_GAMEMAKER' -Target Windows -Package
+python tools/check_package.py '.build/windows/package/CoffinBound-windows-0.1.0.zip'
+```
+
+O comando PackageZip foi executado na fase 6. O pacote completo, seu manifesto e os limites
+da validação inicial estão em [QA Windows](QA_WINDOWS.md). Isso não aprova o percurso completo.
 
 ## HTML5
 

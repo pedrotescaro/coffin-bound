@@ -169,6 +169,38 @@ da GPL do código. Os testes manuais não foram marcados como aprovados.
 preservando conteúdo e nome do asset. O validador passou a detectar o caso também no Windows.
 Essa correção de portabilidade foi registrada em commit adicional de publicação.
 
+## Fase 6 — pacote Windows e validação inicial
+
+**Mudou:** exportação do ZIP Windows completo pelo parâmetro `-Package`, verificador de
+conteúdo/CRC/hash e manifesto do pacote. A repetição da exportação identificou um manifesto
+antigo entrando na distribuição; cada geração passou a usar uma pasta nova e o verificador
+rejeita esse resíduo. Nenhuma mecânica, room, sprite ou outro asset foi alterado.
+
+**Backup:** branch `backup/antes-validacao-windows-2026-11-06`, baseada no commit `4b577c9`.
+
+**Arquivos:** `tools/build.ps1`, `tools/check_package.py`, `docs/QA_WINDOWS.md`,
+`docs/qa/windows-0.1.0-package.json`, `docs/COMPILACAO.md`, `docs/QA.md`,
+`README.md`, `README.en.md`, `CHANGELOG.md` e esta entrega. Normalização de finais de linha
+do relatório original de código, sem mudança de conteúdo. Saídas `.build/` permanecem locais.
+
+**Verificado:** Igor Windows VM/PackageZip terminou com saída 0. ZIP com executável, dados,
+música e avisos de licença; CRCs/cabeçalhos/arquivos obrigatórios verificados. O usuário
+confirmou menu normal e a sequência Novo jogo → diálogo/Enter → pulo/Espaço → pausa e
+retomada/Esc → reinício/R, sem erro e sem pulo/dash involuntário ao retomar/reiniciar.
+O relato do usuário está separado das verificações automáticas no relatório desta fase.
+
+**Limite observado:** a captura de janela pela ferramenta falhou; não foram produzidas
+screenshots de gameplay nem afirmada aprovação visual autônoma. A primeira tentativa de
+lançamento ficou suspensa e foi encerrada; a segunda abriu o executável e o usuário testou.
+
+**Conferir manualmente:** completar a travessia até o caixão; morrer por cada fonte e em
+todos os checkpoints; fechar/reabrir e Continuar; opções/remapeamento; controle; fullscreen
+e Alt+Tab; ouvir efeitos e música; medir frame time e memória. Instruções em `docs/QA.md`.
+
+**Pendente:** esses testes completos, capturas reais, origem/licença das artes e módulo HTML5.
+O ZIP é um candidato local para QA, não uma release final no GitHub/itch.io. O código das
+ferramentas e os relatórios são enviados ao repositório público já autorizado.
+
 ## Histórico das fases
 
 | Etapa | Commit |
@@ -178,4 +210,5 @@ Essa correção de portabilidade foi registrada em commit adicional de publicaç
 | Fase 2 — código | `15121da` |
 | Fase 3 — arte | `07f4dfe` |
 | Fase 4 — polimento | `4033299` |
-| Fase 5 — publicação | Consultar o commit com mensagem “Fase 5” no histórico |
+| Fase 5 — publicação | `3d8fecb` (ajuste Linux em `4b577c9`) |
+| Fase 6 — pacote e QA inicial | Consultar o commit com mensagem “Fase 6” no histórico |

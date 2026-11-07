@@ -47,6 +47,11 @@ The repository does not include GameMaker executables, runtimes or credentials. 
 
 ## Build and distribute
 
+An initial Windows package was generated with Igor `PackageZip`. The user confirmed that
+its main menu displays normally; full gameplay QA is still pending. Use
+`tools/build.ps1 -Package` and `tools/check_package.py` to generate and inspect the ZIP.
+See the [Windows QA report](docs/QA_WINDOWS.md), in Portuguese, for the evidence and limits.
+
 For Windows, select **Windows / VM**, choose **Create Executable**, and generate a ZIP containing the complete runner package. Extract and test that package outside the IDE before uploading it. YYC requires the SDK/Visual Studio supported by your GameMaker version. See the [official Windows build guide](https://gamemaker.io/en/help/articles/windows-compiling-your-app).
 
 HTML5 remains **conditional on a successful build and browser tests**. Select HTML5, test through a server and export a ZIP containing `index.html` at its root, with dependencies and relative paths preserved. Opening the file directly from Explorer is not a publication test. See [GameMaker HTML5 setup](https://gamemaker.io/en/help/articles/setting-up-for-html5) and the [release guide](docs/ITCH_IO.md), including butler commands and capture recommendations.

@@ -1,6 +1,6 @@
 # Checklist final de QA
 
-Todos os itens manuais abaixo iniciam **pendentes**. Marque somente após testar e registrar evidência. As verificações estáticas já feitas estão em [Entregas](ENTREGAS.md); elas não aprovam estes testes do runner.
+Marque somente após testar e registrar evidência. As verificações estáticas já feitas estão em [Entregas](ENTREGAS.md); elas não aprovam estes testes do runner. Na fase 6, o usuário confirmou menu inicial, Novo jogo, diálogo/Enter, pulo/Espaço, pausa/retomada/Esc e reinício/R sem erro e sem ações involuntárias ao retomar/reiniciar. Evidência e limites dessa rodada em [QA Windows](QA_WINDOWS.md); os demais itens continuam pendentes.
 
 Registro da rodada:
 
@@ -17,8 +17,8 @@ Registro da rodada:
 ## Compilação e início
 
 - [ ] Abrir o `.yyp` sem recursos ausentes e registrar avisos da IDE/runtime.
-- [ ] Gerar e executar build Windows VM, registrando resultado da compilação.
-- [ ] Extrair o ZIP final em outra pasta e iniciar o executável sem a IDE aberta.
+- [x] Gerar e executar build Windows VM, registrando resultado da compilação (fase 6).
+- [x] Extrair o ZIP de QA em outra pasta e iniciar o executável sem a IDE aberta (fase 6; menu confirmado pelo usuário).
 - [ ] Com save novo, conferir menu, opções, créditos e início da fase.
 - [ ] Confirmar que o menu não cria pausas/controladores duplicados após dez retornos.
 - [ ] Conferir que confirmar Novo jogo não dispara pulo/dash/transformação no primeiro frame.

@@ -1,5 +1,14 @@
 # Changelog
 
+## Não lançado — validação Windows (fase 6)
+
+- Adicionada opção `tools/build.ps1 -Package` para exportar o ZIP completo pelo Igor.
+- Cada empacotamento usa uma pasta de saída nova e evita resíduos de exportações anteriores.
+- Adicionado verificador do pacote e manifesto com arquivos, CRCs e hashes.
+- Pacote Windows gerado; menu, Novo jogo, diálogo, pulo, pausa/retomada e reinício confirmados
+  pelo usuário na rodada básica com teclado. Relatório em `docs/QA_WINDOWS.md`.
+- Gameplay completo, checkpoints, controle, audição e performance continuam pendentes.
+
 ## 0.1.0 — 2026-11-06
 
 Preparação do projeto existente para publicação por Pedro Tescaro.
