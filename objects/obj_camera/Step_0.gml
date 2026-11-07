@@ -36,3 +36,12 @@ if (instance_exists(obj_player)) {
         clamp(round(follow_x) + _shake_x, 0, max(0, room_width - view_w)),
         clamp(round(follow_y) + _shake_y, 0, max(0, room_height - view_h)));
 }
+
+// Cada deslocamento é arredondado depois de aplicar a proporção da câmera.
+var _px = camera_get_view_x(cam), _py = camera_get_view_y(cam);
+layer_x("Pedra_Distante",round(_px*.65));
+layer_y("Pedra_Distante",round(_py*.45));
+layer_x("Nave_Media",round(_px*.30));
+layer_y("Nave_Media",round(_py*.2));
+layer_x("Nave_Animada",round(_px*.30));
+layer_y("Nave_Animada",round(_py*.2));

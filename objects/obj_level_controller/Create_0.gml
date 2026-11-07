@@ -107,3 +107,35 @@ set_checkpoint = function(_index) {
 respawn_x = checkpoint_spawns[checkpoint][0];
 respawn_y = checkpoint_spawns[checkpoint][1];
 respawn_player();
+
+// Decoração modular por room.
+layer_create(545,"Nave_Animada");
+layer_create(345,"Reliquias_Animadas");
+if (room == rm_level1) {
+    layer_sprite_create("Nave_Animada", 288, 160, spr_mod_estandarte_3);
+    layer_sprite_create("Nave_Animada", 1008, 112, spr_mod_estandarte_1);
+    layer_sprite_create("Nave_Animada", 1728, 160, spr_mod_estandarte_4);
+    layer_sprite_create("Reliquias_Animadas", 328, 448, spr_mod_teia_pendente);
+    layer_sprite_create("Reliquias_Animadas", 448, 288, spr_mod_gargula_2);
+    layer_sprite_create("Reliquias_Animadas", 824, 416, spr_mod_teia_pendente);
+    layer_sprite_create("Reliquias_Animadas", 1264, 208, spr_mod_gargula_2);
+    layer_sprite_create("Reliquias_Animadas", 1512, 320, spr_mod_teia_pendente);
+}
+if (room == rm_level2) {
+    layer_sprite_create("Nave_Animada", 288, 176, spr_mod_estandarte_4);
+    layer_sprite_create("Nave_Animada", 1008, 128, spr_mod_estandarte_2);
+    layer_sprite_create("Nave_Animada", 1728, 176, spr_mod_estandarte_5);
+    layer_sprite_create("Reliquias_Animadas", 520, 384, spr_mod_teia_pendente);
+    layer_sprite_create("Reliquias_Animadas", 704, 240, spr_mod_gargula_2);
+    layer_sprite_create("Reliquias_Animadas", 1048, 352, spr_mod_teia_pendente);
+    layer_sprite_create("Reliquias_Animadas", 1584, 192, spr_mod_gargula_2);
+}
+if (room == rm_level3) {
+    layer_sprite_create("Nave_Animada", 288, 96, spr_mod_estandarte_5);
+    layer_sprite_create("Nave_Animada", 1008, 144, spr_mod_estandarte_3);
+    layer_sprite_create("Nave_Animada", 1728, 96, spr_mod_estandarte_1);
+    layer_sprite_create("Reliquias_Animadas", 520, 368, spr_mod_teia_pendente);
+    layer_sprite_create("Reliquias_Animadas", 704, 240, spr_mod_gargula_2);
+    layer_sprite_create("Reliquias_Animadas", 1064, 320, spr_mod_teia_pendente);
+    layer_sprite_create("Reliquias_Animadas", 1552, 192, spr_mod_gargula_2);
+}

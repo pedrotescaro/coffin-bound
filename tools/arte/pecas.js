@@ -28,6 +28,7 @@ for(var i=0;i<pieces.length;i++){
    if(n.indexOf('porta_')===0&&x>10&&x<w-11&&y>16+Math.abs(x-w/2)*.35){c=n==='porta_aberta'?clear:n==='porta_luz'?C[x%16===1?3:2]:C[x%9===0||y%28===0?0:1];}
    if(n.indexOf('auto_')===0){var mask=Number(n.slice(5));c=C[(y%8===7||(x+(y>=8?8:0))%16===15)?1:2];if(!(mask&1)&&y<2)c=C[3];if(!(mask&2)&&x>13)c=C[0];if(!(mask&4)&&y>13)c=C[0];if(!(mask&8)&&x<2)c=C[1];}
    if(n.indexOf('fundo_')===0&&opaque)c=c===C[0]?C[0]:C[1];
+   if(n.indexOf('fundo_pedra')===0&&opaque)c=(y%8===7||(x+8*Math.floor(y/8))%16===15)?C[0]:C[1];
    if(n==='passarela_fina'&&y>7)c=clear;
    im.putPixel(x,y,c);
   }
