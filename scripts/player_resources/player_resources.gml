@@ -10,5 +10,5 @@ function player_update_resources() {
     wall_jump_timer = max(0, wall_jump_timer - 1);
     damage_timer = max(0, damage_timer - 1);
     respawn_invulnerability = max(0, respawn_invulnerability - 1);
-    mask_index = spr_vampire_idle;
+    mask_index = (state == PlayerState.BAT) ? spr_mask_bat : spr_vampire_idle;
 }

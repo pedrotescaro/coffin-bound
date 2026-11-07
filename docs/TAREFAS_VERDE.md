@@ -34,3 +34,37 @@ Regerados no LibreSprite; nova auditoria de paleta sem violações.
 As formas físicas irregulares/degraus entram na tarefa 3, junto dos colisores,
 para não desenhar uma borda que não corresponde ao apoio real.
 Testar na IDE: cantos, junções e leitura clara de plataformas contra fundo escuro.
+
+## Tarefa 3 — três rooms e dificuldade
+
+Escolhas do usuário: três rooms e inimigos por contato, sem combate.
+Room1: saltos e one-way; room2: plataforma móvel, desmoronamento, corredor de morcego,
+pêndulo e inimigos; room3: combinações de timing antes do caixão final.
+Plataforma cai após30frames e retorna180frames depois; lâmina cicla150frames,
+com50frames recolhida. Contato com inimigo/serra causa35HP, proteção45frames.
+Pausa, diálogo e morte congelam ciclos. Checkpoints x640/1184/1504, spawns porroom.
+Máscara morcego8px versus humano18px, corredor16px; retorno humano bloqueado semespaço.
+
+Arquivos: rooms/rm_level1 e novasrm_level2/rm_level3; obj_challenges/cb_challenges;
+colisão, contatos, recursos e transiçõesplayer; spr_mask_bat; serviços/controlador;
+cenários porroom; ferramentas de geração, testes e workflow. Assets originais preservados.
+
+Testar na IDE: abra Coffin Bound final.yyp e execute Windows/VM pelo menu/Novo jogo.
+- Room1: pulo curto/longo, one-way atravessada por baixo e apoio por cima.
+- Room2: transporte lateral, cair30frames/reaparecer, morte recupera plataformas.
+- Corredor x896: humano não deve passar; morcego passa e retorna fora, sem entrar em parede.
+- Lâmina/pêndulo: aviso/ciclo, contato, proteção45frames e dano posterior.
+- Pausa/diálogo/morte congelam tudo; despausar não dispara pulo/dash.
+- Morrer em cada checkpoint; fechar/reabrir/Continuar; completar três rooms até créditos.
+- Conferir degraus e espinhos de teto, paleta/filtro/fullscreen, controle e performance.
+
+Pendente: travessia e ajuste de dificuldade no runner, controle, audição, performance e
+HTML5(módulo ausente). Nenhum desses testes manuais foi declarado aprovado.
+
+## Resultado final da varredura
+
+273 imagens PNG/GIF verificadas, **0 pixels visíveis fora das quatro cores**,
+**0 pixels com alpha parcial**. Violações: `[]`. Ver `palette-audit.json`.
+Listas completas de arquivos: `arquivos-tarefa-1.txt`, `arquivos-tarefa-2.txt` e
+`arquivos-tarefa-3.txt`. Auditoria incluída no CI.
+31 verificações matemáticas/serviços/apoio aprovadas; não são testes do runner.

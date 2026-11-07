@@ -7,12 +7,13 @@ COLORS=[(15,56,15),(48,98,48),(139,172,15),(155,188,15)]
 def files():
     for folder in ('sprites','fonts','tilesets','assets','prefabs'):
         yield from (ROOT/folder).rglob('*.png')
+        yield from (ROOT/folder).rglob('*.gif')
 def audit():
     bad=[];total=0;count=0
     for p in files():
         count+=1
         with Image.open(p) as im:
-            pixels=list(im.convert('RGBA').getdata())
+            pixels=list(im.convert('RGBA').get_flattened_data())
         n=sum(1 for r,g,b,a in pixels if a and ((r,g,b) not in COLORS or a!=255))
         total+=n
         if n:bad.append({'file':p.relative_to(ROOT).as_posix(),'pixels':n})
@@ -29,7 +30,7 @@ def main():
                 if im.mode=='P':
                     values=im.getpalette();pal=[]
                     for k in range(0,len(values),3):
-                        r,g,b=values[k:k+3];l=(r*.2126+g*.7152+b*.0722)/255;q=COLORS[0 if l<.13 else 1 if l<.32 else 2 if l<.65 else 3];pal.append(q)
+                        r,g,b=values[k:k+3];l=(r*.2126+g*.7152+b*.0722)/255;q=(r,g,b) if (r,g,b) in COLORS else COLORS[0 if l<.13 else 1 if l<.32 else 2 if l<.65 else 3];pal.append(q)
                     dest=work/f'{i}.gpl';dest.write_text('GIMP Palette\nName: GB\n#\n'+''.join(f'{r} {g} {b}\n' for r,g,b in pal));job['palette']=dest.as_posix()
             jobs.append(job)
         # Fontes editáveis também recebem a paleta atual.

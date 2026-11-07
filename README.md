@@ -14,7 +14,7 @@ Um platformer 2D em pixel art sobre um vampiro tentando encontrar seu caixão. A
 LibreSprite. Esta é uma composição estática para revisão visual. Fonte editável e
 instruções em [Diálogos](docs/DIALOGOS.md).*
 
-O projeto contém uma fase com três checkpoints, menu, pausa, tela de morte, créditos, opções, progresso salvo e áudio original. O código de movimento inclui coyote time, buffer de pulo, altura variável, wall jump, dash e transformação em morcego. A apresentação usa resolução lógica de 480×270, tiles de 16×16 e escala inteira.
+O projeto contém três fases com checkpoints, menu, pausa, tela de morte, créditos, opções, progresso salvo e áudio original. O código de movimento inclui coyote time, buffer de pulo, altura variável, wall jump, dash e transformação em morcego. A apresentação usa resolução lógica de 480×270, tiles de 16×16 e escala inteira.
 
 **Estado da versão:** preparação para publicação. Os testes estáticos e as regressões estão descritos em [Entregas por fase](docs/ENTREGAS.md). A aprovação do percurso completo, do visual, do áudio e da performance no runner está pendente no [checklist de QA](docs/QA.md). A origem/licença das artes originais continua por documentar e não está incluída na GPL do código. A publicação do repositório foi solicitada pelo titular; isso não concede uma licença adicional para reutilizar essas imagens.
 
@@ -86,3 +86,5 @@ Copyright © 2026 **Pedro Tescaro**. O **código próprio** é distribuído sob 
 A GPL do código **não atribui uma licença às artes originais**. Sprites, tiles, backgrounds, suas derivações/exportações e prévias precisam de confirmação de procedência e permissão de redistribuição. Consulte [Licenças](docs/LICENCAS.md) e [Avisos de terceiros](THIRD_PARTY_NOTICES.md).
 
 Documentação: [Changelog](CHANGELOG.md) · [Plano e entregas](docs/ENTREGAS.md) · [Polimento](docs/POLIMENTO.md) · [QA](docs/QA.md) · [Página itch.io e builds](docs/ITCH_IO.md).
+
+Atualização 0.2.0: quatro verdes Game Boy, três rooms e novos desafios. Entregas e testes: [Tarefas verde](docs/TAREFAS_VERDE.md).

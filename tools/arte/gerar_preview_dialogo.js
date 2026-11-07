@@ -2,7 +2,7 @@
 // A imagem não representa uma captura do jogo em execução.
 var job = dialoguePreviewJob;
 var pc = app.pixelColor;
-function rgb(r,g,b) { return pc.rgba(r,g,b,255); }
+function rgb(r,g,b) { var l=(r*.2126+g*.7152+b*.0722)/255;var a=[[15,56,15],[48,98,48],[139,172,15],[155,188,15]][l<.13?0:l<.32?1:l<.65?2:3];return pc.rgba(a[0],a[1],a[2],255); }
 var C = {
  ink:rgb(11,13,23),plate:rgb(28,25,45),shadow:rgb(48,38,63),
  line:rgb(75,54,87),edge:rgb(109,77,104),bone:rgb(233,237,197),

@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.2.0 — 2026-11-07
+
+- Paleta Game Boy fixa em toda arte/UI/partículas, auditada no LibreSprite.
+- Retrato baseado na referência fornecida, adaptado a quatro cores.
+- Tijolos gastos, musgo, correntes, teias e ossos.
+- Três rooms com dificuldade crescente, checkpoints, one-way, móveis e desmoronáveis.
+- Serras, pêndulos, lâminas cíclicas, morcegos e esqueletos por contato.
+- Máscara menor do morcego e corredores de transformação; sem combate.
+- Balanceamento e travessia completos pendentes de teste manual.
+
 ## 0.1.2 — 2026-11-06
 
 - Rosto do vampiro redesenhado no LibreSprite: face maior, olhos rubi, volumes e presas legíveis.

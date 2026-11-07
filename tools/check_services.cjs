@@ -30,7 +30,7 @@ function sandbox(files = {}, browser = false) {
     ord: value => value.charCodeAt(0), chr: String.fromCharCode, string: String,
     vk_space: 32, vk_shift: 16, vk_left: 37, vk_up: 38, vk_right: 39, vk_down: 40,
     browser_not_a_browser: -1, os_browser: browser ? 3 : -1,
-    rm_menu: 1000, rm_level1: 1001, audiogroup_music: 1, audiogroup_sfx: 2,
+    rm_menu: 1000, rm_level1: 1001, rm_level2:1002, rm_level3:1003, audiogroup_music: 1, audiogroup_sfx: 2,
     snd_cb_music: 11, snd_cb_ui: 12,
     INPUT_VERB: Object.fromEntries(names.map((name, i) => [name, i])),
     MenuPage: { MAIN: 0, OPTIONS: 1, CONTROLS: 2, CREDITS: 3 },
@@ -90,7 +90,7 @@ check('boot define padrões, bindings primários/setas e é idempotente', () => 
   assert.deepEqual(plain(s.global.cb.keys), DEFAULT_KEYS);
   assert.equal(s.global.cb.master, 0.8); assert.equal(s.global.cb.music, 0.45);
   assert.equal(s.global.cb.sfx, 0.7); assert.equal(s.global.cb.has_save, false);
-  assert.deepEqual(plain(s.global.cb_levels), [s.rm_level1]);
+  assert.deepEqual(plain(s.global.cb_levels), [s.rm_level1,s.rm_level2,s.rm_level3]);
   assert.equal(state.bindings.length, 14);
   assert.deepEqual(state.bindings.filter(b => b[3] === 0).map(b => b[2]), DEFAULT_KEYS);
   assert.deepEqual(state.bindings.filter(b => b[3] === 1).map(b => b[2]), [37, 39, 38, 40, undefined, undefined, undefined]);
@@ -130,7 +130,7 @@ check('novo jogo reinicia progresso preservando opções; continuar preserva che
   assert.equal(state.files[SAVE].progress.version, 1); assert.equal(state.files[SAVE].progress.checkpoint, 0); assert.equal(state.open, null);
 });
 check('conclusão final salva e solicita créditos; catálogo avança fase intermediária', () => {
-  const { s, state } = sandbox(); s.cb_boot(); s.cb_complete_level();
+  const { s, state } = sandbox(); s.cb_boot(); s.global.cb.level=2; s.cb_complete_level();
   assert.equal(s.global.cb.completed, true); assert.equal(s.global.cb_open_credits, true);
   assert.equal(state.room, s.rm_menu); assert.equal(state.files[SAVE].progress.completed, true); assert.equal(state.open, null);
   const next = sandbox(); next.s.cb_boot(); next.s.global.cb_levels.push(1002); next.s.global.cb.checkpoint = 3;

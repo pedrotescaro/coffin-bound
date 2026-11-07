@@ -7,7 +7,7 @@ function cb_boot() {
         has_save: false, level: 0, checkpoint: 0, completed: false,
         deaths: 0, music_handle: -1
     };
-    global.cb_levels = [rm_level1];
+    global.cb_levels = [rm_level1,rm_level2,rm_level3];
     global.cb_open_credits = false;
     global.is_paused = false;
     global.dialogue_active = false;

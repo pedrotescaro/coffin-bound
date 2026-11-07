@@ -86,3 +86,5 @@ Copyright © 2026 **Pedro Tescaro**. **First-party code** is licensed under **GP
 The code's GPL **does not license the original artwork**. Sprites, tiles, backgrounds and their derivatives, exports and previews require provenance and redistribution confirmation. See [Licenses](docs/LICENCAS.md) and [Third-party notices](THIRD_PARTY_NOTICES.md).
 
 Documentation: [Changelog](CHANGELOG.md) · [Phase deliveries](docs/ENTREGAS.md) · [Polish](docs/POLIMENTO.md) · [QA](docs/QA.md) · [itch.io and builds](docs/ITCH_IO.md).
+
+Version 0.2.0: strict four-green Game Boy palette, reference-based portrait and three difficulty rooms. Moving/falling/one-way platforms, timed blades, pendulums and contact-damage enemies. Windows compilation passed; full playthrough and balance require manual QA. See docs/TAREFAS_VERDE.md.

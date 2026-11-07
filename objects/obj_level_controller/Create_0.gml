@@ -3,6 +3,8 @@
 // existentes sem regravar os dados comprimidos da room.
 
 cb_boot();
+var _room_level=(room==rm_level3)?2:((room==rm_level2)?1:0);
+if(global.cb.level!=_room_level) { global.cb.level=_room_level;global.cb.checkpoint=0; }
 depth = -100;
 cb_gui_apply();
 
@@ -67,6 +69,7 @@ respawn_player = function() {
     win_handled = false;
     global.dialogue_active = false;
     with (obj_coffin) sprite_index = spr_coffin;
+    if(instance_exists(obj_challenges)) { with(obj_challenges) event_perform(ev_create,0); }
     if (instance_exists(obj_camera) && instance_exists(obj_player)) {
         with (obj_camera) {
             follow_x = clamp(obj_player.x - view_w / 2, 0, max(0, room_width - view_w));
@@ -77,7 +80,7 @@ respawn_player = function() {
 };
 
 // Posições seguras do catálogo da fase, sem gravar coordenadas arbitrárias no save.
-checkpoint_spawns = [[56, 205], [790, 118], [1290, 230], [1565, 342]];
+checkpoint_spawns = (global.cb.level==2) ? [[48,448],[672,320],[1216,336],[1536,272]] : ((global.cb.level==1) ? [[48,448],[672,320],[1216,320],[1536,272]] : [[48,448],[672,320],[1216,288],[1536,272]]);
 checkpoint_timer = 0;
 death_handled = false;
 win_handled = false;

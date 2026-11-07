@@ -26,7 +26,7 @@ function player_resolve_collision() {
 
     var _direction_y = sign(_move_y);
     repeat (abs(_move_y)) {
-        if (place_meeting(x, y + _direction_y, [obj_wall, obj_ground])) {
+        if (place_meeting(x, y + _direction_y, [obj_wall, obj_ground]) || (_direction_y > 0 && cb_oneway_at(x,y+_direction_y))) {
             vsp = 0;
             move_remainder_y = 0;
             if (_direction_y > 0) {

@@ -47,6 +47,7 @@ function player_try_start_bat() {
         ? ((facing_dir >= 0) ? 0 : 180)
         : point_direction(0, 0, input_move_x, input_move_y);
     state = PlayerState.BAT;
+    mask_index=spr_mask_bat;
     bat_phase = BatPhase.LAUNCH;
     bat_launch_timer = bat_launch_frames;
     bat_flight_timer = bat_flight_duration;
@@ -66,6 +67,8 @@ function player_try_start_bat() {
 
 /// @description Inicia o retorno visual seguro após o pouso.
 function player_return_to_human() {
+    var _mask=mask_index;mask_index=spr_vampire_idle;
+    if(place_meeting(x,y,[obj_wall,obj_ground])) {mask_index=_mask;return;}
     state = PlayerState.TRANSFORM_TO_HUMAN;
     transform_timer = transform_duration;
     hsp = 0;

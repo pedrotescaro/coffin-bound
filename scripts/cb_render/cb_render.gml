@@ -52,6 +52,7 @@ function cb_render_present() {
     if (!surface_exists(application_surface)) return;
     gpu_set_texfilter(false);
     gpu_set_blendenable(false);
+    draw_set_color(c_white);
     shader_set(shd_gameboy);
     draw_surface_stretched(application_surface, global.cb_render_x, global.cb_render_y,
         480 * global.cb_render_scale, 270 * global.cb_render_scale);

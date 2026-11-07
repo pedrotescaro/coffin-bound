@@ -38,13 +38,13 @@ if (_player.state == PlayerState.WIN) {
 }
 
 // Checkpoints invisiveis deixam as tentativas curtas, no ritmo de Celeste.
-if (checkpoint < 1 && _player.x >= 780) {
+if (checkpoint < 1 && _player.x >= 640) {
     set_checkpoint(1);
 }
-if (checkpoint < 2 && _player.x >= 1264) {
+if (checkpoint < 2 && _player.x >= 1184) {
     set_checkpoint(2);
 }
-if (checkpoint < 3 && _player.x >= 1536) {
+if (checkpoint < 3 && _player.x >= 1504) {
     set_checkpoint(3);
 }
 

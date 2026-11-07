@@ -2,6 +2,7 @@
 from pathlib import Path
 import json
 import re
+import os
 
 ROOT = Path(__file__).resolve().parents[2]
 WORK = ROOT / "tools/arte/.work/mapa"
@@ -12,7 +13,8 @@ def load(path):
 
 
 def main():
-    room = load(ROOT / "rooms/rm_level1/rm_level1.yy")
+    room_name=os.environ.get("CB_ROOM","rm_level1")
+    room = load(ROOT / f"rooms/{room_name}/{room_name}.yy")
     solids, instances, lights = [], [], []
     for layer in room["layers"]:
         for item in layer.get("instances", []):

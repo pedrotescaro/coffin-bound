@@ -1,0 +1,12 @@
+assets/environment/crypt_decor.aseprite
+assets/environment/crypt_decor_preview.png
+assets/environment/crypt_map.aseprite
+assets/environment/crypt_tiles.aseprite
+assets/environment/crypt_tiles.png
+assets/environment/crypt_tiles_preview.png
+docs/TAREFAS_VERDE.md
+sprites/spr_hud/983094c0-dc0e-4ab3-b5c0-614c28b2ea7e.png
+sprites/spr_hud/9971e78d-72e5-481d-a987-9a874f3ba2b6.png
+sprites/spr_hud/hud-ui-empty.png
+sprites/spr_hud/hud-ui-full.png
+tools/arte/gerar_cenario.js

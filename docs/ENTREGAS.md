@@ -246,3 +246,17 @@ Não foi feito upload de executável no itch.io nem release jogável sem esses t
 | Fase 5 — publicação | `3d8fecb` (ajuste Linux em `4b577c9`) |
 | Fase 6 — pacote e QA inicial | Consultar o commit com mensagem “Fase 6” no histórico |
 | Fase 7 — diálogos e retrato | Consultar o commit com mensagem “Fase 7” no histórico |
+
+## Atualização 0.2.0 — tarefas solicitadas pelo usuário
+
+- Tarefa1: paletaquatroverdes, portraitreferência, sprites/UI/partículas; commitfbd44fd.
+- Tarefa2: materiaisgastos, musgo, correntes/teias/ossos; commitf6bf031.
+- Tarefa3: trêsrooms, plataformas/armadilhas/inimigos/checkpoints e corredores de morcego;
+  commit com mensagem Tarefa3 no histórico.
+- Backup: backup/antes-paleta-verde-desafios.
+- Arquivos e testes detalhados: TAREFAS_VERDE.md e arquivos-tarefa-*.txt.
+- Final:273imagens,0pixelsvisíveisforapaleta,0alphaparcial;31checks,0erroestrutural,
+  compilaçãoVM2026.0.0.23 eZIPWindows0.2.0aprovados.
+- Pendentes: rodarNovoJogo e completar astrêsrooms, verificaraltura/tempo/colisões,
+  morcego, one-way, móveis, quedas, pêndulos, ciclos, inimigos e save; balanceamento,
+  controle, audição/performance,HTML5continua dependente do móduloausente.

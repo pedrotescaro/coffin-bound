@@ -15,7 +15,7 @@ function sandbox() {
     state: PlayerState.NORMAL, x: 40, y: 40, hsp: 0, vsp: 0,
     move_remainder_x: 0, move_remainder_y: 0, room_width: 480,
     obj_wall: 1, obj_ground: 2, walls: [], on_ground: false, on_wall: 0,
-    cb_play_sfx() {}, cb_shake() {}, snd_cb_dash: 21, snd_cb_bat: 22,
+    cb_oneway_at() { return false; }, cb_play_sfx() {}, cb_shake() {}, snd_cb_dash: 21, snd_cb_bat: 22,
     visual_was_on_ground: false, visual_landed: false, can_dash: true,
     bat_landing_grace_timer: 0, damage_timer: 0,
     player_return_to_human() { s.state = PlayerState.TRANSFORM_TO_HUMAN; },
