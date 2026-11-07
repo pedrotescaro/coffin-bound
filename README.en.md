@@ -1,5 +1,11 @@
 # Coffin Bound
 
+![Static preview of the gothic dialogue UI and vampire portrait](assets/dialogue/dialogue_preview.png)
+
+*Version 0.1.1 adds an original vampire portrait made and exported in LibreSprite. This is
+a static UI composition, not a gameplay capture. Editable source and details are in
+[Dialogue artwork](docs/DIALOGOS.md), in Portuguese.*
+
 [Português](README.md)
 
 A 2D pixel art platformer about a vampire trying to find his coffin. Cross a crypt, avoid light and spikes, climb walls, and turn into a bat to find your way home. Created by **Pedro Tescaro** in **GameMaker**, with movement inspired by Celeste.

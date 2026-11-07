@@ -201,6 +201,39 @@ e Alt+Tab; ouvir efeitos e música; medir frame time e memória. Instruções em
 O ZIP é um candidato local para QA, não uma release final no GitHub/itch.io. O código das
 ferramentas e os relatórios são enviados ao repositório público já autorizado.
 
+## Fase 7 — diálogos e retrato no LibreSprite
+
+**Mudou:** interface de diálogo com moldura gótica recortada, detalhes em rubi/dourado,
+placa do falante, separadores, rodapé de avanço e retrato detalhado original do vampiro.
+Fonte editável e exportações geradas no LibreSprite batch. Retrato 88×96, origem (0,0),
+19 cores da paleta gótica e transparência binária. Texto com wrap de 306px, passo de 20px
+e folga para as duas linhas existentes. Versão Windows/HTML5 marcada como 0.1.1.
+
+**Backup:** branch `backup/antes-dialogos-com-retrato`, no commit `b4e8ac8` da fase 6.
+
+**Arquivos:** `assets/dialogue/`, `sprites/spr_portrait_vampire/`,
+`scripts/cb_dialogue/`, `objects/obj_level_controller/{Create_0,Draw_64}.gml`,
+`tools/arte/gerar_retrato.{js,ps1}`, `tools/arte/gerar_preview_dialogo.{js,ps1}`,
+`.yyp`, `.resource_order`, opções Windows/HTML5, READMEs, `CHANGELOG.md`,
+`docs/DIALOGOS.md`, `docs/LICENCAS.md`, `docs/qa/windows-0.1.1-package.json` e esta entrega.
+Nenhum asset anterior apagado ou renomeado.
+
+**Verificado:** fonte ASEprite/PNG e paleta, alpha 0/255, ampliação nearest 3× e igualdade
+dos PNGs composite/layer. Prévia estática da composição inspecionada; maior linha 270/306px,
+altura 40/44px. Validador: 0 erros/0 avisos, agora com 22 sprites e 454 scripts. Igor
+Windows VM/PackageZip: saída 0. ZIP 0.1.1 com nove arquivos e integridade aprovada.
+
+**Conferir manualmente:** no ZIP 0.1.1, selecionar Novo jogo, verificar retrato inteiro,
+nome e duas linhas sem cortes; Enter deve revelar/avançar sem pulo extra. Conferir a fala
+do Eco da Cripta, pausa/R e fullscreen/filtro. Passos completos em `docs/DIALOGOS.md`.
+Os testes básicos aprovados pelo usuário pertencem ao pacote anterior 0.1.0 e não foram
+transferidos automaticamente à nova interface.
+
+**Pendente:** confirmar essa apresentação no runner, percurso completo, checkpoints,
+controle, audição/performance e capturas reais. HTML5 ainda depende do módulo ausente.
+A arte nova tem fonte própria documentada; a procedência dos assets antigos permanece pendente.
+Não foi feito upload de executável no itch.io nem release jogável sem esses testes.
+
 ## Histórico das fases
 
 | Etapa | Commit |
@@ -212,3 +245,4 @@ ferramentas e os relatórios são enviados ao repositório público já autoriza
 | Fase 4 — polimento | `4033299` |
 | Fase 5 — publicação | `3d8fecb` (ajuste Linux em `4b577c9`) |
 | Fase 6 — pacote e QA inicial | Consultar o commit com mensagem “Fase 6” no histórico |
+| Fase 7 — diálogos e retrato | Consultar o commit com mensagem “Fase 7” no histórico |

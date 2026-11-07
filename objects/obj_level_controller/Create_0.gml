@@ -26,26 +26,33 @@ var _project_font = font_get_name(fnt_monogram);
 dialogue_font = scribble_font_exists(_project_font) ? _project_font : "scribble_fallback_font";
 dialogue_typist = scribble_typist();
 dialogue_serial = 0;
+dialogue_speaker = "";
 dialogue_body = scribble("", "level_dialogue_empty")
-    .starting_format(dialogue_font, c_white)
+    .starting_format(dialogue_font, make_color_rgb(233, 237, 197))
     .align(fa_left, fa_top)
-    .wrap(350);
+    .line_height(20, 20)
+    .line_spacing(20)
+    .wrap(306);
 dialogue_name = scribble("", "level_dialogue_name_empty")
     .starting_format(dialogue_font, COLOR_LEVEL_BRIGHT)
     .align(fa_left, fa_top);
-dialogue_continue = scribble(">", "level_dialogue_continue")
-    .starting_format(dialogue_font, COLOR_LEVEL_BRIGHT)
+dialogue_continue = scribble("ENTER / A", "level_dialogue_continue")
+    .starting_format(dialogue_font, make_color_rgb(233, 237, 197))
     .align(fa_left, fa_top);
 
 start_dialogue = function(_speaker, _text) {
     dialogue_serial++;
+    dialogue_speaker = _speaker;
     dialogue_name = scribble(_speaker, "level_dialogue_name_" + string(dialogue_serial))
-        .starting_format(dialogue_font, COLOR_LEVEL_BRIGHT)
+        .starting_format(dialogue_font, (_speaker == "VAMPIRO")
+            ? make_color_rgb(241, 201, 128) : COLOR_LEVEL_BRIGHT)
         .align(fa_left, fa_top);
     dialogue_body = scribble(_text, "level_dialogue_body_" + string(dialogue_serial))
-        .starting_format(dialogue_font, c_white)
+        .starting_format(dialogue_font, make_color_rgb(233, 237, 197))
         .align(fa_left, fa_top)
-        .wrap(350);
+        .line_height(20, 20)
+        .line_spacing(20)
+        .wrap(306);
     dialogue_typist.reset().in(0.65, 2);
     global.dialogue_active = true;
 };

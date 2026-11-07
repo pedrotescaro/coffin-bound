@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.1 — 2026-11-06
+
+- Caixa de diálogo com moldura gótica, joias, separadores, placa do falante e rodapé de avanço.
+- Retrato detalhado original do vampiro em 88×96, desenhado e exportado no LibreSprite.
+- Fonte `.aseprite`, PNGs e geradores reproduzíveis; sprite integrado sem alterar assets anteriores.
+- Área de texto de 306 pixels e duas linhas com espaçamento inteiro de 20 pixels.
+- Compilação e pacote Windows atualizados; conferir a nova interface no runner conforme `docs/DIALOGOS.md`.
+
 ## Não lançado — validação Windows (fase 6)
 
 - Adicionada opção `tools/build.ps1 -Package` para exportar o ZIP completo pelo Igor.
